@@ -225,3 +225,17 @@ h1 span { display: block; font-size: 3.8rem; }
 .legal-panel a:not(.button) { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 520px) { .legal-panel .story-content { padding: 30cqw 19cqw 26cqw; } .legal-panel h1 { font-size: 2.8rem; } }
 .nature-panel .project-content { padding-inline: 19cqw; }
+/* Pages des jeux */
+.game-page .hero { padding-block: 120px 70px; }
+.game-title { font-size: 4rem; line-height: .95; }
+.game-features { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 1.08rem; line-height: 1.45; text-align: center; }
+.game-features li::before { content: "❖"; display: block; color: #9a6a24; font-size: .8rem; line-height: 1.2; }
+.game-shots { padding-block: 10px 50px; }
+.game-shots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; }
+.game-shot { margin: 0; padding: 8px; background: linear-gradient(145deg, #f3d48a, #a8792c 45%, #f6dd9a 70%, #8c6020); border-radius: 6px; box-shadow: 0 14px 30px rgb(0 0 0 / 40%); }
+.game-shot img { width: 100%; border-radius: 3px; }
+.game-shot figcaption { padding: 10px 8px 4px; color: #2f1d0b; text-align: center; font-size: 1rem; }
+.project-content .discover { font-size: .95rem; text-decoration: underline; text-underline-offset: 4px; color: #4f2a12; }
+@media (max-width: 800px) { .game-title { font-size: 3.1rem; } .game-page .hero { padding-block: 110px 50px; } }
+@media (max-width: 520px) { .game-page .hero { padding-top: 130px; } .game-title { font-size: 2.9rem; } }
+.story-content .legal-list a { text-decoration: underline; text-underline-offset: 4px; color: #4f2a12; }
