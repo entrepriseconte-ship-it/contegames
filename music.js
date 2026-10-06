@@ -6,7 +6,7 @@
   if (!audio || !button) return;
 
   const KEY = 'cg-music';
-  const VOLUME = 0.55;
+  const VOLUME = 0.7;
   let wanted = true;
   try { wanted = localStorage.getItem(KEY) !== 'off'; } catch (e) { /* stockage indisponible */ }
   let fadeTimer = 0;
