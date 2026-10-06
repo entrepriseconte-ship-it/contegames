@@ -3,33 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CONTE GAMES STUDIO</title>
-<style>
-  :root { --fond: #fffaf2; --texte: #2a1d33; --accent: #e8572a; }
-  @media (prefers-color-scheme: dark) { :root { --fond: #1b1420; --texte: #f3ece6; --accent: #ff8a5c; } }
-  body { margin: 0; background: var(--fond); color: var(--texte); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 16px; }
-  a { color: var(--accent); }
-</style>
+<title>Conte Games Studio · Des jeux qui vous ressemblent</title>
+<meta name="description" content="Conte Games Studio, studio indépendant de Saint-Étienne : COCOBOUM!, Royaume des Mots Croisés, Mieux Chaque Jour et Les Tableaux Ensorcelés.">
+<meta name="theme-color" content="#10251c">
+<link rel="icon" href="assets/img/logo-carre.jpg">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<main>
-<h1>CONTE GAMES STUDIO</h1>
-<p>Jeux pour mobile, créés à Saint-Étienne.</p>
-<h2>COCOBOUM!</h2>
-<ul>
-<li><a href="cocoboum/confidentialite.html">Politique de confidentialité</a></li>
-<li><a href="cocoboum/privacy.html">Privacy Policy</a></li>
-</ul>
-<h2>Royaume des Mots Croisés</h2>
-<ul>
-<li><a href="royaumedesmotscroises/assistance.html">Assistance</a></li>
-<li><a href="royaumedesmotscroises/confidentialite.html">Politique de confidentialité</a></li>
-</ul>
-<p>Contact : <a href="mailto:contegamesstudio@gmail.com">contegamesstudio@gmail.com</a></p>
-<h2>Mentions légales</h2>
-<p>Éditeur et directeur de la publication : Anthony Conte, entrepreneur individuel, nom commercial CONTE GAMES STUDIO.<br>SIRET 490 066 602 00056 · 42 C rue du Général de Gaulle, 42400 Saint-Chamond, France<br>Contact : <a href="mailto:contegamesstudio@gmail.com">contegamesstudio@gmail.com</a></p>
-<p>Hébergement : GitHub Pages, GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+
+<header class="bandeau">
+  <a class="marque" href="#haut" aria-label="Conte Games Studio, retour en haut"><span class="marque-conte">Conte</span> <span class="marque-studio">Games Studio</span></a>
+  <nav aria-label="Menu principal">
+    <a href="#univers">Nos univers</a>
+    <a href="#studio">Le studio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="haut">
+
+  <section class="heros" aria-labelledby="titre-heros">
+    <div class="ciel" aria-hidden="true">
+      <img class="dragon" src="assets/img/dragon-1.png" alt="" data-x0="-25" data-x1="115" data-y="14" data-amp="4" data-duree="34" data-phase="0.55" data-taille="1" data-sens="d">
+      <img class="dragon" src="assets/img/dragon-2.png" alt="" data-x0="120" data-x1="-20" data-y="6" data-amp="3" data-duree="46" data-phase="0.2" data-taille="0.55" data-sens="g">
+    </div>
+    <div class="cadre-heros">
+      <img class="cadre-heros-image" src="assets/img/cadre-heros.png" alt="" aria-hidden="true">
+      <div class="cadre-heros-contenu">
+        <img class="logo" src="assets/img/logo.jpg" alt="Logo Conte Games Studio : une couronne et un grand C rouge et or">
+        <div class="heros-texte">
+          <p class="surtitre">Studio indépendant · Saint-Étienne</p>
+          <h1 id="titre-heros"><span>Conte</span> <span>Games Studio</span></h1>
+          <p class="devise">Des jeux qui vous ressemblent.</p>
+          <a class="bouton" href="#univers">Explorer nos univers</a>
+        </div>
+      </div>
+    </div>
+    <button class="pause-animation" type="button" aria-pressed="false">Mettre l’animation en pause</button>
+  </section>
+
+  <section id="univers" class="univers" aria-labelledby="titre-univers">
+    <div class="titre-section">
+      <p class="surtitre">Quatre mondes à explorer</p>
+      <h2 id="titre-univers">Nos univers</h2>
+    </div>
+
+    <div class="jeux">
+      <article class="jeu">
+        <div class="jeu-cadre"><img src="assets/img/cocoboum.jpg" alt="Illustration du jeu COCOBOUM!" loading="lazy"></div>
+        <h3>COCOBOUM!</h3>
+        <p>Un jeu explosif et coloré, à partager en famille.</p>
+        <p class="jeu-liens">
+          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <a href="cocoboum/confidentialite.html">Confidentialité</a>
+        </p>
+      </article>
+
+      <article class="jeu">
+        <div class="jeu-cadre"><img src="assets/img/royaume-mots-croises.jpg" alt="Illustration du jeu Royaume des Mots Croisés" loading="lazy"></div>
+        <h3>Royaume des Mots Croisés</h3>
+        <p>Des grilles de mots croisés au cœur d’un royaume enchanté.</p>
+        <p class="jeu-liens">
+          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <a href="royaumedesmotscroises/assistance.html">Assistance</a>
+        </p>
+      </article>
+
+      <article class="jeu">
+        <div class="jeu-cadre"><img src="assets/img/mieux-chaque-jour.jpg" alt="Illustration de l’application Mieux Chaque Jour" loading="lazy"></div>
+        <h3>Mieux Chaque Jour</h3>
+        <p>Un petit pas chaque jour pour avancer et prendre soin de soi.</p>
+        <p class="jeu-liens">
+          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+        </p>
+      </article>
+
+      <article class="jeu jeu-nouveau">
+        <div class="jeu-cadre"><img src="assets/img/tableaux-capture-01.jpg" alt="Les Tableaux Ensorcelés : un puzzle à emboîter dans un cadre doré" loading="lazy"></div>
+        <p class="ruban">Nouveau</p>
+        <h3>Les Tableaux Ensorcelés</h3>
+        <p>Libérez 50 tableaux enchantés dans un château médiéval, en puzzle coulissant ou en vrai puzzle à emboîter. Gratuit et sans publicité.</p>
+        <p class="jeu-liens">
+          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <a href="https://tableaux-classement.mieuxchaquejour.workers.dev/assistance">Assistance</a>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="duo" aria-label="Le studio et le contact">
+    <article id="studio" class="carte carte-studio">
+      <img class="carte-cadre" src="assets/img/cadre-studio.png" alt="" aria-hidden="true">
+      <div class="carte-texte">
+        <p class="surtitre">L’imagination prend vie</p>
+        <h2>Le studio</h2>
+        <p>Né à Saint-Étienne, Conte Games Studio imagine des jeux et des expériences numériques accessibles, généreux et faits pour être partagés.</p>
+        <p>Du plaisir de jouer en famille aux royaumes de mots croisés, chaque projet ouvre un nouvel univers.</p>
+        <p class="signature">Anthony, fondateur</p>
+      </div>
+    </article>
+
+    <article id="contact" class="carte carte-contact">
+      <img class="carte-cadre" src="assets/img/cadre-contact.png" alt="" aria-hidden="true">
+      <div class="carte-texte">
+        <p class="surtitre">Écrivons la suite</p>
+        <h2>Contact</h2>
+        <p>Une idée, un partenariat ou l’envie de découvrir les projets du studio ?</p>
+        <p>Anthony vous accueille pour échanger autour des jeux, de la presse et des collaborations.</p>
+        <p class="contact-mail"><a href="mailto:contegamesstudio@gmail.com">contegamesstudio@gmail.com</a></p>
+      </div>
+    </article>
+  </section>
+
+  <section id="mentions" class="mentions" aria-labelledby="titre-mentions">
+    <h2 id="titre-mentions">Mentions légales</h2>
+    <p>Éditeur et directeur de la publication : Anthony Conte, entrepreneur individuel, nom commercial CONTE GAMES STUDIO.<br>SIRET 490 066 602 00056 · 42 C rue du Général de Gaulle, 42400 Saint-Chamond, France<br>Contact : <a href="mailto:contegamesstudio@gmail.com">contegamesstudio@gmail.com</a></p>
+    <p>Hébergement : GitHub Pages, GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+  </section>
+
 </main>
+
+<footer class="pied">
+  <p class="marque"><span class="marque-conte">Conte</span> <span class="marque-studio">Games Studio</span></p>
+  <p class="pied-lieu">Imaginé à Saint-Étienne</p>
+  <nav class="pied-liens" aria-label="Pages légales et assistance">
+    <a href="#haut">Retour en haut</a>
+    <a href="#mentions">Mentions légales</a>
+    <details>
+      <summary>Confidentialité et assistance</summary>
+      <ul>
+        <li>COCOBOUM! : <a href="cocoboum/confidentialite.html">Confidentialité</a> · <a href="cocoboum/privacy.html">Privacy Policy</a></li>
+        <li>Royaume des Mots Croisés : <a href="royaumedesmotscroises/confidentialite.html">Confidentialité</a> · <a href="royaumedesmotscroises/assistance.html">Assistance</a></li>
+        <li>Les Tableaux Ensorcelés : <a href="https://tableaux-classement.mieuxchaquejour.workers.dev/confidentialite">Confidentialité</a> · <a href="https://tableaux-classement.mieuxchaquejour.workers.dev/assistance">Assistance</a></li>
+      </ul>
+    </details>
+  </nav>
+</footer>
+
+<script src="assets/js/dragons.js"></script>
 </body>
 </html>
