@@ -6,7 +6,8 @@
 <title>Conte Games Studio · Des jeux qui vous ressemblent</title>
 <meta name="description" content="Conte Games Studio, studio indépendant de Saint-Étienne : COCOBOUM!, Royaume des Mots Croisés, Mieux Chaque Jour et Les Tableaux Ensorcelés.">
 <meta name="theme-color" content="#10251c">
-<link rel="icon" href="assets/img/logo-carre.jpg">
+<link rel="icon" href="assets/img/logo-carre.png">
+<link rel="apple-touch-icon" href="assets/img/logo-carre.png">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -23,21 +24,18 @@
 <main id="haut">
 
   <section class="heros" aria-labelledby="titre-heros">
-    <div class="ciel" aria-hidden="true">
-      <img class="dragon" src="assets/img/dragon-1.png" alt="" data-x0="-25" data-x1="115" data-y="14" data-amp="4" data-duree="34" data-phase="0.55" data-taille="1" data-sens="d">
-      <img class="dragon" src="assets/img/dragon-2.png" alt="" data-x0="120" data-x1="-20" data-y="6" data-amp="3" data-duree="46" data-phase="0.2" data-taille="0.55" data-sens="g">
-    </div>
-    <div class="cadre-heros">
-      <img class="cadre-heros-image" src="assets/img/cadre-heros.png" alt="" aria-hidden="true">
-      <div class="cadre-heros-contenu">
-        <img class="logo" src="assets/img/logo.jpg" alt="Logo Conte Games Studio : une couronne et un grand C rouge et or">
-        <div class="heros-texte">
-          <p class="surtitre">Studio indépendant · Saint-Étienne</p>
-          <h1 id="titre-heros"><span>Conte</span> <span>Games Studio</span></h1>
-          <p class="devise">Des jeux qui vous ressemblent.</p>
-          <a class="bouton" href="#univers">Explorer nos univers</a>
-        </div>
+    <div class="scene">
+      <img class="scene-fond" src="assets/img/fond-heros.jpg" width="1905" height="768" alt="Un château doré au soleil couchant, des montagnes, des lanternes et un grand cadre sculpté à tête de lion qui présente le logo Conte Games Studio">
+      <div class="ciel" aria-hidden="true">
+        <img class="dragon dragon-grand" src="assets/img/dragon-1.png" alt="" data-x0="-32" data-x1="112" data-y="-1" data-amp="0.8" data-duree="38" data-phase="0.6" data-taille="1">
+        <img class="dragon dragon-petit" src="assets/img/dragon-2.png" alt="" data-x0="-12" data-x1="108" data-y="0.5" data-amp="1.2" data-duree="55" data-phase="0.82" data-taille="1">
       </div>
+    </div>
+    <div class="heros-texte">
+      <p class="surtitre">Studio indépendant · Saint-Étienne</p>
+      <h1 id="titre-heros"><span>Conte</span> <span>Games Studio</span></h1>
+      <p class="devise">Des jeux qui vous ressemblent.</p>
+      <a class="bouton" href="#univers">Explorer nos univers</a>
     </div>
     <button class="pause-animation" type="button" aria-pressed="false">Mettre l’animation en pause</button>
   </section>
@@ -50,41 +48,41 @@
 
     <div class="jeux">
       <article class="jeu">
-        <div class="jeu-cadre"><img src="assets/img/cocoboum.jpg" alt="Illustration du jeu COCOBOUM!" loading="lazy"></div>
+        <div class="jeu-cadre"><img src="assets/img/cocoboum.jpg" alt="COCOBOUM! : le héros s’enfuit devant des virus farceurs" loading="lazy"></div>
         <h3>COCOBOUM!</h3>
-        <p>Un jeu explosif et coloré, à partager en famille.</p>
+        <p>Un jeu explosif et plein d’humour : chassez les virus farceurs, en solo ou en duel.</p>
         <p class="jeu-liens">
-          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <!-- Quand le jeu est publié : retirer la classe « bientot » et remplacer le texte par « Télécharger sur l’App Store ». --><a class="bouton bouton-store bientot" href="https://apps.apple.com/app/id6817739082">Bientôt sur l’App Store</a>
           <a href="cocoboum/confidentialite.html">Confidentialité</a>
         </p>
       </article>
 
       <article class="jeu">
-        <div class="jeu-cadre"><img src="assets/img/royaume-mots-croises.jpg" alt="Illustration du jeu Royaume des Mots Croisés" loading="lazy"></div>
+        <div class="jeu-cadre embleme embleme-royaume" aria-hidden="true"><span class="embleme-grille"><b>R</b><b>O</b><b>I</b><b>M</b><b></b><b>O</b><b>T</b><b>S</b><b></b></span></div>
         <h3>Royaume des Mots Croisés</h3>
         <p>Des grilles de mots croisés au cœur d’un royaume enchanté.</p>
         <p class="jeu-liens">
-          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <!-- Quand le jeu est publié : retirer la classe « bientot » et remplacer le texte par « Télécharger sur l’App Store ». --><a class="bouton bouton-store bientot" href="https://apps.apple.com/app/id6817612983">Bientôt sur l’App Store</a>
           <a href="royaumedesmotscroises/assistance.html">Assistance</a>
         </p>
       </article>
 
       <article class="jeu">
-        <div class="jeu-cadre"><img src="assets/img/mieux-chaque-jour.jpg" alt="Illustration de l’application Mieux Chaque Jour" loading="lazy"></div>
+        <div class="jeu-cadre embleme embleme-mieux" aria-hidden="true"><span class="embleme-soleil"></span></div>
         <h3>Mieux Chaque Jour</h3>
         <p>Un petit pas chaque jour pour avancer et prendre soin de soi.</p>
         <p class="jeu-liens">
-          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <!-- Quand le jeu est publié : retirer la classe « bientot » et remplacer le texte par « Télécharger sur l’App Store ». --><a class="bouton bouton-store bientot" href="https://apps.apple.com/app/id6817754343">Bientôt sur l’App Store</a>
         </p>
       </article>
 
       <article class="jeu jeu-nouveau">
-        <div class="jeu-cadre"><img src="assets/img/tableaux-capture-01.jpg" alt="Les Tableaux Ensorcelés : un puzzle à emboîter dans un cadre doré" loading="lazy"></div>
+        <div class="jeu-cadre"><img src="assets/img/tableaux-ensorceles.jpg" alt="Les Tableaux Ensorcelés : un puzzle à emboîter dans un cadre doré" loading="lazy"></div>
         <p class="ruban">Nouveau</p>
         <h3>Les Tableaux Ensorcelés</h3>
         <p>Libérez 50 tableaux enchantés dans un château médiéval, en puzzle coulissant ou en vrai puzzle à emboîter. Gratuit et sans publicité.</p>
         <p class="jeu-liens">
-          <!-- APP STORE : remplacer par <a class="bouton bouton-store" href="URL">Télécharger sur l’App Store</a> --><span class="bouton bouton-store bientot">Bientôt sur l’App Store</span>
+          <!-- Quand le jeu est publié : retirer la classe « bientot » et remplacer le texte par « Télécharger sur l’App Store ». --><a class="bouton bouton-store bientot" href="https://apps.apple.com/app/id6819245288">Bientôt sur l’App Store</a>
           <a href="https://tableaux-classement.mieuxchaquejour.workers.dev/assistance">Assistance</a>
         </p>
       </article>
