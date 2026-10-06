@@ -237,15 +237,3 @@ h1 span { display: block; font-size: 3.8rem; }
 @media (max-width: 800px) { .game-title { font-size: 3.1rem; } .game-page .hero { padding-block: 110px 50px; } }
 @media (max-width: 520px) { .game-page .hero { padding-top: 130px; } .game-title { font-size: 2.9rem; } }
 .story-content .legal-list a { text-decoration: underline; text-underline-offset: 4px; color: #4f2a12; }
-.music-control { position: fixed; bottom: 14px; left: 14px; z-index: 8; display: grid; place-items: center; width: 58px; height: 58px; padding: 0; border: 2px solid #d9b45f; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #6a3f97, #351a55 58%, #1b0d2c); color: var(--gold); cursor: pointer; box-shadow: 0 0 0 3px #4a2b12, 0 0 0 5px #b8893a, 0 6px 18px rgb(12 6 22 / 60%), inset 0 0 12px rgb(255 214 120 / 25%); transition: transform .2s ease, box-shadow .3s ease; }
-.music-control:hover { transform: scale(1.06); }
-.music-control svg { width: 32px; height: 32px; overflow: visible; filter: drop-shadow(0 1px 1px #1a0b04); }
-.music-control .note { fill: #f2cf78; }
-.music-control .wave { fill: none; stroke: #f2cf78; stroke-width: 2.6; stroke-linecap: round; opacity: 0; }
-.music-control .mute { fill: none; stroke: #f6e3b0; stroke-width: 3.2; stroke-linecap: round; }
-.music-control.is-playing { box-shadow: 0 0 0 3px #4a2b12, 0 0 0 5px #d9a845, 0 0 22px 6px rgb(160 98 230 / 55%), 0 6px 18px rgb(12 6 22 / 60%), inset 0 0 12px rgb(255 214 120 / 30%); }
-.music-control.is-playing .wave { opacity: 1; animation: music-glow 2.4s ease-in-out infinite; }
-.music-control.is-playing .mute { display: none; }
-@keyframes music-glow { 50% { opacity: .45; } }
-@media (prefers-reduced-motion: reduce) { .music-control.is-playing .wave { animation: none; } }
-@media (max-width: 520px) { .music-control { width: 50px; height: 50px; bottom: 12px; left: 12px; } .music-control svg { width: 27px; height: 27px; } }
