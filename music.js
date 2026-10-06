@@ -5,20 +5,10 @@
   if (!audio) return;
 
   const VOLUME = 0.7;
-  let fadeTimer = 0;
-
-  function fadeIn() {
-    clearInterval(fadeTimer);
-    fadeTimer = setInterval(() => {
-      audio.volume = Math.min(VOLUME, audio.volume + 0.04);
-      if (audio.volume >= VOLUME) clearInterval(fadeTimer);
-    }, 60);
-  }
-
   function start() {
     if (!audio.paused) return Promise.resolve(true);
-    audio.volume = 0;
-    return audio.play().then(() => { fadeIn(); return true; }, () => false);
+    audio.volume = VOLUME;
+    return audio.play().then(() => true, () => false);
   }
 
   // Les navigateurs bloquent le son avant toute action du visiteur :
