@@ -73,6 +73,7 @@ h1 span { display: block; font-size: 3.8rem; }
 .button { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: 9px 20px; border: 1px solid #ceae6d; outline: 1px solid #164132; outline-offset: 2px; border-radius: 3px; background: var(--forest); color: var(--cream); font-size: 1.125rem; line-height: 1.4; text-align: center; box-shadow: 0 5px 12px rgb(41 35 17 / 18%); transition: background .18s, transform .18s; }
 .button:hover { background: #245642; transform: translateY(-2px); }
 .button:active { transform: translateY(0); }
+.button-soon, .button-soon:hover { cursor: default; background: var(--forest); transform: none; }
 .projects-section { padding-block: 14px 42px; }
 .section-heading { display: flex; align-items: center; justify-content: center; gap: 22px; padding-block: 8px 12px; }
 .section-heading h2 { color: #fff2ca; font: 700 3.2rem/1.05 Tangerine, cursive; text-align: center; text-shadow: 0 2px 3px #14342b, 0 0 16px #14342b; }
