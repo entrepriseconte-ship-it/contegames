@@ -93,6 +93,11 @@ h1 span { display: block; font-size: 3.8rem; }
 .project-content > p:not(.eyebrow) { font-size: 1.0625rem; line-height: 1.5; text-wrap: pretty; }
 .project-links { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 4px; }
 .button-store { min-height: 38px; padding: 6px 14px; font-size: .95rem; }
+.button-appstore { gap: 10px; border: 2px solid #e6c77c; outline-color: #7a5a1f; background: linear-gradient(180deg, #2b1f3d 0%, #160f22 100%); color: #fff6dc; box-shadow: 0 0 0 1px #3d2a0e inset, 0 0 14px rgb(176 120 255 / 35%), 0 5px 12px rgb(41 35 17 / 25%); }
+.button-appstore:hover { background: linear-gradient(180deg, #3a2a52 0%, #1d142d 100%); box-shadow: 0 0 0 1px #3d2a0e inset, 0 0 20px rgb(190 140 255 / 55%), 0 7px 14px rgb(41 35 17 / 28%); }
+.apple-logo { width: 1.25em; height: 1.4em; flex: none; color: #f3d98f; }
+.store-label { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; font-weight: 700; text-align: left; }
+.store-label small { font-size: .68em; font-weight: 400; letter-spacing: .02em; color: #e9dcc0; }
 .small-links { font-size: .95rem; color: #5d3418; }
 .small-links a, .contact-mail { text-decoration: underline; text-underline-offset: 4px; }
 .contact-mail { color: #4f2a12; word-break: break-word; }
