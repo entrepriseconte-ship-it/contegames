@@ -91,6 +91,9 @@ h1 span { display: block; font-size: 3.8rem; }
 .project-content .eyebrow { font-size: .9375rem; }
 .project-content h3 { font: 400 1.75rem/1.18 Fondamento, cursive; color: #402710; text-wrap: balance; }
 .project-content > p:not(.eyebrow) { font-size: 1.0625rem; line-height: 1.5; text-wrap: pretty; }
+.project-thumb { display: block; width: 62%; max-width: 170px; border: 3px solid #c9a24f; outline: 1px solid #5a3a12; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 14px rgb(53 27 7 / 35%), 0 0 12px rgb(176 120 255 / 25%); transition: transform .18s; }
+.project-thumb:hover { transform: translateY(-2px) scale(1.02); }
+.project-thumb img { display: block; width: 100%; height: auto; }
 .project-links { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 4px; }
 .button-store { min-height: 38px; padding: 6px 14px; font-size: .95rem; }
 .button-appstore { gap: 10px; border: 2px solid #e6c77c; outline-color: #7a5a1f; background: linear-gradient(180deg, #2b1f3d 0%, #160f22 100%); color: #fff6dc; box-shadow: 0 0 0 1px #3d2a0e inset, 0 0 14px rgb(176 120 255 / 35%), 0 5px 12px rgb(41 35 17 / 25%); }
