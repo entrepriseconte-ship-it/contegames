@@ -251,3 +251,26 @@ h1 span { display: block; font-size: 3.8rem; }
 @media (max-width: 800px) { .game-title { font-size: 3.1rem; } .game-page .hero { padding-block: 110px 50px; } }
 @media (max-width: 520px) { .game-page .hero { padding-top: 130px; } .game-title { font-size: 2.9rem; } }
 .story-content .legal-list a { text-decoration: underline; text-underline-offset: 4px; color: #4f2a12; }
+
+/* Internationalisation: selective language dropdown without changing the medieval artwork. */
+.language-nav { display: flex; justify-content: flex-end; width: min(1380px, calc(100% - 64px)); margin: 0 auto; padding: 0 0 9px; color: var(--cream); position: relative; z-index: 25; }
+.language-menu { position: relative; font: 400 .85rem/1.4 system-ui, sans-serif; }
+.language-menu summary { display: inline-flex; align-items: center; justify-content: center; min-width: 116px; padding: 5px 12px; border: 1px solid #cfaa64; border-radius: 5px; color: var(--cream); background: #163e32; cursor: pointer; list-style-position: inside; }
+.language-menu summary:focus-visible { outline: 3px solid #ffe3a1; outline-offset: 2px; }
+.language-options { position: absolute; top: calc(100% + 5px); right: 0; display: grid; grid-template-columns: repeat(2, minmax(125px, 1fr)); gap: 2px; width: min(420px, 88vw); max-height: 62vh; overflow: auto; padding: 7px; background: #163e32; color: var(--cream); border: 1px solid #cfaa64; border-radius: 5px; box-shadow: 0 12px 25px #051a14a3; }
+.language-options a { padding: 7px 9px; border-radius: 3px; font-size: .88rem; }
+.language-options a:hover, .language-options a:focus-visible, .language-options a[aria-current="page"] { background: #295d48; color: #ffe8aa; }
+.seo-intro { max-width: 920px; margin: 3px auto 30px; padding: 0 15px; color: #fff1d0; text-align: center; font-size: 1rem; text-shadow: 0 2px 4px #082f25; }
+html:lang(ja) body, html:lang(ko) body, html:lang(zh-CN) body, html:lang(zh-TW) body, html:lang(hi) body { font-family: system-ui, sans-serif; }
+html:lang(ja) .project-content h3, html:lang(ko) .project-content h3, html:lang(zh-CN) .project-content h3, html:lang(zh-TW) .project-content h3, html:lang(hi) .project-content h3 { font-family: system-ui, sans-serif; }
+@media (max-width: 600px) { .language-nav { width: calc(100% - 32px); } .language-options { grid-template-columns: 1fr 1fr; width: min(360px, 88vw); } }
+
+/* Accessible text flow for Arabic and Hebrew without mirroring the medieval artwork. */
+html:lang(ar) body, html:lang(he) body { font-family: system-ui, "Segoe UI", Arial, sans-serif; }
+html:lang(ar) .project-content h3, html:lang(he) .project-content h3,
+html:lang(ar) .story-content h2, html:lang(he) .story-content h2 { font-family: system-ui, "Segoe UI", Arial, sans-serif; }
+html[dir="rtl"] .brand, html[dir="rtl"] .footer-brand { direction: ltr; unicode-bidi: isolate; }
+html[dir="rtl"] .royal-copy, html[dir="rtl"] .project-content, html[dir="rtl"] .story-content { direction: rtl; }
+html[dir="rtl"] .language-menu .language-options { left: 0; right: auto; }
+.language-menu[open] { z-index: 30; }
+.language-options { overscroll-behavior: contain; }

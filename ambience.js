@@ -26,7 +26,7 @@
 
   const images = new Map();
   function asset(name) {
-    if (!images.has(name)) images.set(name, loadImage(`assets/${name}`));
+    if (!images.has(name)) images.set(name, loadImage(`/assets/${name}`));
     return images.get(name);
   }
 
@@ -222,9 +222,12 @@
     request = requestAnimationFrame(tick);
   }
 
+  const motionLabels = {"fr":["Animer le royaume","Mettre l’animation en pause"],"en":["Animate the kingdom","Pause animation"],"es":["Animar el reino","Pausar animación"],"de":["Königreich animieren","Animation pausieren"],"it":["Anima il regno","Metti in pausa l'animazione"],"pt":["Animar o reino","Pausar animação"],"ja":["アニメーションを再開","アニメーションを一時停止"],"ko":["애니메이션 재생","애니메이션 일시 정지"],"zh-cn":["恢复动画","暂停动画"],"zh-tw":["繼續動畫","暫停動畫"],"hi":["एनिमेशन फिर चलाएँ","एनिमेशन रोकें"],"id":["Lanjutkan animasi","Jeda animasi"],"pt-br":["Continuar animação","Pausar animação"],"es-mx":["Reanudar animación","Pausar animación"],"ar":["استئناف الحركة","إيقاف الحركة مؤقتًا"],"tr":["Animasyonu sürdür","Animasyonu duraklat"],"ru":["Возобновить анимацию","Приостановить анимацию"],"nl":["Animatie hervatten","Animatie pauzeren"],"pl":["Wznów animację","Wstrzymaj animację"],"th":["เล่นภาพเคลื่อนไหวต่อ","หยุดภาพเคลื่อนไหวชั่วคราว"],"vi":["Tiếp tục hoạt ảnh","Tạm dừng hoạt ảnh"],"uk":["Відновити анімацію","Призупинити анімацію"],"sv":["Återuppta animation","Pausa animation"],"ms":["Sambung animasi","Jeda animasi"],"ro":["Reia animația","Pune animația pe pauză"],"el":["Συνέχεια κινούμενων εικόνων","Παύση κινούμενων εικόνων"],"cs":["Obnovit animaci","Pozastavit animaci"],"hu":["Animáció folytatása","Animáció szüneteltetése"],"fi":["Jatka animaatiota","Keskeytä animaatio"],"he":["המשך הנפשה","השהה הנפשה"]};
   function updateMotion() {
     button.setAttribute('aria-pressed', String(paused));
-    button.textContent = paused ? 'Animer le royaume' : 'Mettre l’animation en pause';
+    const locale = document.documentElement.lang.toLowerCase();
+    const labels = motionLabels[locale] || motionLabels[locale.split('-')[0]] || motionLabels.fr;
+    button.textContent = labels[paused ? 0 : 1];
     if (paused && request) { cancelAnimationFrame(request); request = 0; lastTick = 0; }
     if (!paused && !document.hidden && !request) request = requestAnimationFrame(tick);
   }
