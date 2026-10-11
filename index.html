@@ -63,7 +63,9 @@
     <link rel="stylesheet" href="styles.css?v=8" />
     <script src="ambience.js?v=2" defer></script>
     <script src="music.js?v=3" defer></script>
-  </head>
+      <!-- Performance: connexion anticipée et découverte rapide des visuels principaux. -->
+    <link rel="preload" href="assets/studio-hero-medieval.webp" as="image" fetchpriority="high" />
+</head>
   <body>
     <a class="skip-link" href="#projets">Aller aux projets</a>
     <audio id="site-music" src="assets/musique/le-royaume-s-eveille.mp3?v=2" preload="auto" loop></audio>
@@ -85,7 +87,7 @@
           <div class="parchment" aria-hidden="true"></div>
           <div class="frame-art" aria-hidden="true"><span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>
           <div class="royal-content">
-            <img class="official-logo" src="assets/conte-game-studio-logo-exact.jpg" alt="Logo officiel Conte Games Studio : un C doré couronné, un téléphone et le nom Conte." width="699" height="699" fetchpriority="high" />
+            <img class="official-logo" fetchpriority="high" decoding="async" src="assets/conte-game-studio-logo-exact.jpg" alt="Logo officiel Conte Games Studio : un C doré couronné, un téléphone et le nom Conte." width="699" height="699" fetchpriority="high" />
             <div class="royal-copy">
               <p class="eyebrow">Studio indépendant · Saint-Chamond</p>
               <h1 id="studio-title">Conte <span>Games Studio</span></h1>
