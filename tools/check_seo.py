@@ -203,7 +203,8 @@ for path, parser in PARSED.items():
                     "akan datang.", "în curând pe iPhone", "σύντομα για iPhone",
                     "brzy pro iPhone", "hamarosan iPhone", "on tulossa iPhonelle",
                     "יגיע בקרוב")
-        if any(phrase in FILES[path] for phrase in outdated):
+        page_without_android_badges = re.sub(r'<span class="badge-soon">[\s\S]*?</span>', "", FILES[path])
+        if any(phrase in page_without_android_badges for phrase in outdated):
             error(path, "Les Tableaux Ensorceles: obsolete iOS coming-soon text")
 
     if len(parser.title) > 100:
