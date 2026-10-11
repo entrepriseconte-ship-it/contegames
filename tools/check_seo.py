@@ -174,13 +174,21 @@ for path, parser in PARSED.items():
             error(path, f"hreflang {language} points to {actual!r} instead of {expected_url}")
     if not parser.json_ld:
         error(path, "JSON-LD missing")
+    cocoboum_schema_found = False
     for raw in parser.json_ld:
         try:
             structured = json.loads(raw)
             if structured.get("@context") != "https://schema.org":
                 error(path, "JSON-LD context invalid")
+            if game == "cocoboum/" and structured.get("@type") == "SoftwareApplication":
+                cocoboum_schema_found = True
+                offer = structured.get("offers")
+                if not isinstance(offer, dict) or str(offer.get("price")) not in ("0", "0.0"):
+                    error(path, "COCOBOUM free price missing from SoftwareApplication JSON-LD")
         except (json.JSONDecodeError, AttributeError) as exc:
             error(path, f"JSON-LD parse error: {exc}")
+    if game == "cocoboum/" and not cocoboum_schema_found:
+        error(path, "COCOBOUM SoftwareApplication JSON-LD missing")
     if len(parser.title) > 100:
         WARNINGS.append(f"{path}: long title ({len(parser.title)} chars)")
     for tag, url in parser.refs:
