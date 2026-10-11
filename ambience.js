@@ -26,7 +26,7 @@
 
   const images = new Map();
   function asset(name) {
-    if (!images.has(name)) images.set(name, loadImage(`assets/${name}`));
+    if (!images.has(name)) images.set(name, loadImage(`/assets/${name}`));
     return images.get(name);
   }
 
