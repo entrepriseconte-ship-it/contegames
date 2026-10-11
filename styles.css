@@ -281,3 +281,7 @@ html[dir="rtl"] .language-menu .language-options { left: 0; right: auto; }
 .seo-game-guide p {font: 400 1rem/1.75 system-ui, sans-serif; margin: 0 0 13px;}
 .seo-game-guide p:last-child {margin-bottom: 0;}
 html[dir="rtl"] .seo-game-guide {direction: rtl; text-align: right;}
+
+/* Clearer localized guides for upcoming projects. */
+.seo-game-guide h3 {font: 700 1.1rem/1.4 system-ui,sans-serif; margin: 22px 0 8px;}
+.seo-game-guide .button {margin-top: 12px; font: 600 1rem/1.4 system-ui,sans-serif;}
