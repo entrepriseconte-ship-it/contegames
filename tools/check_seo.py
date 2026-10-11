@@ -189,6 +189,24 @@ for path, parser in PARSED.items():
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:
         error(path, "COCOBOUM SoftwareApplication JSON-LD missing")
+    if game == "tableauxensorceles/":
+        # Keep every localized App Store availability and download link consistent.
+        if "id6819245288" not in FILES[path] or 'button-appstore' not in FILES[path]:
+            error(path, "Les Tableaux Ensorceles: iOS download button is missing")
+        if 'badge-soon' not in FILES[path]:
+            error(path, "Les Tableaux Ensorceles: Android availability badge missing")
+        outdated = ("近日公開予定", "출시 예정", "计划登陆 iPhone", "預計在 iPhone",
+                    "आने वाला", "yang akan hadir", "em breve.", "próximamente en iPhone",
+                    "قريبًا على App Store", "yakında geliyor", "скоро выйдет",
+                    "binnenkort op iPhone", "już wkrótce", "กำลังจะเปิดบน iPhone",
+                    "sắp có trên iPhone", "незабаром", "snart kommer till iPhone",
+                    "akan datang.", "în curând pe iPhone", "σύντομα για iPhone",
+                    "brzy pro iPhone", "hamarosan iPhone", "on tulossa iPhonelle",
+                    "יגיע בקרוב")
+        page_without_android_badges = re.sub(r'<span class="badge-soon">[\s\S]*?</span>', "", FILES[path])
+        if any(phrase in page_without_android_badges for phrase in outdated):
+            error(path, "Les Tableaux Ensorceles: obsolete iOS coming-soon text")
+
     if len(parser.title) > 100:
         WARNINGS.append(f"{path}: long title ({len(parser.title)} chars)")
     for tag, url in parser.refs:
