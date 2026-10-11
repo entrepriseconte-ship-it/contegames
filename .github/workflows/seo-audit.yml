@@ -1,0 +1,37 @@
+name: Audit SEO international
+
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "index.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "styles.css"
+      - "tools/check_seo.py"
+      - ".github/workflows/seo-audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "index.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "tools/check_seo.py"
+      - ".github/workflows/seo-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify 30 languages, 150 pages and links
+        run: python tools/check_seo.py
