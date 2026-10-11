@@ -274,3 +274,10 @@ html[dir="rtl"] .royal-copy, html[dir="rtl"] .project-content, html[dir="rtl"] .
 html[dir="rtl"] .language-menu .language-options { left: 0; right: auto; }
 .language-menu[open] { z-index: 30; }
 .language-options { overscroll-behavior: contain; }
+
+/* Helpful localized gameplay guide for COCOBOUM!. */
+.seo-game-guide {max-width: 900px; margin: 4px auto 48px; padding: 28px clamp(18px, 4vw, 40px); color: #392712; background: #f4dfaf; border: 2px solid #b48b45; border-radius: 10px; box-shadow: 0 12px 28px #071b1666;}
+.seo-game-guide h2 {font: 700 clamp(1.55rem, 3vw, 2rem)/1.25 Georgia, serif; margin: 0 0 14px;}
+.seo-game-guide p {font: 400 1rem/1.75 system-ui, sans-serif; margin: 0 0 13px;}
+.seo-game-guide p:last-child {margin-bottom: 0;}
+html[dir="rtl"] .seo-game-guide {direction: rtl; text-align: right;}
