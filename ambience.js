@@ -31,27 +31,74 @@
   }
 
   let dragon;
-  // Register each pose at the shoulder so the body remains steady during a beat.
-  const anchors = [[306, 350], [309, 350], [309, 348], [294, 254], [308, 296], [327, 313]];
-  const beat = [0, 1, 2, 4, 3, 4, 2, 1];
+  // Register each pose at the shoulder so the body remains steady during a beat: anchor, then shift and tilt.
+  const anchors = [[306, 350], [309, 350], [309, 348], [294, 254], [320, 268], [327, 313]];
+  const offsets = [null, null, null, [-23, 18, 16 * Math.PI / 180], null, null];
+  // One wingbeat, starting and ending on the gliding pose.
+  const beat = [2, 1, 0, 1, 2, 4, 3, 4];
+  const flapTime = 1.8;
+  const flaps = 2;
   const flights = [
     { offset: .76, period: 47, size: .17, y: .17, phase: 2.4, direction: -1 },
     { offset: .25, period: 34, size: .27, y: .215, phase: 0, direction: 1 },
     { offset: .58, period: 59, size: .09, y: .13, phase: 4.7, direction: 1 },
   ];
 
-  function drawPose(pose, scale) {
+  // Poses are cross-faded on a scratch canvas: additive blending of premultiplied pixels keeps the body opaque.
+  const blend = document.createElement('canvas');
+  const blendCtx = blend.getContext('2d');
+
+  function drawPose(target, pose, scale, alpha) {
     const col = pose % 3;
     const row = Math.floor(pose / 3);
     const anchor = anchors[pose];
-    ctx.drawImage(dragon, col * 512, row * 512, 512, 512,
+    const offset = offsets[pose];
+    target.save();
+    if (offset) {
+      target.translate(offset[0] * scale, offset[1] * scale);
+      target.rotate(offset[2]);
+    }
+    target.globalAlpha = alpha;
+    target.drawImage(dragon, col * 512, row * 512, 512, 512,
       -anchor[0] * scale, -anchor[1] * scale, 512 * scale, 512 * scale);
+    target.restore();
+  }
+
+  // Wing position along the beat, from 0 to beat.length: eased so the wings linger at the top and bottom.
+  function wingPosition(cycle) {
+    if (cycle >= flapTime * flaps) return 0;
+    const flap = (cycle / flapTime) % 1;
+    const eased = flap + Math.sin(flap * Math.PI * 4) / (Math.PI * 8);
+    return eased * beat.length;
+  }
+
+  function drawWings(position, scale, density) {
+    const index = Math.floor(position) % beat.length;
+    // A short, eased fade between two poses: each pose stays crisp most of the time.
+    const fade = Math.min(Math.max((position - Math.floor(position) - .25) / .5, 0), 1);
+    const mix = fade * fade * (3 - 2 * fade);
+    const from = beat[index];
+    const to = beat[(index + 1) % beat.length];
+    if (mix < .01 || from === to) { drawPose(ctx, from, scale, 1); return; }
+    if (mix > .99) { drawPose(ctx, to, scale, 1); return; }
+    const box = Math.ceil(1400 * scale * density);
+    if (blend.width < box) blend.width = blend.height = box;
+    blendCtx.setTransform(1, 0, 0, 1, 0, 0);
+    blendCtx.globalCompositeOperation = 'source-over';
+    blendCtx.clearRect(0, 0, box, box);
+    blendCtx.setTransform(density, 0, 0, density, box / 2, box / 2);
+    blendCtx.globalCompositeOperation = 'lighter';
+    drawPose(blendCtx, from, scale, 1 - mix);
+    drawPose(blendCtx, to, scale, mix);
+    ctx.globalAlpha = 1;
+    ctx.drawImage(blend, 0, 0, box, box, -box / 2 / density, -box / 2 / density, box / density, box / density);
   }
 
   function drawDragons(time) {
     if (!ctx || !dragon) return;
     ctx.clearRect(0, 0, width, height);
     const header = document.querySelector('.site-header').offsetHeight;
+    const density = Math.min(devicePixelRatio || 1, 2);
     for (const flight of flights) {
       const size = Math.max(flight.size * width, flight.size * 760);
       const progress = (flight.offset + time / flight.period) % 1;
@@ -61,12 +108,11 @@
       const y = header + (flight.y - .08) * 650 + Math.sin(time * .19 + flight.phase) * 17;
       const cycle = (time + flight.phase) % 9;
       // Broad, slow wingbeats alternate with long quiet glides.
-      const pose = cycle < 3.2 ? beat[Math.floor(cycle / .2) % beat.length] : 2;
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(flight.direction, 1);
       ctx.rotate(Math.sin(time * .2 + flight.phase) * .025 - .055);
-      drawPose(pose, size / 512);
+      drawWings(wingPosition(cycle), size / 512, density);
       ctx.restore();
     }
   }
@@ -213,7 +259,7 @@
     if (document.hidden || paused) { lastTick = 0; return; }
     if (!lastTick) lastTick = timestamp;
     const delta = timestamp - lastTick;
-    if (delta >= 1000 / 30) {
+    if (delta >= 1000 / 70) {
       elapsed += Math.min(delta, 100) / 1000;
       lastTick = timestamp;
       drawDragons(elapsed);
