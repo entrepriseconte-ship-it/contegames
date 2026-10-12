@@ -38,10 +38,11 @@
   const beat = [2, 1, 0, 1, 2, 4, 3, 4];
   const flapTime = 1.8;
   const flaps = 2;
+  // Farthest first: the small dragon flies low near the mountains, slower and veiled by the haze.
   const flights = [
-    { offset: .76, period: 47, size: .17, y: .17, phase: 2.4, direction: -1 },
-    { offset: .25, period: 34, size: .27, y: .215, phase: 0, direction: 1 },
-    { offset: .58, period: 59, size: .09, y: .13, phase: 4.7, direction: 1 },
+    { offset: .58, period: 84, size: .06, y: .2, phase: 4.7, direction: 1, haze: .38 },
+    { offset: .76, period: 47, size: .17, y: .17, phase: 2.4, direction: -1, haze: 0 },
+    { offset: .25, period: 34, size: .27, y: .215, phase: 0, direction: 1, haze: 0 },
   ];
 
   // Poses are cross-faded on a scratch canvas: additive blending of premultiplied pixels keeps the body opaque.
@@ -72,15 +73,15 @@
     return eased * beat.length;
   }
 
-  function drawWings(position, scale, density) {
+  function drawWings(position, scale, density, haze) {
     const index = Math.floor(position) % beat.length;
     // A short, eased fade between two poses: each pose stays crisp most of the time.
     const fade = Math.min(Math.max((position - Math.floor(position) - .25) / .5, 0), 1);
     const mix = fade * fade * (3 - 2 * fade);
     const from = beat[index];
     const to = beat[(index + 1) % beat.length];
-    if (mix < .01 || from === to) { drawPose(ctx, from, scale, 1); return; }
-    if (mix > .99) { drawPose(ctx, to, scale, 1); return; }
+    const single = mix < .01 || mix > .99 || from === to;
+    if (single && !haze) { drawPose(ctx, mix > .99 ? to : from, scale, 1); return; }
     const box = Math.ceil(1400 * scale * density);
     if (blend.width < box) blend.width = blend.height = box;
     blendCtx.setTransform(1, 0, 0, 1, 0, 0);
@@ -88,8 +89,19 @@
     blendCtx.clearRect(0, 0, box, box);
     blendCtx.setTransform(density, 0, 0, density, box / 2, box / 2);
     blendCtx.globalCompositeOperation = 'lighter';
-    drawPose(blendCtx, from, scale, 1 - mix);
-    drawPose(blendCtx, to, scale, mix);
+    if (single) drawPose(blendCtx, mix > .99 ? to : from, scale, 1);
+    else {
+      drawPose(blendCtx, from, scale, 1 - mix);
+      drawPose(blendCtx, to, scale, mix);
+    }
+    if (haze) {
+      // Distant air: tint the dragon towards the pale blue of the far mountains.
+      blendCtx.setTransform(1, 0, 0, 1, 0, 0);
+      blendCtx.globalCompositeOperation = 'source-atop';
+      blendCtx.globalAlpha = haze;
+      blendCtx.fillStyle = '#a9bcd6';
+      blendCtx.fillRect(0, 0, box, box);
+    }
     ctx.globalAlpha = 1;
     ctx.drawImage(blend, 0, 0, box, box, -box / 2 / density, -box / 2 / density, box / density, box / density);
   }
@@ -112,7 +124,7 @@
       ctx.translate(x, y);
       ctx.scale(flight.direction, 1);
       ctx.rotate(Math.sin(time * .2 + flight.phase) * .025 - .055);
-      drawWings(wingPosition(cycle), size / 512, density);
+      drawWings(wingPosition(cycle), size / 512, density, flight.haze);
       ctx.restore();
     }
   }

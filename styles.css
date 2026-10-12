@@ -34,6 +34,8 @@ img { display: block; max-width: 100%; height: auto; }
 .skip-link:focus { top: 12px; }
 .landscape { position: fixed; inset: 0; z-index: -1; background: url("assets/studio-hero-medieval.webp") center top / cover no-repeat; }
 .landscape::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(9 35 28 / 12%), transparent 35%, rgb(8 31 23 / 48%)); }
+/* The balcony, arch and leaves are painted again above the dragons so they fly behind them. */
+.landscape:has(#dragon-sky)::after { background: linear-gradient(180deg, rgb(9 35 28 / 12%), transparent 35%, rgb(8 31 23 / 48%)), url("assets/studio-hero-foreground.webp") center top / cover no-repeat; }
 #dragon-sky { position: absolute; inset: 0; width: 100%; height: 100%; }
 .site-header { color: var(--cream); background: rgb(10 31 24 / 85%); border-bottom: 1px solid rgb(234 196 108 / 36%); }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-block: 15px; }
