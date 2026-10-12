@@ -79,14 +79,18 @@ h1 span { display: block; font-size: 3.8rem; }
 .section-heading h2 { color: #fff2ca; font: 700 3.2rem/1.05 Tangerine, cursive; text-align: center; text-shadow: 0 2px 3px #14342b, 0 0 16px #14342b; }
 .heading-rule { height: 1px; width: 64px; background: #edcf89; box-shadow: 0 1px 2px #294f37; }
 .projects { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
-.project-card { --frame-x: 0%; }
-.dragon-panel { --frame-x: 50%; }
-.nature-panel { --frame-x: 100%; }
+/* Side rails keep the artwork's proportions: the natural middle is split around a mirrored rail tile that repeats as the card grows. */
+.project-card { --frame-x: 0%; --rail: url("assets/project-rail-lion.webp"); --rail-a: 10.1989cqw; --rail-b: 28.8011cqw; --rail-tile: 22.6519cqw; }
+.dragon-panel { --frame-x: 50%; --rail: url("assets/project-rail-dragon.webp"); --rail-a: 11.5801cqw; --rail-b: 27.4199cqw; --rail-tile: 24.3094cqw; }
+.nature-panel { --frame-x: 100%; --rail: url("assets/project-rail-nature.webp"); --rail-a: 3.2928cqw; --rail-b: 35.7072cqw; --rail-tile: 21.547cqw; }
 .tableaux-panel { --frame-x: 0%; }
 .project-card .parchment { inset: 24cqw 8cqw 20cqw; }
 .project-card .frame-art span { background-image: url("assets/project-frames-lion-dragon.webp"); }
 .project-card .frame-top { top: 0; height: 34cqw; background-size: 300% auto; background-position: var(--frame-x) top; }
-.project-card .frame-middle { top: 34cqw; bottom: 27cqw; background-size: 300% 256.410256%; background-position: var(--frame-x) 55.737705%; }
+.project-card .frame-art .frame-middle { top: 34cqw; bottom: 27cqw; box-sizing: border-box; padding-block: var(--rail-a) var(--rail-b); background: var(--rail) center top / 100% var(--rail-tile) no-repeat round content-box; }
+.project-card .frame-middle::before, .project-card .frame-middle::after { content: ""; position: absolute; left: 0; width: 100%; background: url("assets/project-frames-lion-dragon.webp") no-repeat; background-size: 300% 100cqw; }
+.project-card .frame-middle::before { top: 0; height: var(--rail-a); background-position: var(--frame-x) -34cqw; }
+.project-card .frame-middle::after { bottom: 0; height: var(--rail-b); background-position: var(--frame-x) calc(-34cqw - var(--rail-a)); }
 .project-card .frame-bottom { bottom: 0; height: 27cqw; background-size: 300% auto; background-position: var(--frame-x) bottom; }
 .project-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 100cqw; height: 100%; padding: 34cqw 17cqw 29cqw; text-align: center; }
 .project-content .eyebrow { font-size: .9375rem; }
@@ -121,16 +125,12 @@ h1 span { display: block; font-size: 3.8rem; }
 .eagle-panel .frame-middle { top: 35cqw; bottom: 18cqw; }
 .eagle-panel .frame-bottom { height: 18cqw; }
 .eagle-panel .parchment { inset: 28cqw 10cqw 8cqw; }
-.unicorn-panel .frame-art .frame-middle {
-  background: none;
-  border: 0 solid transparent;
-  border-image: url("assets/studio-unicorn-frame.webp") 287 210 246 210 / 0 20.5078cqw / 0 stretch;
-}
-.eagle-panel .frame-art .frame-middle {
-  background: none;
-  border: 0 solid transparent;
-  border-image: url("assets/contact-eagle-frame.webp") 358 185 184 185 / 0 18.0664cqw / 0 stretch;
-}
+.unicorn-panel { --frame-src: url("assets/studio-unicorn-frame.webp"); --rail: url("assets/story-rail-unicorn.webp"); --rail-top: 28cqw; --rail-a: 30.1055cqw; --rail-b: 17.8945cqw; --rail-tile: 19.5313cqw; }
+.eagle-panel { --frame-src: url("assets/contact-eagle-frame.webp"); --rail: url("assets/story-rail-eagle.webp"); --rail-top: 35cqw; --rail-a: 31.8945cqw; --rail-b: 15.1055cqw; --rail-tile: 18.5547cqw; }
+.story-panel .frame-art .frame-middle { box-sizing: border-box; padding-block: var(--rail-a) var(--rail-b); background: var(--rail) center top / 100% var(--rail-tile) no-repeat round content-box; }
+.story-panel .frame-middle::before, .story-panel .frame-middle::after { content: ""; position: absolute; left: 0; width: 100%; background: var(--frame-src) no-repeat; background-size: 100% 100cqw; }
+.story-panel .frame-middle::before { top: 0; height: var(--rail-a); background-position: center calc(0px - var(--rail-top)); }
+.story-panel .frame-middle::after { bottom: 0; height: var(--rail-b); background-position: center calc(0px - var(--rail-top) - var(--rail-a)); }
 .story-content { display: flex; flex-direction: column; justify-content: center; gap: 14px; height: 100%; min-height: 100cqw; padding: 29cqw 21cqw 26cqw; text-align: center; }
 .story-content h2 { color: #3c2712; font: 700 3.6rem/1 Tangerine, cursive; }
 .story-content > p:not(.eyebrow) { font-size: 1.125rem; line-height: 1.6; text-wrap: pretty; }
