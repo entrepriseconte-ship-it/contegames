@@ -227,6 +227,18 @@ for code, _ in LANGS:
             if label in upcoming:
                 error(path, f"released game shows the upcoming-game label {label!r}")
 
+# Outside French, each game name keeps its official App Store spelling and
+# shows its translation right under it (requested by the studio owner).
+for code, _ in LANGS:
+    if code == "fr":
+        continue
+    for game in ("tableauxensorceles/", "royaumedesmotscroises/", "mieuxchaquejour/"):
+        path = code + "/" + game + "index.html"
+        if not re.search(r'<h1 [^>]*class="game-title[^"]*">[^<]+<span class="title-translation">[^<]+</span></h1>', FILES.get(path, "")):
+            error(path, "translated game name missing under the H1")
+    if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 3:
+        error(code + "/index.html", "expected 3 translated game names on the home page")
+
 sitemap = ROOT / "sitemap.xml"
 if not sitemap.exists():
     error("sitemap.xml", "file missing")
