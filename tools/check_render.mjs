@@ -7,7 +7,10 @@ const pages = [
   '/', '/cocoboum/', '/en/', '/en/cocoboum/', '/pt-br/',
   '/es-mx/cocoboum/', '/ja/', '/ko/cocoboum/',
   '/ar/', '/ar/cocoboum/', '/he/', '/zh-cn/', '/hi/',
-  '/th/', '/tr/tableauxensorceles/'
+  '/th/', '/tr/tableauxensorceles/',
+  '/tableauxensorceles/', '/en/tableauxensorceles/', '/de/tableauxensorceles/',
+  '/es/tableauxensorceles/', '/it/tableauxensorceles/', '/pt/tableauxensorceles/', '/de/cocoboum/',
+  '/de/', '/ja/tableauxensorceles/', '/ar/royaumedesmotscroises/', '/he/mieuxchaquejour/', '/th/tableauxensorceles/'
 ];
 
 try {
