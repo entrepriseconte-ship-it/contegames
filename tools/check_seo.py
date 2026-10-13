@@ -202,7 +202,8 @@ for path, parser in PARSED.items():
                     "sắp có trên iPhone", "незабаром", "snart kommer till iPhone",
                     "akan datang.", "în curând pe iPhone", "σύντομα για iPhone",
                     "brzy pro iPhone", "hamarosan iPhone", "on tulossa iPhonelle",
-                    "יגיע בקרוב")
+                    "יגיע בקרוב", "planned features and may evolve before release",
+                    "avant la publication")
         page_without_android_badges = re.sub(r'<span class="badge-soon">[\s\S]*?</span>', "", FILES[path])
         if any(phrase in page_without_android_badges for phrase in outdated):
             error(path, "Les Tableaux Ensorceles: obsolete iOS coming-soon text")
@@ -211,6 +212,20 @@ for path, parser in PARSED.items():
         WARNINGS.append(f"{path}: long title ({len(parser.title)} chars)")
     for tag, url in parser.refs:
         verify_local_path(parser, canonical, url)
+
+# A released game must never reuse the "upcoming game" hero label of the
+# unreleased games in the same language (contradictory availability signal).
+HERO_EYEBROW = re.compile(r'<div class="royal-copy"><p class="eyebrow">([^<]*)</p>')
+for code, _ in LANGS:
+    prefix = "" if code == "fr" else code + "/"
+    upcoming = set()
+    for game in ("royaumedesmotscroises/", "mieuxchaquejour/"):
+        upcoming.update(HERO_EYEBROW.findall(FILES.get(prefix + game + "index.html", "")))
+    for game in ("cocoboum/", "tableauxensorceles/"):
+        path = prefix + game + "index.html"
+        for label in HERO_EYEBROW.findall(FILES.get(path, "")):
+            if label in upcoming:
+                error(path, f"released game shows the upcoming-game label {label!r}")
 
 sitemap = ROOT / "sitemap.xml"
 if not sitemap.exists():
