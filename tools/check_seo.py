@@ -239,6 +239,12 @@ for code, _ in LANGS:
     if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 3:
         error(code + "/index.html", "expected 3 translated game names on the home page")
 
+# App Store links must not force the French storefront: without a country
+# code Apple opens the visitor's own store (US, DE, JP...).
+for path, html in FILES.items():
+    if "apps.apple.com/fr/" in html:
+        error(path, "App Store link forces the French storefront (apps.apple.com/fr/)")
+
 sitemap = ROOT / "sitemap.xml"
 if not sitemap.exists():
     error("sitemap.xml", "file missing")
