@@ -219,9 +219,9 @@ HERO_EYEBROW = re.compile(r'<div class="royal-copy"><p class="eyebrow">([^<]*)</
 for code, _ in LANGS:
     prefix = "" if code == "fr" else code + "/"
     upcoming = set()
-    for game in ("royaumedesmotscroises/", "mieuxchaquejour/"):
+    for game in ("mieuxchaquejour/",):
         upcoming.update(HERO_EYEBROW.findall(FILES.get(prefix + game + "index.html", "")))
-    for game in ("cocoboum/", "tableauxensorceles/"):
+    for game in ("cocoboum/", "tableauxensorceles/", "royaumedesmotscroises/"):
         path = prefix + game + "index.html"
         for label in HERO_EYEBROW.findall(FILES.get(path, "")):
             if label in upcoming:
