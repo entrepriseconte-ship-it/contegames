@@ -43,8 +43,9 @@ def main():
     if game not in NAMES:
         sys.exit(f"Jeu inconnu : {game}")
     vid = video_id(link)
+    vertical = " game-video-vertical" if "/shorts/" in link else ""
     video = (
-        '<figure class="game-shot game-video"><div class="video-frame">'
+        f'<figure class="game-shot game-video{vertical}"><div class="video-frame">'
         f'<iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" title="{NAMES[game]}" loading="lazy" '
         'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
         'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></figure>'
