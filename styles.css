@@ -296,7 +296,8 @@ html[dir="rtl"] .seo-game-guide {direction: rtl; text-align: right;}
 html:lang(ja) .title-translation, html:lang(ko) .title-translation, html:lang(zh-CN) .title-translation, html:lang(zh-TW) .title-translation, html:lang(hi) .title-translation,
 html:lang(ar) .title-translation, html:lang(he) .title-translation, html:lang(th) .title-translation { font-family: system-ui, "Segoe UI", Arial, sans-serif; font-style: normal; }
 .guide-with-video { max-width: 1120px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: center; }
-.guide-with-video .game-video { align-self: center; }
+.guide-with-video .game-video { align-self: start; position: sticky; top: 24px; }
 .game-video .video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 3px; overflow: hidden; background: #1a0f06; }
 .game-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-@media (max-width: 800px) { .guide-with-video { grid-template-columns: 1fr; gap: 20px; } }
+@media (max-width: 800px) { .guide-with-video { grid-template-columns: 1fr; gap: 20px; } .guide-with-video .game-video { position: static; } }
+.game-video-solo { max-width: 860px; margin: 4px auto 48px; }
