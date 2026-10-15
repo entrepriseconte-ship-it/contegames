@@ -1,4 +1,5 @@
-"""Remplace la grande image « En images » des 30 pages COCOBOUM! par le dessin animé YouTube.
+"""Remplace la grande image « En images » des 30 pages COCOBOUM! par le dessin animé YouTube,
+placé dans le même cadre que la description du jeu.
 
 Usage : python3 tools/cocoboum_video.py <lien YouTube>
 L'image assets/cocoboum-ecran.jpg reste dans le dépôt (rien n'est supprimé).
@@ -25,7 +26,8 @@ def video_id(link):
     return vid
 
 
-FIGURE = re.compile(r'<figure class="game-shot">\s*<img src="(?:\.\./)+assets/cocoboum-ecran\.jpg"[^>]*?\balt="([^"]*)"[^>]*/>(\s*<figcaption>[^<]*</figcaption>)?\s*</figure>')
+SHOTS = re.compile(r'<section class="game-shots page-width"[^>]*>.*?<img src="(?:\.\./)+assets/cocoboum-ecran\.jpg"[^>]*?\balt="([^"]*)"[^>]*/>.*?</section>\s*', re.S)
+GUIDE = re.compile(r'<section class="seo-game-guide page-width"( aria-labelledby="guide-cocoboum">)(.*?)</section>', re.S)
 
 
 def main():
@@ -33,21 +35,25 @@ def main():
     pages = sorted(glob.glob(f"{ROOT}/cocoboum/index.html") + glob.glob(f"{ROOT}/*/cocoboum/index.html"))
     for path in pages:
         html = open(path, encoding="utf-8").read()
-        def repl(m):
-            title = m.group(1)
-            caption = m.group(2) or ""
-            return (
-                '<figure class="game-shot game-video">'
-                f'<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" '
-                f'title="{title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
-                'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
-                f"{caption.strip()}</figure>"
-            )
-        new, n = FIGURE.subn(repl, html)
+        m = SHOTS.search(html)
+        if not m:
+            sys.exit(f"{path} : grande image introuvable")
+        title = m.group(1)
+        html = html[:m.start()] + html[m.end():]
+        video = (
+            '<figure class="game-shot game-video"><div class="video-frame">'
+            f'<iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" title="{title}" loading="lazy" '
+            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
+            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></figure>'
+        )
+        html, n = GUIDE.subn(
+            lambda g: f'<section class="seo-game-guide page-width guide-with-video"{g.group(1)}{video}<div class="guide-text">{g.group(2)}</div></section>',
+            html,
+        )
         if n != 1:
-            sys.exit(f"{path} : {n} image trouvée (1 attendue)")
-        new = new.replace("styles.css?v=11", "styles.css?v=12")
-        open(path, "w", encoding="utf-8").write(new)
+            sys.exit(f"{path} : {n} description trouvée (1 attendue)")
+        html = html.replace("styles.css?v=11", "styles.css?v=12")
+        open(path, "w", encoding="utf-8").write(html)
     print(f"{len(pages)} pages COCOBOUM! mises à jour avec la vidéo {vid}")
 
 
