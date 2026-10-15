@@ -21,7 +21,7 @@ try {
       page.on('pageerror', e => pageErrors.push(String(e)));
       try {
         const response = await page.goto(base + path, {waitUntil: 'domcontentloaded', timeout: 20000});
-        await page.locator('.official-logo').waitFor({state:'visible', timeout:10000});
+        await page.locator('.official-logo, .hero-video').waitFor({state:'visible', timeout:10000});
         const audit = await page.evaluate(() => ({
           title: document.title,
           lang: document.documentElement.lang,
@@ -29,7 +29,7 @@ try {
           viewportWidth: window.innerWidth,
           mainHeading: document.querySelectorAll('main h1').length,
           languages: document.querySelectorAll('.language-options a').length,
-          heroLoaded: Boolean(document.querySelector('.official-logo')?.complete && document.querySelector('.official-logo')?.naturalWidth > 0),
+          heroLoaded: Boolean(document.querySelector('.hero-video iframe')) || Boolean(document.querySelector('.official-logo')?.complete && document.querySelector('.official-logo')?.naturalWidth > 0),
           css: getComputedStyle(document.querySelector('body')).backgroundColor
         }));
         if (response?.status() !== 200) failures.push(path + ' HTTP ' + response?.status());

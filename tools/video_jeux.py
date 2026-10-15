@@ -1,11 +1,10 @@
-"""Met le dessin animé YouTube d'un jeu sur ses 30 pages, dans le même cadre que la description.
+"""Met le dessin animé YouTube d'un jeu sur ses 30 pages, dans le grand cadre du haut, à la place du logo.
 
 Usage : python3 tools/video_jeux.py <jeu> <lien YouTube>
   <jeu> : cocoboum, tableauxensorceles ou royaumedesmotscroises
-Les grandes images « En images » sont retirées de la page, mais leurs fichiers
-restent dans assets/ (rien n'est supprimé). Une page sans description
-(pages témoins du suivi SEO) reçoit la vidéo seule à la place des images,
-sans toucher à son texte.
+Le logo du cadre et les grandes images « En images » sont retirés de la page,
+mais leurs fichiers restent dans assets/ (rien n'est supprimé). Le texte des
+pages n'est pas modifié.
 """
 import glob
 import re
@@ -35,7 +34,7 @@ def video_id(link):
 
 
 SHOTS = re.compile(r'<section class="game-shots page-width"[^>]*>.*?</section>\s*', re.S)
-GUIDE = re.compile(r'<section class="seo-game-guide page-width"( aria-labelledby="guide-[a-z]+">)(.*?)</section>', re.S)
+LOGO = re.compile(r'<img class="official-logo"[^>]*/>')
 
 
 def main():
@@ -43,38 +42,24 @@ def main():
     if game not in NAMES:
         sys.exit(f"Jeu inconnu : {game}")
     vid = video_id(link)
-    vertical = " game-video-vertical" if "/shorts/" in link else ""
+    wide = "" if "/shorts/" in link else " hero-video-wide"
     video = (
-        f'<figure class="game-shot game-video{vertical}"><div class="video-frame">'
+        f'<figure class="hero-video{wide}"><div class="video-frame">'
         f'<iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" title="{NAMES[game]}" loading="lazy" '
         'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
         'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></figure>'
     )
     pages = sorted(glob.glob(f"{ROOT}/{game}/index.html") + glob.glob(f"{ROOT}/*/{game}/index.html"))
-    solo = []
     for path in pages:
         html = open(path, encoding="utf-8").read()
         if "youtube-nocookie.com/embed/" in html:
             sys.exit(f"{path} : la vidéo est déjà en place")
-        shots = SHOTS.search(html)
-        guide = GUIDE.search(html)
-        if guide:
-            if shots:
-                html = html[:shots.start()] + html[shots.end():]
-            html = GUIDE.sub(
-                lambda g: f'<section class="seo-game-guide page-width guide-with-video"{g.group(1)}{video}<div class="guide-text">{g.group(2)}</div></section>',
-                html, count=1,
-            )
-        elif shots:
-            html = html[:shots.start()] + f'<section class="game-video-solo page-width">{video}</section>' + html[shots.end():]
-            solo.append(path.replace(ROOT + "/", ""))
-        else:
-            sys.exit(f"{path} : ni description ni images trouvées")
+        html, n = LOGO.subn(lambda m: video, html, count=1)
+        if n != 1:
+            sys.exit(f"{path} : logo du cadre introuvable")
+        html = SHOTS.sub("", html, count=1)
         html = html.replace("styles.css?v=11", "styles.css?v=12")
         open(path, "w", encoding="utf-8").write(html)
     print(f"{len(pages)} pages {NAMES[game]} mises à jour avec la vidéo {vid}")
-    if solo:
-        print("Vidéo seule (pas de description) :", ", ".join(solo))
-
 
 main()
