@@ -213,19 +213,11 @@ for path, parser in PARSED.items():
     for tag, url in parser.refs:
         verify_local_path(parser, canonical, url)
 
-# A released game must never reuse the "upcoming game" hero label of the
-# unreleased games in the same language (contradictory availability signal).
-HERO_EYEBROW = re.compile(r'<div class="royal-copy"><p class="eyebrow">([^<]*)</p>')
-for code, _ in LANGS:
-    prefix = "" if code == "fr" else code + "/"
-    upcoming = set()
-    for game in ("mieuxchaquejour/",):
-        upcoming.update(HERO_EYEBROW.findall(FILES.get(prefix + game + "index.html", "")))
-    for game in ("cocoboum/", "tableauxensorceles/", "royaumedesmotscroises/"):
-        path = prefix + game + "index.html"
-        for label in HERO_EYEBROW.findall(FILES.get(path, "")):
-            if label in upcoming:
-                error(path, f"released game shows the upcoming-game label {label!r}")
+# All four games are out on the App Store (Mieux Chaque Jour since 16/10/2026):
+# no page may still show a non-clickable "coming soon to the App Store" button.
+for path, html in FILES.items():
+    if "button-soon" in html:
+        error(path, "page still shows a coming-soon App Store button (button-soon)")
 
 # Outside French, each game name keeps its official App Store spelling and
 # shows its translation right under it (requested by the studio owner).
