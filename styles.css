@@ -295,3 +295,8 @@ html[dir="rtl"] .seo-game-guide {direction: rtl; text-align: right;}
 @media (max-width: 520px) { .game-title .title-translation { font-size: 1.1rem; } .project-content h3 .title-translation { font-size: .95rem; } }
 html:lang(ja) .title-translation, html:lang(ko) .title-translation, html:lang(zh-CN) .title-translation, html:lang(zh-TW) .title-translation, html:lang(hi) .title-translation,
 html:lang(ar) .title-translation, html:lang(he) .title-translation, html:lang(th) .title-translation { font-family: system-ui, "Segoe UI", Arial, sans-serif; font-style: normal; }
+.hero-video { width: 100%; max-width: 270px; justify-self: center; margin: 0; padding: 6px; background: linear-gradient(145deg, #f3d48a, #a8792c 45%, #f6dd9a 70%, #8c6020); border-radius: 6px; box-shadow: 0 8px 22px rgb(53 27 7 / 30%); }
+.hero-video .video-frame { position: relative; aspect-ratio: 9 / 16; border-radius: 3px; overflow: hidden; background: #1a0f06; }
+.hero-video-wide .video-frame { aspect-ratio: 16 / 9; }
+.hero-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 520px) { .hero-video { max-width: 230px; } .hero-video-wide { max-width: none; } }
