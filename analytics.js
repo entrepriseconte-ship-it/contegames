@@ -31,3 +31,15 @@
     else if (host === 'play.google.com' && url.pathname.startsWith('/store/apps/')) send('store_android');
   }, {capture: true, passive: true});
 })();
+
+
+/* Charge la suggestion de langue/région sur toutes les pages qui utilisent analytics.js. */
+(() => {
+  'use strict';
+  if (document.querySelector('script[data-cg-language-suggest]')) return;
+  const script = document.createElement('script');
+  script.src = '/language-suggest.js?v=1';
+  script.defer = true;
+  script.dataset.cgLanguageSuggest = '1';
+  document.head.appendChild(script);
+})();
