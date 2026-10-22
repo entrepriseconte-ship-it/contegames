@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si'
   ]);
 
   const labels = {
@@ -42,7 +42,17 @@
     'ta':'தமிழ்',
     'kk':'Қазақ тілі',
     'ka':'ქართული',
-    'az':'Azərbaycan'
+    'az':'Azərbaycan',
+    'sq':'Shqip',
+    'mk':'Македонски',
+    'hy':'Հայերեն',
+    'uz':'Oʻzbekcha',
+    'gl':'Galego',
+    'eu':'Euskara',
+    'mr':'मराठी',
+    'te':'తెలుగు',
+    'ne':'नेपाली',
+    'si':'සිංහල'
   };
 
   const prompts = {
@@ -95,7 +105,17 @@
     'ta':'இந்தப் பக்கத்தைத் தமிழில் பார்க்கவா?',
     'kk':'Бұл бетті қазақ тілінде көрсету керек пе?',
     'ka':'გსურთ ამ გვერდის ქართულად ნახვა?',
-    'az':'Bu səhifəni Azərbaycan dilində göstərək?'
+    'az':'Bu səhifəni Azərbaycan dilində göstərək?',
+    'sq':'Ta shfaq këtë faqe në shqip?',
+    'mk':'Да се прикаже оваа страница на македонски?',
+    'hy':'Ցուցադրե՞լ այս էջը հայերենով',
+    'uz':'Bu sahifani oʻzbek tilida koʻrsataymi?',
+    'gl':'Queres ver esta páxina en galego?',
+    'eu':'Orri hau euskaraz ikusi nahi duzu?',
+    'mr':'हे पान मराठीत पाहायचे?',
+    'te':'ఈ పేజీని తెలుగులో చూడాలా?',
+    'ne':'यो पृष्ठ नेपालीमा हेर्ने?',
+    'si':'මෙම පිටුව සිංහලෙන් බලන්නද?'
   };
 
   function localeToSiteCode(locale) {
