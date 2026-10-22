@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca'
   ]);
 
   const labels = {
@@ -22,7 +22,17 @@
     'es-mx':'Español (México)','ar':'العربية','tr':'Türkçe','ru':'Русский',
     'nl':'Nederlands','pl':'Polski','th':'ไทย','vi':'Tiếng Việt','uk':'Українська',
     'sv':'Svenska','ms':'Bahasa Melayu','ro':'Română','el':'Ελληνικά',
-    'cs':'Čeština','hu':'Magyar','fi':'Suomi','he':'עברית'
+    'cs':'Čeština','hu':'Magyar','fi':'Suomi','he':'עברית',
+    'da':'Dansk',
+    'nb':'Norsk bokmål',
+    'sk':'Slovenčina',
+    'bg':'Български',
+    'hr':'Hrvatski',
+    'sl':'Slovenščina',
+    'lt':'Lietuvių',
+    'lv':'Latviešu',
+    'et':'Eesti',
+    'ca':'Català'
   };
 
   const prompts = {
@@ -55,7 +65,17 @@
     'cs':'Zobrazit tuto stránku česky?',
     'hu':'Megnézi ezt az oldalt magyarul?',
     'fi':'Näytetäänkö tämä sivu suomeksi?',
-    'he':'להציג את הדף הזה בעברית?'
+    'he':'להציג את הדף הזה בעברית?',
+    'da':'Vis denne side på dansk?',
+    'nb':'Vise denne siden på norsk?',
+    'sk':'Zobraziť túto stránku po slovensky?',
+    'bg':'Да се покаже ли тази страница на български?',
+    'hr':'Prikazati ovu stranicu na hrvatskom?',
+    'sl':'Prikažem to stran v slovenščini?',
+    'lt':'Rodyti šį puslapį lietuviškai?',
+    'lv':'Rādīt šo lapu latviski?',
+    'et':'Kas näidata seda lehte eesti keeles?',
+    'ca':'Vols veure aquesta pàgina en català?'
   };
 
   function localeToSiteCode(locale) {
@@ -79,6 +99,7 @@
     ) return 'zh-cn';
 
     const base = normalized.split('-')[0];
+    if ((base === 'no' || base === 'nn') && supported.has('nb')) return 'nb';
     return supported.has(base) ? base : '';
   }
 
