@@ -23,6 +23,8 @@ LANGS = [
     ("ru", "ru"), ("nl", "nl"), ("pl", "pl"), ("th", "th"), ("vi", "vi"),
     ("uk", "uk"), ("sv", "sv"), ("ms", "ms"), ("ro", "ro"),
     ("el", "el"), ("cs", "cs"), ("hu", "hu"), ("fi", "fi"), ("he", "he"),
+    ("da", "da"), ("nb", "nb"), ("sk", "sk"), ("bg", "bg"), ("hr", "hr"),
+    ("sl", "sl"), ("lt", "lt"), ("lv", "lv"), ("et", "et"), ("ca", "ca"),
 ]
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
@@ -149,8 +151,8 @@ for code, language in LANGS:
         PARSED[path] = parser
         FILES[path] = html
 
-if len(PARSED) != 240:
-    error("site", f"expected 240 language pages, got {len(PARSED)}")
+if len(PARSED) != len(LANGS) * len(GAMES):
+    error("site", f"expected {len(LANGS) * len(GAMES)} language pages, got {len(PARSED)}")
 
 for path, parser in PARSED.items():
     code, game = EXPECTED[path]
