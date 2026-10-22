@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az'
   ]);
 
   const labels = {
@@ -32,7 +32,17 @@
     'lt':'Lietuvių',
     'lv':'Latviešu',
     'et':'Eesti',
-    'ca':'Català'
+    'ca':'Català',
+    'is':'Íslenska',
+    'sr':'Српски',
+    'fil':'Filipino',
+    'af':'Afrikaans',
+    'sw':'Kiswahili',
+    'bn':'বাংলা',
+    'ta':'தமிழ்',
+    'kk':'Қазақ тілі',
+    'ka':'ქართული',
+    'az':'Azərbaycan'
   };
 
   const prompts = {
@@ -75,7 +85,17 @@
     'lt':'Rodyti šį puslapį lietuviškai?',
     'lv':'Rādīt šo lapu latviski?',
     'et':'Kas näidata seda lehte eesti keeles?',
-    'ca':'Vols veure aquesta pàgina en català?'
+    'ca':'Vols veure aquesta pàgina en català?',
+    'is':'Sýna þessa síðu á íslensku?',
+    'sr':'Прикажи ову страницу на српском?',
+    'fil':'Tingnan ang pahinang ito sa Filipino?',
+    'af':'Wys hierdie bladsy in Afrikaans?',
+    'sw':'Ungependa kuona ukurasa huu kwa Kiswahili?',
+    'bn':'এই পৃষ্ঠাটি বাংলায় দেখবেন?',
+    'ta':'இந்தப் பக்கத்தைத் தமிழில் பார்க்கவா?',
+    'kk':'Бұл бетті қазақ тілінде көрсету керек пе?',
+    'ka':'გსურთ ამ გვერდის ქართულად ნახვა?',
+    'az':'Bu səhifəni Azərbaycan dilində göstərək?'
   };
 
   function localeToSiteCode(locale) {
@@ -99,6 +119,7 @@
     ) return 'zh-cn';
 
     const base = normalized.split('-')[0];
+    if (base === 'tl' && supported.has('fil')) return 'fil';
     if ((base === 'no' || base === 'nn') && supported.has('nb')) return 'nb';
     return supported.has(base) ? base : '';
   }
