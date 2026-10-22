@@ -24,7 +24,10 @@ LANGS = [
     ("uk", "uk"), ("sv", "sv"), ("ms", "ms"), ("ro", "ro"),
     ("el", "el"), ("cs", "cs"), ("hu", "hu"), ("fi", "fi"), ("he", "he"),
 ]
-GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/"]
+GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
+         "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
+# Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
+UPCOMING = ("caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/")
 ERRORS = []
 WARNINGS = []
 
@@ -146,8 +149,8 @@ for code, language in LANGS:
         PARSED[path] = parser
         FILES[path] = html
 
-if len(PARSED) != 150:
-    error("site", f"expected 150 language pages, got {len(PARSED)}")
+if len(PARSED) != 240:
+    error("site", f"expected 240 language pages, got {len(PARSED)}")
 
 for path, parser in PARSED.items():
     code, game = EXPECTED[path]
@@ -216,6 +219,12 @@ for path, parser in PARSED.items():
 # All four games are out on the App Store (Mieux Chaque Jour since 16/10/2026):
 # no page may still show a non-clickable "coming soon to the App Store" button.
 for path, html in FILES.items():
+    if EXPECTED[path][1] in UPCOMING:
+        if "button-soon" not in html or "apps.apple.com" in html:
+            error(path, "upcoming game: coming-soon button missing or store link present")
+        continue
+    if EXPECTED[path][1] == "":
+        html = re.sub(r'<div class="projects projects-more">[\s\S]*?</article>\s*</div>', "", html)
     if "button-soon" in html:
         error(path, "page still shows a coming-soon App Store button (button-soon)")
 
@@ -224,12 +233,12 @@ for path, html in FILES.items():
 for code, _ in LANGS:
     if code == "fr":
         continue
-    for game in ("tableauxensorceles/", "royaumedesmotscroises/", "mieuxchaquejour/"):
+    for game in ("tableauxensorceles/", "royaumedesmotscroises/", "mieuxchaquejour/", "sauvequifleche/", "royaumedesenigmes/"):
         path = code + "/" + game + "index.html"
         if not re.search(r'<h1 [^>]*class="game-title[^"]*">[^<]+<span class="title-translation">[^<]+</span></h1>', FILES.get(path, "")):
             error(path, "translated game name missing under the H1")
-    if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 3:
-        error(code + "/index.html", "expected 3 translated game names on the home page")
+    if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 5:
+        error(code + "/index.html", "expected 5 translated game names on the home page")
 
 # App Store links must not force the French storefront: without a country
 # code Apple opens the visitor's own store (US, DE, JP...).

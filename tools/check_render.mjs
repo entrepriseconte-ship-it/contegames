@@ -10,7 +10,7 @@ const pages = [
   '/th/', '/tr/tableauxensorceles/',
   '/tableauxensorceles/', '/en/tableauxensorceles/', '/de/tableauxensorceles/',
   '/es/tableauxensorceles/', '/it/tableauxensorceles/', '/pt/tableauxensorceles/', '/de/cocoboum/',
-  '/de/', '/ja/tableauxensorceles/', '/ar/royaumedesmotscroises/', '/he/mieuxchaquejour/', '/mieuxchaquejour/', '/en/mieuxchaquejour/', '/ja/mieuxchaquejour/', '/th/tableauxensorceles/'
+  '/de/', '/ja/tableauxensorceles/', '/ar/royaumedesmotscroises/', '/he/mieuxchaquejour/', '/mieuxchaquejour/', '/en/mieuxchaquejour/', '/ja/mieuxchaquejour/', '/th/tableauxensorceles/', '/caligulavsgladiators/', '/sauvequifleche/', '/royaumedesenigmes/', '/en/sauvequifleche/', '/ar/royaumedesenigmes/', '/ja/caligulavsgladiators/', '/he/sauvequifleche/'
 ];
 
 try {
