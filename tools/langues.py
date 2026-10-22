@@ -39,6 +39,10 @@ LANGS = [
     ("da", "da", "Dansk"), ("nb", "nb", "Norsk bokmål"), ("sk", "sk", "Slovenčina"),
     ("bg", "bg", "Български"), ("hr", "hr", "Hrvatski"), ("sl", "sl", "Slovenščina"),
     ("lt", "lt", "Lietuvių"), ("lv", "lv", "Latviešu"), ("et", "et", "Eesti"), ("ca", "ca", "Català"),
+    # Lot 2
+    ("is", "is", "Íslenska"), ("sr", "sr", "Српски"), ("fil", "fil", "Filipino"),
+    ("af", "af", "Afrikaans"), ("sw", "sw", "Kiswahili"), ("bn", "bn", "বাংলা"),
+    ("ta", "ta", "தமிழ்"), ("kk", "kk", "Қазақ тілі"), ("ka", "ka", "ქართული"), ("az", "az", "Azərbaycan"),
 ]
 
 # New languages: og:locale, language-suggest prompt, ambience.js labels (play, pause)
@@ -53,6 +57,16 @@ NEW = {
     "lv": ("lv_LV", "Rādīt šo lapu latviski?", ["Atsākt animāciju", "Apturēt animāciju"]),
     "et": ("et_EE", "Kas näidata seda lehte eesti keeles?", ["Jätka animatsiooni", "Peata animatsioon"]),
     "ca": ("ca_ES", "Vols veure aquesta pàgina en català?", ["Reprèn l'animació", "Posa l'animació en pausa"]),
+    "is": ("is_IS", "Sýna þessa síðu á íslensku?", ["Halda hreyfimynd áfram", "Gera hlé á hreyfimynd"]),
+    "sr": ("sr_RS", "Прикажи ову страницу на српском?", ["Настави анимацију", "Паузирај анимацију"]),
+    "fil": ("fil_PH", "Tingnan ang pahinang ito sa Filipino?", ["Ituloy ang animation", "I-pause ang animation"]),
+    "af": ("af_ZA", "Wys hierdie bladsy in Afrikaans?", ["Hervat animasie", "Onderbreek animasie"]),
+    "sw": ("sw_KE", "Ungependa kuona ukurasa huu kwa Kiswahili?", ["Endelea na uhuishaji", "Sitisha uhuishaji"]),
+    "bn": ("bn_BD", "এই পৃষ্ঠাটি বাংলায় দেখবেন?", ["অ্যানিমেশন আবার চালু করুন", "অ্যানিমেশন থামান"]),
+    "ta": ("ta_IN", "இந்தப் பக்கத்தைத் தமிழில் பார்க்கவா?", ["அனிமேஷனைத் தொடரவும்", "அனிமேஷனை இடைநிறுத்தவும்"]),
+    "kk": ("kk_KZ", "Бұл бетті қазақ тілінде көрсету керек пе?", ["Анимацияны жалғастыру", "Анимацияны кідірту"]),
+    "ka": ("ka_GE", "გსურთ ამ გვერდის ქართულად ნახვა?", ["ანიმაციის გაგრძელება", "ანიმაციის შეჩერება"]),
+    "az": ("az_AZ", "Bu səhifəni Azərbaycan dilində göstərək?", ["Animasiyanı davam etdir", "Animasiyanı dayandır"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)
@@ -210,9 +224,10 @@ def scripts() -> None:
     js = add_entries(js, "labels", [(c, names[c]) for c in NEW])
     js = add_entries(js, "prompts", [(c, NEW[c][1]) for c in NEW])
     base = "const base = normalized.split('-')[0];"
-    nb = "    if ((base === 'no' || base === 'nn') && supported.has('nb')) return 'nb';"
-    if nb not in js:
-        js = js.replace(base, base + "\n" + nb, 1)
+    for extra in ("    if ((base === 'no' || base === 'nn') && supported.has('nb')) return 'nb';",
+                  "    if (base === 'tl' && supported.has('fil')) return 'fil';"):
+        if extra not in js:
+            js = js.replace(base, base + "\n" + extra, 1)
     path.write_text(js, encoding="utf-8")
 
     path = ROOT / "ambience.js"
