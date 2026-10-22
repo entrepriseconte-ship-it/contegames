@@ -316,3 +316,6 @@ html:lang(ar) .title-translation, html:lang(he) .title-translation, html:lang(th
   .projects-more > :last-child:nth-child(odd) { grid-column: auto; justify-self: stretch; width: auto; }
 }
 .project-links .button-soon { min-height: 38px; padding: 6px 14px; font-size: .95rem; }
+
+/* Long single words (e.g. Georgian, Tamil) must wrap inside their frame instead of widening the page. */
+h1, h2, h3 { overflow-wrap: break-word; }
