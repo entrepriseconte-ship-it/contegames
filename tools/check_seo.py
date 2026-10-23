@@ -36,7 +36,7 @@ GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableau
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
 UPCOMING = ("caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/")
 # Price not yet confirmed by the studio owner: no free offer is claimed for it.
-PRICE_UNCONFIRMED = ("mieuxchaquejour/",)
+PRICE_UNCONFIRMED = ()  # every studio app is free (confirmed by Anthony on 23/10)
 ERRORS = []
 WARNINGS = []
 
