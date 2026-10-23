@@ -8,6 +8,7 @@ from __future__ import annotations
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, unquote
+import html as html_lib
 import json
 import re
 import sys
@@ -199,6 +200,13 @@ for path, parser in PARSED.items():
                 if game not in PRICE_UNCONFIRMED and (
                         not isinstance(offer, dict) or str(offer.get("price")) not in ("0", "0.0")):
                     error(path, "free price (offers.price 0) missing from SoftwareApplication JSON-LD")
+            if structured.get("@type") == "FAQPage":
+                # The FAQ markup may only repeat questions and answers visible on the page.
+                visible = re.sub(r"\s+", " ", html_lib.unescape(re.sub(r"<[^>]+>", "", FILES[path])))
+                for item in structured.get("mainEntity", []):
+                    for said in (item.get("name", ""), item.get("acceptedAnswer", {}).get("text", "")):
+                        if not said or said not in visible:
+                            error(path, f"FAQPage text not visible on the page: {said[:60]!r}")
         except (json.JSONDecodeError, AttributeError) as exc:
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:

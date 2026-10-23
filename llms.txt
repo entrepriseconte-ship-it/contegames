@@ -1,0 +1,21 @@
+# Conte Games Studio
+
+> Independent mobile game studio based in Saint-Chamond, France. Games and apps for iPhone, with Android versions on the way. The website is available in 60 languages.
+
+Contact: contegamesstudio@gmail.com
+
+## Games
+
+- [COCOBOUM!](https://contegames.com/en/cocoboum/): Play COCOBOUM!, a free iPhone game: pop bubbles, beat levels, challenge other players in duels and climb the global leaderboard.
+- [Royaume des Mots Croisés](https://contegames.com/en/royaumedesmotscroises/): Solve crosswords, earn coins and grow a medieval village in Royaume des Mots Croisés, now available on iPhone.
+- [Mieux Chaque Jour](https://contegames.com/en/mieuxchaquejour/): Mieux Chaque Jour: a well-being app with nutrition and yoga to help you make progress every day. Available on iPhone.
+- [Les Tableaux Ensorcelés](https://contegames.com/en/tableauxensorceles/): Play Les Tableaux Ensorcelés for free on iPhone and iPad, with no ads. Complete 50 magical puzzles and restore an enchanted castle.
+- [Caligula vs Gladiators](https://contegames.com/en/caligulavsgladiators/): Caligula vs Gladiators: face gladiators and wild beasts in the arena, earn stars and coins, and get a thumbs-up from Caligula. Coming soon to iPhone and Android.
+- [Sauve qui Flèche ! Casse-tête](https://contegames.com/en/sauvequifleche/): Sauve qui Flèche! (Arrow Escape): get every arrow off the board in the right order through medieval levels full of keys, doors and teleporters. Coming soon to iPhone and Android.
+- [Royaume des Énigmes](https://contegames.com/en/royaumedesenigmes/): Royaume des Énigmes (The Kingdom of Riddles): match symbols, solve riddles and defeat 3 bosses across 30 levels, with 6 bonus games and 50 relics to collect. Coming soon to iPhone and Android.
+
+## Studio
+
+- [Home page](https://contegames.com/en/): all games, the studio and contact
+- [YouTube channel](https://www.youtube.com/channel/UCNty6M9KyLwwPj6WUbQQbBQ): short cartoons of each game
+- [Sitemap](https://contegames.com/sitemap.xml): every page in every language
