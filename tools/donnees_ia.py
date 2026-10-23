@@ -7,6 +7,9 @@
 2. Home pages: an Organization JSON-LD linking the studio to its official
    YouTube and TikTok accounts (sameAs) and its only contact address.
 3. llms.txt at the root: a short factual summary of the studio for AI tools.
+4. Game pages with a public App Store button: Apple's Smart App Banner meta
+   tag, so Safari on iPhone offers the app natively. Games still "coming soon"
+   have no App Store link, so they get none until they are published.
 
 Idempotent. Run from the repository root:  python3 tools/donnees_ia.py
 """
@@ -23,6 +26,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LD = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
 GUIDE = re.compile(r'<section class="seo-game-guide.*?</section>', re.S)
 QA = re.compile(r'<h3>(.*?)</h3>\s*<p>(.*?)</p>', re.S)
+APPSTORE = re.compile(r'class="button[^"]*\bbutton-appstore" href="https://apps\.apple\.com/[^"]*?/id(\d+)')
+BANNER = re.compile(r'<meta name="apple-itunes-app" content="[^"]*" />\n?')
 
 ORGANIZATION = {
     "@context": "https://schema.org", "@type": "Organization", "name": "Conte Games Studio",
@@ -61,6 +66,16 @@ def add_faq(html: str) -> str:
     return html[:last.end()] + script(faq) + html[last.end():]
 
 
+def add_app_banner(html: str) -> str:
+    html = BANNER.sub("", html)
+    app = APPSTORE.search(html)
+    if not app:
+        return html
+    viewport = html.index("<meta name=\"viewport\"")
+    return (html[:viewport] + f'<meta name="apple-itunes-app" content="app-id={app.group(1)}" />\n'
+            + html[viewport:])
+
+
 def add_organization(html: str) -> str:
     html = without(html, "Organization")
     last = list(LD.finditer(html))[-1]
@@ -90,7 +105,7 @@ def main() -> None:
         for group in GROUPS:
             path = page_path(code, group)
             html = path.read_text(encoding="utf-8")
-            new = add_organization(html) if group == "" else add_faq(html)
+            new = add_organization(html) if group == "" else add_app_banner(add_faq(html))
             if new != html:
                 path.write_text(new, encoding="utf-8")
                 changed += 1
