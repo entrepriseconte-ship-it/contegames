@@ -174,6 +174,8 @@ def build(code: str, hreflang: str) -> int:
         html = html.replace('"og:locale" content="en_US"', f'"og:locale" content="{locale}"', 1)
         html = html.replace('"inLanguage":"en"', f'"inLanguage":"{hreflang}"')
         html = html.replace(f"{DOMAIN}/en/", f"{DOMAIN}/{code}/")
+        from donnees_ia import add_faq  # FAQPage must follow the translated questions
+        html = add_faq(html)
         target = page_path(code, group)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding="utf-8")
