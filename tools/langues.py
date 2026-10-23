@@ -43,6 +43,10 @@ LANGS = [
     ("is", "is", "Íslenska"), ("sr", "sr", "Српски"), ("fil", "fil", "Filipino"),
     ("af", "af", "Afrikaans"), ("sw", "sw", "Kiswahili"), ("bn", "bn", "বাংলা"),
     ("ta", "ta", "தமிழ்"), ("kk", "kk", "Қазақ тілі"), ("ka", "ka", "ქართული"), ("az", "az", "Azərbaycan"),
+    # Lot 3
+    ("sq", "sq", "Shqip"), ("mk", "mk", "Македонски"), ("hy", "hy", "Հայերեն"),
+    ("uz", "uz", "Oʻzbekcha"), ("gl", "gl", "Galego"), ("eu", "eu", "Euskara"),
+    ("mr", "mr", "मराठी"), ("te", "te", "తెలుగు"), ("ne", "ne", "नेपाली"), ("si", "si", "සිංහල"),
 ]
 
 # New languages: og:locale, language-suggest prompt, ambience.js labels (play, pause)
@@ -67,6 +71,16 @@ NEW = {
     "kk": ("kk_KZ", "Бұл бетті қазақ тілінде көрсету керек пе?", ["Анимацияны жалғастыру", "Анимацияны кідірту"]),
     "ka": ("ka_GE", "გსურთ ამ გვერდის ქართულად ნახვა?", ["ანიმაციის გაგრძელება", "ანიმაციის შეჩერება"]),
     "az": ("az_AZ", "Bu səhifəni Azərbaycan dilində göstərək?", ["Animasiyanı davam etdir", "Animasiyanı dayandır"]),
+    "sq": ("sq_AL", "Ta shfaq këtë faqe në shqip?", ["Vazhdo animacionin", "Ndalo animacionin"]),
+    "mk": ("mk_MK", "Да се прикаже оваа страница на македонски?", ["Продолжи ја анимацијата", "Паузирај ја анимацијата"]),
+    "hy": ("hy_AM", "Ցուցադրե՞լ այս էջը հայերենով", ["Շարունակել անիմացիան", "Դադարեցնել անիմացիան"]),
+    "uz": ("uz_UZ", "Bu sahifani oʻzbek tilida koʻrsataymi?", ["Animatsiyani davom ettirish", "Animatsiyani toʻxtatish"]),
+    "gl": ("gl_ES", "Queres ver esta páxina en galego?", ["Retomar a animación", "Pausar a animación"]),
+    "eu": ("eu_ES", "Orri hau euskaraz ikusi nahi duzu?", ["Jarraitu animazioarekin", "Pausatu animazioa"]),
+    "mr": ("mr_IN", "हे पान मराठीत पाहायचे?", ["अ‍ॅनिमेशन पुन्हा सुरू करा", "अ‍ॅनिमेशन थांबवा"]),
+    "te": ("te_IN", "ఈ పేజీని తెలుగులో చూడాలా?", ["యానిమేషన్ కొనసాగించు", "యానిమేషన్ ఆపు"]),
+    "ne": ("ne_NP", "यो पृष्ठ नेपालीमा हेर्ने?", ["एनिमेसन जारी राख्नुहोस्", "एनिमेसन रोक्नुहोस्"]),
+    "si": ("si_LK", "මෙම පිටුව සිංහලෙන් බලන්නද?", ["සජීවිකරණය නැවත අරඹන්න", "සජීවිකරණය නවත්වන්න"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)

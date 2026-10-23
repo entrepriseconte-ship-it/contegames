@@ -27,11 +27,15 @@ LANGS = [
     ("sl", "sl"), ("lt", "lt"), ("lv", "lv"), ("et", "et"), ("ca", "ca"),
     ("is", "is"), ("sr", "sr"), ("fil", "fil"), ("af", "af"), ("sw", "sw"),
     ("bn", "bn"), ("ta", "ta"), ("kk", "kk"), ("ka", "ka"), ("az", "az"),
+    ("sq", "sq"), ("mk", "mk"), ("hy", "hy"), ("uz", "uz"), ("gl", "gl"),
+    ("eu", "eu"), ("mr", "mr"), ("te", "te"), ("ne", "ne"), ("si", "si"),
 ]
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
 UPCOMING = ("caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/")
+# Price not yet confirmed by the studio owner: no free offer is claimed for it.
+PRICE_UNCONFIRMED = ("mieuxchaquejour/",)
 ERRORS = []
 WARNINGS = []
 
@@ -187,11 +191,14 @@ for path, parser in PARSED.items():
             structured = json.loads(raw)
             if structured.get("@context") != "https://schema.org":
                 error(path, "JSON-LD context invalid")
-            if game == "cocoboum/" and structured.get("@type") == "SoftwareApplication":
-                cocoboum_schema_found = True
+            if structured.get("@type") == "SoftwareApplication":
+                if game == "cocoboum/":
+                    cocoboum_schema_found = True
+                # Every game page (current and future) shows Google its free price.
                 offer = structured.get("offers")
-                if not isinstance(offer, dict) or str(offer.get("price")) not in ("0", "0.0"):
-                    error(path, "COCOBOUM free price missing from SoftwareApplication JSON-LD")
+                if game not in PRICE_UNCONFIRMED and (
+                        not isinstance(offer, dict) or str(offer.get("price")) not in ("0", "0.0")):
+                    error(path, "free price (offers.price 0) missing from SoftwareApplication JSON-LD")
         except (json.JSONDecodeError, AttributeError) as exc:
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:
