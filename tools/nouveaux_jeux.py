@@ -80,6 +80,8 @@ def build_page(code: str, game: tuple) -> None:
                     **({"alternateName": tr} if tr else {}), "description": G["desc"], "url": url(code, folder),
                     "image": f"https://contegames.com/assets/{icon}", "operatingSystem": "iOS, Android",
                     "applicationCategory": "GameApplication", "inLanguage": code if code != "fr" else "fr",
+                    # Every studio game is free (ads-funded): Google's app card shows the price.
+                    "offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR"},
                     "author": data["author"]}
         elif data.get("@type") == "BreadcrumbList":
             data["itemListElement"][1]["name"] = name
