@@ -72,8 +72,9 @@ def add_app_banner(html: str) -> str:
     if not app:
         return html
     viewport = html.index("<meta name=\"viewport\"")
-    return (html[:viewport] + f'<meta name="apple-itunes-app" content="app-id={app.group(1)}" />\n'
-            + html[viewport:])
+    # Own campaign name, so App Store Connect separates banner downloads from page-button ones.
+    content = f"app-id={app.group(1)}, affiliate-data=pt=129524141&amp;ct=site-banner"
+    return html[:viewport] + f'<meta name="apple-itunes-app" content="{content}" />\n' + html[viewport:]
 
 
 def add_organization(html: str) -> str:

@@ -266,6 +266,9 @@ for code, _ in LANGS:
 # App Store links must not force the French storefront: without a country
 # code Apple opens the visitor's own store (US, DE, JP...).
 for path, html in FILES.items():
+    for link in re.findall(r'<a [^>]*href="(https://apps\.apple\.com/app/[^"]*)"', html):
+        if "pt=129524141&amp;ct=site-" not in link:
+            error(path, f"App Store link without campaign parameters (run tools/liens_suivis.py): {link[:70]}")
     if "apps.apple.com/fr/" in html:
         error(path, "App Store link forces the French storefront (apps.apple.com/fr/)")
 
