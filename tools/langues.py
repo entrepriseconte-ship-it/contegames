@@ -51,7 +51,14 @@ LANGS = [
     ("pa", "pa", "ਪੰਜਾਬੀ"), ("gu", "gu", "ગુજરાતી"), ("kn", "kn", "ಕನ್ನಡ"),
     ("ml", "ml", "മലയാളം"), ("km", "km", "ខ្មែរ"), ("lo", "lo", "ລາວ"),
     ("my", "my", "မြန်မာ"), ("mn", "mn", "Монгол"), ("am", "am", "አማርኛ"), ("cy", "cy", "Cymraeg"),
+    # Lot 5
+    ("fa", "fa", "فارسی"), ("ur", "ur", "اردو"), ("ga", "ga", "Gaeilge"), ("mt", "mt", "Malti"),
+    ("lb", "lb", "Lëtzebuergesch"), ("be", "be", "Беларуская"), ("jv", "jv", "Basa Jawa"),
+    ("zu", "zu", "isiZulu"), ("ha", "ha", "Hausa"), ("so", "so", "Soomaali"),
 ]
+
+# Right-to-left new languages (styles.css already handles html[dir="rtl"], as for ar and he)
+RTL = {"fa", "ur"}
 
 # New languages: og:locale, language-suggest prompt, ambience.js labels (play, pause)
 NEW = {
@@ -95,6 +102,16 @@ NEW = {
     "mn": ("mn_MN", "Энэ хуудсыг монголоор харах уу?", ["Хөдөлгөөнийг үргэлжлүүлэх", "Хөдөлгөөнийг түр зогсоох"]),
     "am": ("am_ET", "ይህን ገጽ በአማርኛ ይመልከቱ?", ["እነማውን ቀጥል", "እነማውን አቁም"]),
     "cy": ("cy_GB", "Dangos y dudalen hon yn Gymraeg?", ["Ailddechrau'r animeiddiad", "Oedi'r animeiddiad"]),
+    "fa": ("fa_IR", "این صفحه به فارسی نمایش داده شود؟", ["ادامه‌ی پویانمایی", "توقف پویانمایی"]),
+    "ur": ("ur_PK", "کیا یہ صفحہ اردو میں دکھائیں؟", ["اینیمیشن دوبارہ شروع کریں", "اینیمیشن روکیں"]),
+    "ga": ("ga_IE", "An bhfuil tú ag iarraidh an leathanach seo a fheiceáil as Gaeilge?", ["Atosaigh an beochan", "Cuir an beochan ar sos"]),
+    "mt": ("mt_MT", "Turi din il-paġna bil-Malti?", ["Kompli l-animazzjoni", "Waqqaf l-animazzjoni"]),
+    "lb": ("lb_LU", "Dës Säit op Lëtzebuergesch weisen?", ["Animatioun weiderféieren", "Animatioun pausen"]),
+    "be": ("be_BY", "Паказаць гэту старонку па-беларуску?", ["Працягнуць анімацыю", "Спыніць анімацыю"]),
+    "jv": ("jv_ID", "Tampilake kaca iki nganggo basa Jawa?", ["Terusake animasi", "Setop animasi sedhela"]),
+    "zu": ("zu_ZA", "Ngabe ufuna ukubona leli khasi ngesiZulu?", ["Qhubeka nopopayi", "Misa uphopayi"]),
+    "ha": ("ha_NG", "Nuna wannan shafin da Hausa?", ["Ci gaba da motsin hoto", "Dakatar da motsin hoto"]),
+    "so": ("so_SO", "Ma rabtaa inaad bogga ku aragto Soomaali?", ["Sii wad animation-ka", "Hakad animation-ka"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)
@@ -184,7 +201,8 @@ def build(code: str, hreflang: str) -> int:
     for group in GROUPS:
         html = page_path("en", group).read_text(encoding="utf-8")
         html = transform(html, tr)
-        html = html.replace('<html lang="en">', f'<html lang="{hreflang}">', 1)
+        direction = ' dir="rtl"' if code in RTL else ""
+        html = html.replace('<html lang="en">', f'<html lang="{hreflang}"{direction}>', 1)
         html = html.replace('"og:locale" content="en_US"', f'"og:locale" content="{locale}"', 1)
         html = html.replace('"inLanguage":"en"', f'"inLanguage":"{hreflang}"')
         html = html.replace(f"{DOMAIN}/en/", f"{DOMAIN}/{code}/")

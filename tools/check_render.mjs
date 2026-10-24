@@ -10,7 +10,7 @@ const pages = [
   '/th/', '/tr/tableauxensorceles/',
   '/tableauxensorceles/', '/en/tableauxensorceles/', '/de/tableauxensorceles/',
   '/es/tableauxensorceles/', '/it/tableauxensorceles/', '/pt/tableauxensorceles/', '/de/cocoboum/',
-  '/de/', '/ja/tableauxensorceles/', '/ar/royaumedesmotscroises/', '/he/mieuxchaquejour/', '/mieuxchaquejour/', '/en/mieuxchaquejour/', '/ja/mieuxchaquejour/', '/th/tableauxensorceles/', '/caligulavsgladiators/', '/sauvequifleche/', '/royaumedesenigmes/', '/en/sauvequifleche/', '/ar/royaumedesenigmes/', '/ja/caligulavsgladiators/', '/he/sauvequifleche/', '/da/', '/nb/cocoboum/', '/bg/', '/lt/sauvequifleche/', '/ca/royaumedesenigmes/', '/et/mieuxchaquejour/', '/is/', '/sr/cocoboum/', '/fil/sauvequifleche/', '/bn/', '/ka/royaumedesenigmes/', '/az/tableauxensorceles/', '/hy/', '/mk/cocoboum/', '/si/sauvequifleche/', '/te/', '/eu/royaumedesenigmes/', '/km/', '/my/cocoboum/', '/am/sauvequifleche/', '/ml/', '/cy/royaumedesenigmes/', '/lo/tableauxensorceles/'
+  '/de/', '/ja/tableauxensorceles/', '/ar/royaumedesmotscroises/', '/he/mieuxchaquejour/', '/mieuxchaquejour/', '/en/mieuxchaquejour/', '/ja/mieuxchaquejour/', '/th/tableauxensorceles/', '/caligulavsgladiators/', '/sauvequifleche/', '/royaumedesenigmes/', '/en/sauvequifleche/', '/ar/royaumedesenigmes/', '/ja/caligulavsgladiators/', '/he/sauvequifleche/', '/da/', '/nb/cocoboum/', '/bg/', '/lt/sauvequifleche/', '/ca/royaumedesenigmes/', '/et/mieuxchaquejour/', '/is/', '/sr/cocoboum/', '/fil/sauvequifleche/', '/bn/', '/ka/royaumedesenigmes/', '/az/tableauxensorceles/', '/hy/', '/mk/cocoboum/', '/si/sauvequifleche/', '/te/', '/eu/royaumedesenigmes/', '/km/', '/my/cocoboum/', '/am/sauvequifleche/', '/ml/', '/cy/royaumedesenigmes/', '/lo/tableauxensorceles/', '/fa/', '/ur/cocoboum/', '/ga/royaumedesenigmes/', '/mt/', '/be/sauvequifleche/', '/zu/mieuxchaquejour/'
 ];
 
 try {
@@ -34,7 +34,7 @@ try {
         }));
         if (response?.status() !== 200) failures.push(path + ' HTTP ' + response?.status());
         if (audit.mainHeading !== 1) failures.push(path + ' H1=' + audit.mainHeading);
-        if (audit.languages !== 70) failures.push(path + ' menu=' + audit.languages);
+        if (audit.languages !== 80) failures.push(path + ' menu=' + audit.languages);
         if (audit.contentWidth > audit.viewportWidth + 3) failures.push(path + ' horizontal overflow ' + audit.contentWidth + ' > ' + audit.viewportWidth + ' at ' + width);
         if (!audit.heroLoaded) failures.push(path + ' hero image failed to load');
         if (pageErrors.length) failures.push(path + ' JS error: ' + pageErrors.join(' | ').slice(0,300));

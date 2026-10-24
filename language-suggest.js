@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so'
   ]);
 
   const labels = {
@@ -62,7 +62,17 @@
     'my':'မြန်မာ',
     'mn':'Монгол',
     'am':'አማርኛ',
-    'cy':'Cymraeg'
+    'cy':'Cymraeg',
+    'fa':'فارسی',
+    'ur':'اردو',
+    'ga':'Gaeilge',
+    'mt':'Malti',
+    'lb':'Lëtzebuergesch',
+    'be':'Беларуская',
+    'jv':'Basa Jawa',
+    'zu':'isiZulu',
+    'ha':'Hausa',
+    'so':'Soomaali'
   };
 
   const prompts = {
@@ -135,7 +145,17 @@
     'my':'ဤစာမျက်နှာကို မြန်မာလို ကြည့်မလား။',
     'mn':'Энэ хуудсыг монголоор харах уу?',
     'am':'ይህን ገጽ በአማርኛ ይመልከቱ?',
-    'cy':'Dangos y dudalen hon yn Gymraeg?'
+    'cy':'Dangos y dudalen hon yn Gymraeg?',
+    'fa':'این صفحه به فارسی نمایش داده شود؟',
+    'ur':'کیا یہ صفحہ اردو میں دکھائیں؟',
+    'ga':'An bhfuil tú ag iarraidh an leathanach seo a fheiceáil as Gaeilge?',
+    'mt':'Turi din il-paġna bil-Malti?',
+    'lb':'Dës Säit op Lëtzebuergesch weisen?',
+    'be':'Паказаць гэту старонку па-беларуску?',
+    'jv':'Tampilake kaca iki nganggo basa Jawa?',
+    'zu':'Ngabe ufuna ukubona leli khasi ngesiZulu?',
+    'ha':'Nuna wannan shafin da Hausa?',
+    'so':'Ma rabtaa inaad bogga ku aragto Soomaali?'
   };
 
   function localeToSiteCode(locale) {
