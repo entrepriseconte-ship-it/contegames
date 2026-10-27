@@ -217,6 +217,10 @@ for path, parser in PARSED.items():
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:
         error(path, "COCOBOUM SoftwareApplication JSON-LD missing")
+    if game in ("", "cocoboum/"):
+        # COCOBOUM! is public on Google Play (27/10/2026): real button, never the "coming soon" badge.
+        if "play.google.com/store/apps/details?id=com.contegames.cocoboum" not in FILES[path]:
+            error(path, "COCOBOUM Google Play button missing")
     if game == "tableauxensorceles/":
         # Keep every localized App Store availability and download link consistent.
         if "id6819245288" not in FILES[path] or 'button-appstore' not in FILES[path]:
