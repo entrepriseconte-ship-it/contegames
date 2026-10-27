@@ -86,7 +86,7 @@ def add_organization(html: str) -> str:
 def llms_txt() -> str:
     lines = ["# Conte Games Studio", "",
              "> Independent mobile game studio based in Saint-Chamond, France. Games and apps for iPhone; "
-             "COCOBOUM! is also on Google Play for Android, other Android versions are on the way. "
+             "COCOBOUM! and Les Tableaux Ensorcelés are also on Google Play for Android, other Android versions are on the way. "
              f"The website is available in {len(LANGS)} languages.", "",
              "Contact: contegamesstudio@gmail.com", "", "## Games", ""]
     for group in GROUPS[1:]:
