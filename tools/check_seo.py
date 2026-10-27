@@ -217,16 +217,19 @@ for path, parser in PARSED.items():
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:
         error(path, "COCOBOUM SoftwareApplication JSON-LD missing")
-    if game in ("", "cocoboum/"):
-        # COCOBOUM! is public on Google Play (27/10/2026): real button, never the "coming soon" badge.
-        if "play.google.com/store/apps/details?id=com.contegames.cocoboum" not in FILES[path]:
-            error(path, "COCOBOUM Google Play button missing")
+    if game in ("", "cocoboum/", "tableauxensorceles/"):
+        # Public on Google Play (COCOBOUM! and Les Tableaux Ensorcelés, 27/10/2026): real button, never the badge.
+        for package in ("com.contegames.cocoboum", "com.contegames.tableauxensorceles"):
+            if game and not package.endswith(game.rstrip("/")):
+                continue
+            if f"play.google.com/store/apps/details?id={package}" not in FILES[path]:
+                error(path, f"Google Play button missing ({package})")
     if game == "tableauxensorceles/":
         # Keep every localized App Store availability and download link consistent.
         if "id6819245288" not in FILES[path] or 'button-appstore' not in FILES[path]:
             error(path, "Les Tableaux Ensorceles: iOS download button is missing")
-        if 'badge-soon' not in FILES[path]:
-            error(path, "Les Tableaux Ensorceles: Android availability badge missing")
+        if 'badge-soon' not in FILES[path] and "com.contegames.tableauxensorceles" not in FILES[path]:
+            error(path, "Les Tableaux Ensorceles: Android availability badge or Google Play button missing")
         outdated = ("近日公開予定", "출시 예정", "计划登陆 iPhone", "預計在 iPhone",
                     "आने वाला", "yang akan hadir", "em breve.", "próximamente en iPhone",
                     "قريبًا على App Store", "yakında geliyor", "скоро выйдет",
