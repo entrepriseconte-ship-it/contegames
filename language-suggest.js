@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny'
   ]);
 
   const labels = {
@@ -72,7 +72,17 @@
     'jv':'Basa Jawa',
     'zu':'isiZulu',
     'ha':'Hausa',
-    'so':'Soomaali'
+    'so':'Soomaali',
+    'tg':'Тоҷикӣ',
+    'ky':'Кыргызча',
+    'tk':'Türkmençe',
+    'ku':'Kurdî',
+    'yo':'Yorùbá',
+    'ig':'Igbo',
+    'mg':'Malagasy',
+    'sn':'chiShona',
+    'xh':'isiXhosa',
+    'ny':'Chichewa'
   };
 
   const prompts = {
@@ -155,7 +165,17 @@
     'jv':'Tampilake kaca iki nganggo basa Jawa?',
     'zu':'Ngabe ufuna ukubona leli khasi ngesiZulu?',
     'ha':'Nuna wannan shafin da Hausa?',
-    'so':'Ma rabtaa inaad bogga ku aragto Soomaali?'
+    'so':'Ma rabtaa inaad bogga ku aragto Soomaali?',
+    'tg':'Ин саҳифаро бо забони тоҷикӣ нишон диҳам?',
+    'ky':'Бул баракты кыргызча көрсөтөйүнбү?',
+    'tk':'Bu sahypany türkmençe görkezeýinmi?',
+    'ku':'Ev rûpel bi kurdî were nîşandan?',
+    'yo':'Ṣé kí a fi ojú-ìwé yìí hàn ní èdè Yorùbá?',
+    'ig':'Gosi ibe a n’asụsụ Igbo?',
+    'mg':'Asehoy amin’ny teny Malagasy ve ity pejy ity?',
+    'sn':'Unoda here kuti peji iyi iratidzwe nechiShona?',
+    'xh':'Ngaba ndiyibonise le phepha ngesiXhosa?',
+    'ny':'Kodi ndiwonetse tsambali mu Chichewa?'
   };
 
   function localeToSiteCode(locale) {

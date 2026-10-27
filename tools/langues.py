@@ -55,6 +55,10 @@ LANGS = [
     ("fa", "fa", "فارسی"), ("ur", "ur", "اردو"), ("ga", "ga", "Gaeilge"), ("mt", "mt", "Malti"),
     ("lb", "lb", "Lëtzebuergesch"), ("be", "be", "Беларуская"), ("jv", "jv", "Basa Jawa"),
     ("zu", "zu", "isiZulu"), ("ha", "ha", "Hausa"), ("so", "so", "Soomaali"),
+    # Lot 6
+    ("tg", "tg", "Тоҷикӣ"), ("ky", "ky", "Кыргызча"), ("tk", "tk", "Türkmençe"),
+    ("ku", "ku", "Kurdî"), ("yo", "yo", "Yorùbá"), ("ig", "ig", "Igbo"), ("mg", "mg", "Malagasy"),
+    ("sn", "sn", "chiShona"), ("xh", "xh", "isiXhosa"), ("ny", "ny", "Chichewa"),
 ]
 
 # Right-to-left new languages (styles.css already handles html[dir="rtl"], as for ar and he)
@@ -112,6 +116,16 @@ NEW = {
     "zu": ("zu_ZA", "Ngabe ufuna ukubona leli khasi ngesiZulu?", ["Qhubeka nopopayi", "Misa uphopayi"]),
     "ha": ("ha_NG", "Nuna wannan shafin da Hausa?", ["Ci gaba da motsin hoto", "Dakatar da motsin hoto"]),
     "so": ("so_SO", "Ma rabtaa inaad bogga ku aragto Soomaali?", ["Sii wad animation-ka", "Hakad animation-ka"]),
+    "tg": ("tg_TJ", "Ин саҳифаро бо забони тоҷикӣ нишон диҳам?", ["Идомаи аниматсия", "Таваққуфи аниматсия"]),
+    "ky": ("ky_KG", "Бул баракты кыргызча көрсөтөйүнбү?", ["Анимацияны улантуу", "Анимацияны токтотуу"]),
+    "tk": ("tk_TM", "Bu sahypany türkmençe görkezeýinmi?", ["Animasiýany dowam etdir", "Animasiýany duruz"]),
+    "ku": ("ku_TR", "Ev rûpel bi kurdî were nîşandan?", ["Anîmasyonê bidomîne", "Anîmasyonê rawestîne"]),
+    "yo": ("yo_NG", "Ṣé kí a fi ojú-ìwé yìí hàn ní èdè Yorùbá?", ["Tẹ̀síwájú ìdárayá", "Dá ìdárayá dúró"]),
+    "ig": ("ig_NG", "Gosi ibe a n’asụsụ Igbo?", ["Gaa n’ihu na animashọn", "Kwụsị animashọn nwa oge"]),
+    "mg": ("mg_MG", "Asehoy amin’ny teny Malagasy ve ity pejy ity?", ["Tohizo ny sary mihetsika", "Ajanony ny sary mihetsika"]),
+    "sn": ("sn_ZW", "Unoda here kuti peji iyi iratidzwe nechiShona?", ["Enderera mberi neanimeshini", "Mira kwenguva neanimeshini"]),
+    "xh": ("xh_ZA", "Ngaba ndiyibonise le phepha ngesiXhosa?", ["Qhubeka nopopayi", "Misa okwethutyana upopayi"]),
+    "ny": ("ny_MW", "Kodi ndiwonetse tsambali mu Chichewa?", ["Pitirizani makanema", "Imitsani makanema"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)
