@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny','ceb','ht','mi','sm','st','rw','om','ti','eo','co'
   ]);
 
   const labels = {
@@ -82,7 +82,17 @@
     'mg':'Malagasy',
     'sn':'chiShona',
     'xh':'isiXhosa',
-    'ny':'Chichewa'
+    'ny':'Chichewa',
+    'ceb':'Cebuano',
+    'ht':'Kreyòl ayisyen',
+    'mi':'Te Reo Māori',
+    'sm':'Gagana Samoa',
+    'st':'Sesotho',
+    'rw':'Ikinyarwanda',
+    'om':'Afaan Oromoo',
+    'ti':'ትግርኛ',
+    'eo':'Esperanto',
+    'co':'Corsu'
   };
 
   const prompts = {
@@ -175,7 +185,17 @@
     'mg':'Asehoy amin’ny teny Malagasy ve ity pejy ity?',
     'sn':'Unoda here kuti peji iyi iratidzwe nechiShona?',
     'xh':'Ngaba ndiyibonise le phepha ngesiXhosa?',
-    'ny':'Kodi ndiwonetse tsambali mu Chichewa?'
+    'ny':'Kodi ndiwonetse tsambali mu Chichewa?',
+    'ceb':'Ipakita ba kini nga panid sa Cebuano?',
+    'ht':'Montre paj sa a an kreyòl ayisyen?',
+    'mi':'Whakaatuhia tēnei whārangi ki te reo Māori?',
+    'sm':'Faaali atu lenei itulau i le gagana Samoa?',
+    'st':'Na u bontše leqephe lena ka Sesotho?',
+    'rw':'Werekana uru rupapuro mu Kinyarwanda?',
+    'om':'Fuulli kana Afaan Oromootiin agarsiisi?',
+    'ti':'ነዚ ገጽ ብትግርኛ ይርአ?',
+    'eo':'Ĉu montri ĉi tiun paĝon en Esperanto?',
+    'co':'Vulete vede sta pagina in corsu?'
   };
 
   function localeToSiteCode(locale) {
