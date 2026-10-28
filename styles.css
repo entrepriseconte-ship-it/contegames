@@ -319,3 +319,6 @@ html:lang(ar) .title-translation, html:lang(he) .title-translation, html:lang(th
 
 /* Long single words (e.g. Georgian, Tamil) must wrap inside their frame instead of widening the page. */
 h1, h2, h3 { overflow-wrap: break-word; }
+
+/* Mobile : titre + boutons de téléchargement au-dessus de la vidéo (pages jeux sorties) */
+@media (max-width: 520px) { .royal-content:has(.button-appstore) .royal-copy { order: -1; } .royal-content:has(.button-appstore) .hero-video { margin-top: 6px; } }
