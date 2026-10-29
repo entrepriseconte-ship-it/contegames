@@ -59,6 +59,10 @@ LANGS = [
     ("tg", "tg", "Тоҷикӣ"), ("ky", "ky", "Кыргызча"), ("tk", "tk", "Türkmençe"),
     ("ku", "ku", "Kurdî"), ("yo", "yo", "Yorùbá"), ("ig", "ig", "Igbo"), ("mg", "mg", "Malagasy"),
     ("sn", "sn", "chiShona"), ("xh", "xh", "isiXhosa"), ("ny", "ny", "Chichewa"),
+    # Lot 7
+    ("ceb", "ceb", "Cebuano"), ("ht", "ht", "Kreyòl ayisyen"), ("mi", "mi", "Te Reo Māori"),
+    ("sm", "sm", "Gagana Samoa"), ("st", "st", "Sesotho"), ("rw", "rw", "Ikinyarwanda"),
+    ("om", "om", "Afaan Oromoo"), ("ti", "ti", "ትግርኛ"), ("eo", "eo", "Esperanto"), ("co", "co", "Corsu"),
 ]
 
 # Right-to-left new languages (styles.css already handles html[dir="rtl"], as for ar and he)
@@ -126,6 +130,16 @@ NEW = {
     "sn": ("sn_ZW", "Unoda here kuti peji iyi iratidzwe nechiShona?", ["Enderera mberi neanimeshini", "Mira kwenguva neanimeshini"]),
     "xh": ("xh_ZA", "Ngaba ndiyibonise le phepha ngesiXhosa?", ["Qhubeka nopopayi", "Misa okwethutyana upopayi"]),
     "ny": ("ny_MW", "Kodi ndiwonetse tsambali mu Chichewa?", ["Pitirizani makanema", "Imitsani makanema"]),
+    "ceb": ("ceb_PH", "Ipakita ba kini nga panid sa Cebuano?", ["Ipadayon ang animasyon", "Ihunong ang animasyon"]),
+    "ht": ("ht_HT", "Montre paj sa a an kreyòl ayisyen?", ["Kontinye animasyon an", "Mete animasyon an sou poz"]),
+    "mi": ("mi_NZ", "Whakaatuhia tēnei whārangi ki te reo Māori?", ["Haere tonu te hākoritanga", "Whakatārewa te hākoritanga"]),
+    "sm": ("sm_WS", "Faaali atu lenei itulau i le gagana Samoa?", ["Faaauau le ata fa’agaoioi", "Taofi le ata fa’agaoioi"]),
+    "st": ("st_LS", "Na u bontše leqephe lena ka Sesotho?", ["Tsoela pele ka animation", "Emisa animation nakoana"]),
+    "rw": ("rw_RW", "Werekana uru rupapuro mu Kinyarwanda?", ["Komeza animasiyo", "Hagarika animasiyo mu gihe gito"]),
+    "om": ("om_ET", "Fuulli kana Afaan Oromootiin agarsiisi?", ["Animeeshinii itti fufi", "Animeeshinii yeroo muraasaaf dhaabi"]),
+    "ti": ("ti_ER", "ነዚ ገጽ ብትግርኛ ይርአ?", ["ኣኒሜሽን ቀጽል", "ኣኒሜሽን ኣቋርጽ"]),
+    "eo": ("eo_EO", "Ĉu montri ĉi tiun paĝon en Esperanto?", ["Daŭrigi la animacion", "Paŭzigi la animacion"]),
+    "co": ("co_FR", "Vulete vede sta pagina in corsu?", ["Cuntinuà l’animazione", "Mette l’animazione in pausa"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)
@@ -306,6 +320,10 @@ if __name__ == "__main__":
     if "--extract" in sys.argv:
         extract()
         sys.exit()
-    built = sum(build(code, h) for code, h, _ in LANGS if code in NEW)
+    only = None
+    for arg in sys.argv[1:]:
+        if arg.startswith("--only="):
+            only = set(arg[len("--only="):].split(","))
+    built = sum(build(code, h) for code, h, _ in LANGS if code in NEW and (only is None or code in only))
     print(f"built {built} pages, relinked {link_all()} pages, sitemap +{sitemap('2026-10-22')}")
     scripts()
