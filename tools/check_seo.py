@@ -42,7 +42,9 @@ LANGS = [
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
-UPCOMING = ("caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/")
+UPCOMING = ("caligulavsgladiators/", "royaumedesenigmes/")
+# Out on the App Store, still coming to Android (tools/sortie_appstore.py): page -> App Store id.
+RELEASED = {"sauvequifleche/": "6823751966"}
 # Price not yet confirmed by the studio owner: no free offer is claimed for it.
 PRICE_UNCONFIRMED = ()  # every studio app is free (confirmed by Anthony on 23/10)
 ERRORS = []
@@ -261,6 +263,19 @@ for path, html in FILES.items():
         html = re.sub(r'<div class="projects projects-more">[\s\S]*?</article>\s*</div>', "", html)
     if "button-soon" in html:
         error(path, "page still shows a coming-soon App Store button (button-soon)")
+    if EXPECTED[path][1] in RELEASED:
+        app_id = RELEASED[EXPECTED[path][1]]
+        if f"apps.apple.com/app/id{app_id}?" not in html or f'name="apple-itunes-app" content="app-id={app_id},' not in html:
+            error(path, "released game: App Store button or Smart App Banner missing")
+        if f'"downloadUrl":"https://apps.apple.com/app/id{app_id}"' not in html:
+            error(path, "released game: downloadUrl missing from the app card")
+        if 'class="badge-soon"' not in html:
+            error(path, "released game: Android coming-soon badge missing")
+    if EXPECTED[path][1] == "":
+        for folder, app_id in RELEASED.items():
+            card = re.search(rf'<article class="project-card [^"]*"(?:(?!</article>).)*href="{folder}"(?:(?!</article>).)*</article>', FILES[path], re.S)
+            if not card or f"apps.apple.com/app/id{app_id}?" not in card.group(0) or "button-soon" in card.group(0):
+                error(path, f"home card of {folder}: App Store button missing")
 
 # Outside French, each game name keeps its official App Store spelling and
 # shows its translation right under it (requested by the studio owner).

@@ -4,8 +4,9 @@
 For each of the 30 languages, builds the game page from that language's
 Royaume des Mots Croisés page (same layout, same frames) and adds a second
 row of three cards under the four existing cards of the home page.
-The games are not public yet: "coming soon" for the App Store and Android,
-never a store link. A game gets its YouTube video in the large frame once
+Games not public yet show "coming soon" for the App Store and Android, never
+a store link; once Apple publishes one, tools/sortie_appstore.py (run at the
+end) gives it its App Store button. A game gets its YouTube video in the large frame once
 its link is in VIDEO; until then its App Store icon is shown.
 Idempotent: run from the repository root, python3 tools/nouveaux_jeux.py
 """
@@ -187,4 +188,7 @@ for code in CODES:
         build_page(code, game)
     build_home(code)
 build_sitemap()
+# Games already out on the App Store get their real button back (all languages).
+import sortie_appstore  # noqa: E402
+sortie_appstore.main()
 print(f"{len(CODES)} languages, {len(GAMES)} games")
