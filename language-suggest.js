@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny','ceb','ht','mi','sm','st','rw','om','ti','eo','co'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny','ceb','ht','mi','sm','st','rw','om','ti','eo','co','as','or','ps','sd','fy','gd','tt','ln','wo','ak'
   ]);
 
   const labels = {
@@ -92,7 +92,17 @@
     'om':'Afaan Oromoo',
     'ti':'ትግርኛ',
     'eo':'Esperanto',
-    'co':'Corsu'
+    'co':'Corsu',
+    'as':'অসমীয়া',
+    'or':'ଓଡ଼ିଆ',
+    'ps':'پښتو',
+    'sd':'سنڌي',
+    'fy':'Frysk',
+    'gd':'Gàidhlig',
+    'tt':'Татарча',
+    'ln':'Lingála',
+    'wo':'Wolof',
+    'ak':'Twi'
   };
 
   const prompts = {
@@ -195,7 +205,17 @@
     'om':'Fuulli kana Afaan Oromootiin agarsiisi?',
     'ti':'ነዚ ገጽ ብትግርኛ ይርአ?',
     'eo':'Ĉu montri ĉi tiun paĝon en Esperanto?',
-    'co':'Vulete vede sta pagina in corsu?'
+    'co':'Vulete vede sta pagina in corsu?',
+    'as':'এই পৃষ্ঠাটো অসমীয়াত দেখুৱাব নেকি?',
+    'or':'ଏହି ପୃଷ୍ଠାକୁ ଓଡ଼ିଆରେ ଦେଖାଇବେ କି?',
+    'ps':'دا پاڼه په پښتو وښيم؟',
+    'sd':'هي صفحو سنڌي ۾ ڏيکاريان؟',
+    'fy':'Dizze side yn it Frysk toane?',
+    'gd':'A bheil thu airson an duilleag seo a shealltainn sa Ghàidhlig?',
+    'tt':'Бу битне татарча күрсәтергәме?',
+    'ln':'Olingi komona lokasa oyo na Lingála?',
+    'wo':'Ndax nga bëgg ko gis ci Wolof?',
+    'ak':'Wopɛ sɛ wohwɛ kratafa yi wɔ Twi mu?'
   };
 
   function localeToSiteCode(locale) {

@@ -34,6 +34,7 @@ DESC_END = {
     "fr": ("Bientôt sur iPhone et Android.", "Disponible sur iPhone, bientôt sur Android."),
     "my": ("မကြာမီ iPhone နှင့် Android တွင်။", "{ey}။"),
     "mn": ("Удахгүй iPhone, Android дээр.", "{ey}."),
+    "wo": ("Dootul yàgg ci iPhone ak Android.", "{ey}."),
 }
 
 
