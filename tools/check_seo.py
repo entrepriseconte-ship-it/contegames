@@ -38,6 +38,8 @@ LANGS = [
     ("mg", "mg"), ("sn", "sn"), ("xh", "xh"), ("ny", "ny"),
     ("ceb", "ceb"), ("ht", "ht"), ("mi", "mi"), ("sm", "sm"), ("st", "st"), ("rw", "rw"),
     ("om", "om"), ("ti", "ti"), ("eo", "eo"), ("co", "co"),
+    ("as", "as"), ("or", "or"), ("ps", "ps"), ("sd", "sd"), ("fy", "fy"), ("gd", "gd"),
+    ("tt", "tt"), ("ln", "ln"), ("wo", "wo"), ("ak", "ak"),
 ]
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
@@ -176,7 +178,7 @@ for path, parser in PARSED.items():
     canonical = location(code, game)
     if parser.lang.lower() != dict(LANGS)[code].lower():
         error(path, f"incorrect lang {parser.lang!r}")
-    if code in ("ar", "he", "fa", "ur") and parser.dir != "rtl":
+    if code in ("ar", "he", "fa", "ur", "ps", "sd") and parser.dir != "rtl":
         error(path, "RTL direction missing")
     if len(parser.canons) != 1 or parser.canons[0] != canonical:
         error(path, f"incorrect canonical {parser.canons}")
