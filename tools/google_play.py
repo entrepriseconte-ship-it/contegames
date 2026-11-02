@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 GAMES = [
     ("cocoboum/", "id6817739082", "com.contegames.cocoboum", "COCOBOUM!"),
     ("tableauxensorceles/", "id6819245288", "com.contegames.tableauxensorceles", "Les Tableaux Ensorcelés"),
+    ("mieuxchaquejour/", "id6817754343", "com.contegames.mieuxchaquejour", "Mieux Chaque Jour"),
 ]
 PLAY_ICON = ('<svg class="apple-logo" viewBox="0 0 512 512" aria-hidden="true" focusable="false">'
              '<path fill="currentColor" d="M96 32v448l352-224z"/></svg>')
