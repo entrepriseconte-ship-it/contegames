@@ -17,7 +17,21 @@ GAMES = [
     ("cocoboum/", "id6817739082", "com.contegames.cocoboum", "COCOBOUM!"),
     ("tableauxensorceles/", "id6819245288", "com.contegames.tableauxensorceles", "Les Tableaux Ensorcelés"),
     ("mieuxchaquejour/", "id6817754343", "com.contegames.mieuxchaquejour", "Mieux Chaque Jour"),
+    # On Google Play since 04/11/2026, still waiting for Apple: no App Store id, the badge
+    # follows the "coming soon to the App Store" button, which stays.
+    ("caligulavsgladiators/", None, "com.contegames.caligulavsgladiators", "Caligula vs Gladiators"),
 ]
+# Texts of a game out on Google Play but not yet on the App Store (French and English pages;
+# other languages keep their "coming soon to iPhone and Android" wording).
+SOON_TEXTS = {
+    "": [("Bientôt sur iPhone et Android.", "Disponible sur Android, bientôt sur iPhone."),
+         ("{name} arrive bientôt sur l’App Store pour iPhone et sur Android. Le bouton de téléchargement apparaîtra en haut de cette page dès sa sortie.",
+          "{name} est disponible sur Google Play pour Android : le bouton de téléchargement est en haut de cette page. La version iPhone arrive bientôt sur l’App Store.")],
+    "en": [("Coming soon to iPhone and Android", "Available on Android, coming soon to iPhone"),
+           ("{name} is coming soon to the App Store for iPhone and to Android. The download button will appear at the top of this page as soon as it is released.",
+            "{name} is available on Google Play for Android: the download button is at the top of this page. The iPhone version is coming soon to the App Store.")],
+}
+SOON = re.compile(r'<span class="button button-soon">[^<]*</span>')
 PLAY_ICON = ('<svg class="apple-logo" viewBox="0 0 512 512" aria-hidden="true" focusable="false">'
              '<path fill="currentColor" d="M96 32v448l352-224z"/></svg>')
 
@@ -41,6 +55,40 @@ def mark_android(html: str, name: str) -> str:
     return re.sub(r'("@type":"SoftwareApplication","name":"' + re.escape(name) + r'"[^}]*?"operatingSystem":")([^"]*)(")',
                   lambda m: m.group(0) if "Android" in m.group(2) else f"{m.group(1)}{m.group(2)}, Android{m.group(3)}",
                   html)
+
+
+def process_soon(path: Path, folder: str, package: str, name: str) -> bool:
+    """Game not yet on the App Store: swap the Android badge next to its "coming soon" button."""
+    html = path.read_text(encoding="utf-8")
+    home = path.parent.name != folder.rstrip("/")
+    if home:
+        block = next(c for c in re.findall(r'<article class="project-card [^"]*".*?</article>', html, re.S)
+                     if f'href="{folder}"' in c)
+        campaign = "site-accueil"
+    else:
+        block = re.search(r'<div class="royal-copy">.*?</div>', html, re.S).group(0)
+        campaign = "site-" + folder.rstrip("/")
+    if package in block:
+        return False
+    soon = SOON.search(block)
+    badge = soon and re.compile(r"\s*" + BADGE.pattern).match(block, soon.end())
+    if not badge:
+        raise SystemExit(f"{path}: no Android badge right after the {name} coming-soon button")
+    start = badge.start() + (len(badge.group(0)) - len(badge.group(0).lstrip()))
+    new = block[:start] + play_button(package, name, campaign) + block[badge.end():]
+    html = html.replace(block, new, 1)
+    parts = path.relative_to(ROOT).parts
+    code = parts[0] if len(parts) > (1 if home else 2) else ""
+    for old, text in SOON_TEXTS.get(code, []):
+        old, text = old.format(name=name), text.format(name=name)
+        if home:  # only the eyebrow of this game's card
+            card = next(c for c in re.findall(r'<article class="project-card [^"]*".*?</article>', html, re.S)
+                        if f'href="{folder}"' in c)
+            html = html.replace(card, card.replace(old, text))
+        else:
+            html = html.replace(old, text)
+    path.write_text(html, encoding="utf-8")
+    return True
 
 
 def process(path: Path, appstore_id: str, package: str, name: str) -> bool:
@@ -73,7 +121,10 @@ def main() -> None:
         for code in codes:
             base = ROOT / code if code else ROOT
             for page in (base / "index.html", base / folder / "index.html"):
-                changed += process(page, appstore_id, package, name)
+                if appstore_id is None:
+                    changed += process_soon(page, folder, package, name)
+                else:
+                    changed += process(page, appstore_id, package, name)
     print(f"updated {changed} pages")
 
 

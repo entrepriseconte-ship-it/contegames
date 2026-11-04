@@ -191,4 +191,7 @@ build_sitemap()
 # Games already out on the App Store get their real button back (all languages).
 import sortie_appstore  # noqa: E402
 sortie_appstore.main()
+# Games already out on Google Play (Caligula vs Gladiators) get their real button back too.
+import google_play  # noqa: E402
+google_play.main()
 print(f"{len(CODES)} languages, {len(GAMES)} games")

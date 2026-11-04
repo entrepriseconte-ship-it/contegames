@@ -225,10 +225,12 @@ for path, parser in PARSED.items():
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:
         error(path, "COCOBOUM SoftwareApplication JSON-LD missing")
-    if game in ("", "cocoboum/", "tableauxensorceles/", "mieuxchaquejour/"):
+    if game in ("", "cocoboum/", "tableauxensorceles/", "mieuxchaquejour/", "caligulavsgladiators/"):
         # Public on Google Play (COCOBOUM! and Les Tableaux Ensorcelés 27/10/2026, Mieux Chaque Jour 02/11/2026):
         # real button, never the badge.
-        for package in ("com.contegames.cocoboum", "com.contegames.tableauxensorceles", "com.contegames.mieuxchaquejour"):
+        # Caligula vs Gladiators on Google Play 04/11/2026 (App Store still coming soon).
+        for package in ("com.contegames.cocoboum", "com.contegames.tableauxensorceles", "com.contegames.mieuxchaquejour",
+                        "com.contegames.caligulavsgladiators"):
             if game and not package.endswith(game.rstrip("/")):
                 continue
             if f"play.google.com/store/apps/details?id={package}" not in FILES[path]:
