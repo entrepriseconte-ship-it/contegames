@@ -291,7 +291,7 @@ for code, _ in LANGS:
         continue
     for game in ("tableauxensorceles/", "royaumedesmotscroises/", "mieuxchaquejour/", "sauvequifleche/", "royaumedesenigmes/"):
         path = code + "/" + game + "index.html"
-        if not re.search(r'<h1 [^>]*class="game-title[^"]*">[^<]+<span class="title-translation">[^<]+</span></h1>', FILES.get(path, "")):
+        if not re.search(r'<h1 [^>]*class="game-title[^"]*">[^<]+<span class="title-translation">[^<]+</span>(?:<span class="title-genre">[^<]+</span>)?</h1>', FILES.get(path, "")):
             error(path, "translated game name missing under the H1")
     if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 5:
         error(code + "/index.html", "expected 5 translated game names on the home page")
