@@ -12,7 +12,7 @@
   const supported = new Set([
     'fr','en','es','de','it','pt','ja','ko','zh-cn','zh-tw','hi','id',
     'pt-br','es-mx','ar','tr','ru','nl','pl','th','vi','uk','sv','ms',
-    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny','ceb','ht','mi','sm','st','rw','om','ti','eo','co','as','or','ps','sd','fy','gd','tt','ln','wo','ak','bho','mai','ug','yi','qu','gn','tn','lg','bm','ba'
+    'ro','el','cs','hu','fi','he','da','nb','sk','bg','hr','sl','lt','lv','et','ca','is','sr','fil','af','sw','bn','ta','kk','ka','az','sq','mk','hy','uz','gl','eu','mr','te','ne','si','pa','gu','kn','ml','km','lo','my','mn','am','cy','fa','ur','ga','mt','lb','be','jv','zu','ha','so','tg','ky','tk','ku','yo','ig','mg','sn','xh','ny','ceb','ht','mi','sm','st','rw','om','ti','eo','co','as','or','ps','sd','fy','gd','tt','ln','wo','ak','bho','mai','ug','yi','qu','gn','tn','lg','bm','ba','ckb','dv','bo','sa','fo','ay','kok','haw','ts','ee'
   ]);
 
   const labels = {
@@ -112,7 +112,17 @@
     'tn':'Setswana',
     'lg':'Luganda',
     'bm':'Bamanankan',
-    'ba':'Башҡортса'
+    'ba':'Башҡортса',
+    'ckb':'کوردیی ناوەندی',
+    'dv':'ދިވެހި',
+    'bo':'བོད་སྐད་',
+    'sa':'संस्कृतम्',
+    'fo':'Føroyskt',
+    'ay':'Aymar aru',
+    'kok':'कोंकणी',
+    'haw':'ʻŌlelo Hawaiʻi',
+    'ts':'Xitsonga',
+    'ee':'Eʋegbe'
   };
 
   const prompts = {
@@ -235,7 +245,17 @@
     'tn':'A o batla go bona tsebe e ka Setswana?',
     'lg':'Oyagala okulaba empapula eno mu Luganda?',
     'bm':'I b’a fɛ ka nin ɲɛ in lajɛ Bamanankan na wa?',
-    'ba':'Был биттө башҡортса күрһәтергәме?'
+    'ba':'Был биттө башҡортса күрһәтергәме?',
+    'ckb':'ئەم لاپەڕەیە بە کوردی نیشان بدەم؟',
+    'dv':'މި ސަފްޙާ ދިވެހިން ދައްކަންވީހެއްޔެ؟',
+    'bo':'ཤོག་ངོས་འདི་བོད་སྐད་དུ་སྟོན་ནམ།',
+    'sa':'इदं पृष्ठं संस्कृतेन दर्शयामि वा?',
+    'fo':'Skal hendan síðan vísast á føroyskum?',
+    'ay':'¿Aka laphi aymar arun uñacht’ayañati?',
+    'kok':'हें पान कोंकणींत दाखयांव?',
+    'haw':'E hōʻike anei i kēia ʻaoʻao ma ka ʻŌlelo Hawaiʻi?',
+    'ts':'Xana u lava ku vona tluka leri hi Xitsonga?',
+    'ee':'Èdi be matsɔ axa sia afia le Eʋegbe me?'
   };
 
   function localeToSiteCode(locale) {
