@@ -46,9 +46,9 @@ LANGS = [
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
-UPCOMING = ("caligulavsgladiators/", "royaumedesenigmes/")
+UPCOMING = ("caligulavsgladiators/",)
 # Out on the App Store, still coming to Android (tools/sortie_appstore.py): page -> App Store id.
-RELEASED = {"sauvequifleche/": "6823751966"}
+RELEASED = {"sauvequifleche/": "6823751966", "royaumedesenigmes/": "6825285817"}
 # Price not yet confirmed by the studio owner: no free offer is claimed for it.
 PRICE_UNCONFIRMED = ()  # every studio app is free (confirmed by Anthony on 23/10)
 ERRORS = []

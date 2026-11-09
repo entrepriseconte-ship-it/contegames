@@ -26,7 +26,8 @@ SOURCE, SOURCE_NAME, SOURCE_ID = "royaumedesmotscroises", "Royaume des Mots Croi
 PROVIDER = "129524141"
 
 # folder, name shown on the site, App Store id
-RELEASED = [("sauvequifleche", "Sauve qui Flèche !", "6823751966")]
+RELEASED = [("sauvequifleche", "Sauve qui Flèche !", "6823751966"),
+            ("royaumedesenigmes", "Royaume des Énigmes", "6825285817")]  # online since 08/11/2026
 
 # Languages whose description does not end with the page eyebrow:
 # (old last sentence, new last sentence). "{ey}" is the new eyebrow.
