@@ -18,6 +18,7 @@ GAMES = [
     ("tableauxensorceles/", "id6819245288", "com.contegames.tableauxensorceles", "Les Tableaux Ensorcelés"),
     ("mieuxchaquejour/", "id6817754343", "com.contegames.mieuxchaquejour", "Mieux Chaque Jour"),
     ("royaumedesenigmes/", "id6825285817", "com.contegames.royaumedesenigmes", "Royaume des Énigmes"),
+    ("royaumedesmotscroises/", "id6817612983", "com.contegames.royaumedesmotscroises", "Royaume des Mots Croisés"),
     # On Google Play since 04/11/2026, still waiting for Apple: no App Store id, the badge
     # follows the "coming soon to the App Store" button, which stays.
     ("caligulavsgladiators/", None, "com.contegames.caligulavsgladiators", "Caligula vs Gladiators"),
