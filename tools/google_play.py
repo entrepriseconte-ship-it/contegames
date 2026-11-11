@@ -17,6 +17,7 @@ GAMES = [
     ("cocoboum/", "id6817739082", "com.contegames.cocoboum", "COCOBOUM!"),
     ("tableauxensorceles/", "id6819245288", "com.contegames.tableauxensorceles", "Les Tableaux Ensorcelés"),
     ("mieuxchaquejour/", "id6817754343", "com.contegames.mieuxchaquejour", "Mieux Chaque Jour"),
+    ("royaumedesenigmes/", "id6825285817", "com.contegames.royaumedesenigmes", "Royaume des Énigmes"),
     # On Google Play since 04/11/2026, still waiting for Apple: no App Store id, the badge
     # follows the "coming soon to the App Store" button, which stays.
     ("caligulavsgladiators/", None, "com.contegames.caligulavsgladiators", "Caligula vs Gladiators"),
@@ -31,6 +32,13 @@ SOON_TEXTS = {
            ("{name} is coming soon to the App Store for iPhone and to Android. The download button will appear at the top of this page as soon as it is released.",
             "{name} is available on Google Play for Android: the download button is at the top of this page. The iPhone version is coming soon to the App Store.")],
 }
+# French texts of a game that was out on the App Store with Android still "coming soon"
+# (written by sortie_appstore.py), once it is on Google Play too.
+RELEASED_TEXTS_FR = [
+    ("Disponible sur iPhone, bientôt sur Android.", "Disponible sur iPhone et Android."),
+    ("{name} est disponible dès maintenant sur l’App Store pour iPhone : touchez le bouton App Store en haut de cette page pour le télécharger.",
+     "{name} est disponible dès maintenant sur l’App Store pour iPhone et sur Google Play pour Android : touchez le bouton de votre téléphone en haut de cette page pour le télécharger."),
+]
 SOON = re.compile(r'<span class="button button-soon">[^<]*</span>')
 PLAY_ICON = ('<svg class="apple-logo" viewBox="0 0 512 512" aria-hidden="true" focusable="false">'
              '<path fill="currentColor" d="M96 32v448l352-224z"/></svg>')
@@ -91,11 +99,20 @@ def process_soon(path: Path, folder: str, package: str, name: str) -> bool:
     return True
 
 
+def released_texts(html: str, path: Path, name: str) -> str:
+    """French game page: drop "coming soon to Android" from its texts."""
+    if path.relative_to(ROOT).parts[0] == path.parent.name:  # French pages sit at the root
+        for old, text in RELEASED_TEXTS_FR:
+            html = html.replace(old.format(name=name), text.format(name=name))
+    return html
+
+
 def process(path: Path, appstore_id: str, package: str, name: str) -> bool:
     html = path.read_text(encoding="utf-8")
+    html = released_texts(html, path, name) if path.name == "index.html" and path.parent != ROOT else html
     if package in html:
         marked = mark_android(html, name)
-        if marked != html:
+        if marked != path.read_text(encoding="utf-8"):
             path.write_text(marked, encoding="utf-8")
         return False
     done = False
