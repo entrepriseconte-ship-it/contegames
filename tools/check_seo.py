@@ -308,6 +308,22 @@ for code, _ in LANGS:
     if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 5:
         error(code + "/index.html", "expected 5 translated game names on the home page")
 
+# Share cards and AI readers use og:title: it must equal the Google title on game pages.
+for path, html in FILES.items():
+    if 'class="game-page"' in html:
+        t = re.search(r"<title>(.*?)</title>", html, re.S)
+        og = re.search(r'<meta property="og:title" content="([^"]*)"', html)
+        if t and og and og.group(1) != t.group(1):
+            error(path, "og:title differs from <title>")
+
+# Every game page shows its genre ("Free crossword puzzle game") under the name, in the
+# languages that have been written by hand. New games get it from tools/nouveaux_jeux.py.
+for code in ("fr", "en", "id", "ja"):
+    for game in GAMES[1:]:
+        path = (game if code == "fr" else code + "/" + game) + "index.html"
+        if not re.search(r'<h1 [^>]*>.*<span class="title-genre">[^<]+</span></h1>', FILES.get(path, ""), re.S):
+            error(path, "genre line (title-genre) missing under the H1")
+
 # App Store links must not force the French storefront: without a country
 # code Apple opens the visitor's own store (US, DE, JP...).
 for path, html in FILES.items():
