@@ -75,6 +75,10 @@ LANGS = [
     ("ckb", "ckb", "کوردیی ناوەندی"), ("dv", "dv", "ދިވެހި"), ("bo", "bo", "བོད་སྐད་"), ("sa", "sa", "संस्कृतम्"),
     ("fo", "fo", "Føroyskt"), ("ay", "ay", "Aymar aru"), ("kok", "kok", "कोंकणी"),
     ("haw", "haw", "ʻŌlelo Hawaiʻi"), ("ts", "ts", "Xitsonga"), ("ee", "ee", "Eʋegbe"),
+    # Lot 11
+    ("nn", "nn", "Norsk nynorsk"), ("br", "br", "Brezhoneg"), ("oc", "oc", "Occitan"), ("sc", "sc", "Sardu"),
+    ("rn", "rn", "Ikirundi"), ("kg", "kg", "Kikongo"), ("cv", "cv", "Чӑвашла"), ("os", "os", "Ирон"),
+    ("ce", "ce", "Нохчийн"), ("ve", "ve", "Tshivenḓa"),
 ]
 
 # Right-to-left new languages (styles.css already handles html[dir="rtl"], as for ar and he)
@@ -182,6 +186,16 @@ NEW = {
     "haw": ("haw_US", "E hōʻike anei i kēia ʻaoʻao ma ka ʻŌlelo Hawaiʻi?", ["E hoʻomau i ka animation", "E hoʻomaha i ka animation"]),
     "ts": ("ts_ZA", "Xana u lava ku vona tluka leri hi Xitsonga?", ["Yisa emahlweni animation", "Yimisa animation"]),
     "ee": ("ee_GH", "Èdi be matsɔ axa sia afia le Eʋegbe me?", ["Yi edzi kple animation la", "Tɔ animation la"]),
+    "nn": ("nn_NO", "Vil du sjå denne sida på nynorsk?", ["Hald fram animasjonen", "Stopp animasjonen"]),
+    "br": ("br_FR", "Diskouez ar bajenn-mañ e brezhoneg?", ["Kenderc’hel an animadur", "Ehanañ an animadur"]),
+    "oc": ("oc_FR", "Mostrar aquesta pagina en occitan ?", ["Contunhar l’animacion", "Metre en pausa l’animacion"]),
+    "sc": ("sc_IT", "Boles bìdere custa pàgina in sardu?", ["Sighi s’animatzione", "Firma s’animatzione"]),
+    "rn": ("rn_BI", "Urashaka kubona uru rupapuro mu Kirundi?", ["Komeza animation", "Hagarika animation"]),
+    "kg": ("kg_CD", "Nge zola monisa e mukanda yai na Kikongo?", ["Tula ngolo na animation", "Telama na animation"]),
+    "cv": ("cv_RU", "Ку страницӑна чӑвашла кӑтартмалла-и?", ["Анимацие малалла тӑсас", "Анимацие чарас"]),
+    "os": ("os_RU", "Ацы фарс ирон æвзагыл равдисæм?", ["Анимаци дарддæр кæнын", "Анимаци сæвæрын"]),
+    "ce": ("ce_RU", "Хӏара агӏо нохчийн маттахь гайта?", ["Анимаци кхин а лета", "Анимаци сацо"]),
+    "ve": ("ve_ZA", "Ni khou ṱoḓa u vhona iyi peji nga Tshivenḓa?", ["Bvela phanḓa na animation", "Imisa animation"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)
