@@ -48,9 +48,12 @@ LANGS = [
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
-UPCOMING = ("caligulavsgladiators/", "royaumedesenigmes/")
-# Out on the App Store, still coming to Android (tools/sortie_appstore.py): page -> App Store id.
-RELEASED = {"sauvequifleche/": "6823751966"}
+UPCOMING = ()  # Caligula vs Gladiators: on the App Store since 12/11/2026
+# Out on the App Store (tools/sortie_appstore.py): page -> App Store id.
+# Those still coming to Android must keep the Android coming-soon badge.
+RELEASED = {"sauvequifleche/": "6823751966", "royaumedesenigmes/": "6825285817",
+            "caligulavsgladiators/": "6822433598"}
+ON_GOOGLE_PLAY = {"royaumedesenigmes/", "caligulavsgladiators/"}  # Google Play button instead of the badge (tools/google_play.py)
 # Price not yet confirmed by the studio owner: no free offer is claimed for it.
 PRICE_UNCONFIRMED = ()  # every studio app is free (confirmed by Anthony on 23/10)
 ERRORS = []
@@ -227,12 +230,16 @@ for path, parser in PARSED.items():
             error(path, f"JSON-LD parse error: {exc}")
     if game == "cocoboum/" and not cocoboum_schema_found:
         error(path, "COCOBOUM SoftwareApplication JSON-LD missing")
-    if game in ("", "cocoboum/", "tableauxensorceles/", "mieuxchaquejour/", "caligulavsgladiators/"):
+    if game in ("", "cocoboum/", "tableauxensorceles/", "mieuxchaquejour/", "caligulavsgladiators/", "royaumedesenigmes/",
+                "royaumedesmotscroises/"):
         # Public on Google Play (COCOBOUM! and Les Tableaux Ensorcelés 27/10/2026, Mieux Chaque Jour 02/11/2026):
         # real button, never the badge.
         # Caligula vs Gladiators on Google Play 04/11/2026 (App Store still coming soon).
+        # Royaume des Énigmes on Google Play 11/11/2026 (App Store since 08/11/2026).
+        # Royaume des Mots Croisés on Google Play 11/11/2026.
         for package in ("com.contegames.cocoboum", "com.contegames.tableauxensorceles", "com.contegames.mieuxchaquejour",
-                        "com.contegames.caligulavsgladiators"):
+                        "com.contegames.caligulavsgladiators", "com.contegames.royaumedesenigmes",
+                        "com.contegames.royaumedesmotscroises"):
             if game and not package.endswith(game.rstrip("/")):
                 continue
             if f"play.google.com/store/apps/details?id={package}" not in FILES[path]:
@@ -278,7 +285,10 @@ for path, html in FILES.items():
             error(path, "released game: App Store button or Smart App Banner missing")
         if f'"downloadUrl":"https://apps.apple.com/app/id{app_id}"' not in html:
             error(path, "released game: downloadUrl missing from the app card")
-        if 'class="badge-soon"' not in html:
+        if EXPECTED[path][1] in ON_GOOGLE_PLAY:
+            if 'class="badge-soon"' in html:
+                error(path, "released game on Google Play: Android coming-soon badge still shown")
+        elif 'class="badge-soon"' not in html:
             error(path, "released game: Android coming-soon badge missing")
     if EXPECTED[path][1] == "":
         for folder, app_id in RELEASED.items():
