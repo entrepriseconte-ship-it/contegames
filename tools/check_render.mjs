@@ -16,6 +16,7 @@ const pages = [
   '/as/', '/or/cocoboum/', '/ps/', '/sd/tableauxensorceles/', '/fy/', '/gd/mieuxchaquejour/', '/tt/', '/ln/cocoboum/', '/wo/', '/ak/royaumedesmotscroises/',
   '/bho/', '/mai/cocoboum/', '/ug/', '/yi/tableauxensorceles/', '/qu/', '/gn/mieuxchaquejour/', '/tn/', '/lg/cocoboum/', '/bm/', '/ba/royaumedesmotscroises/',
   '/ckb/', '/dv/cocoboum/', '/bo/', '/sa/tableauxensorceles/', '/fo/', '/ay/mieuxchaquejour/', '/kok/', '/haw/cocoboum/', '/ts/', '/ee/royaumedesmotscroises/',
+  '/nn/', '/br/cocoboum/', '/oc/', '/sc/tableauxensorceles/', '/rn/', '/kg/mieuxchaquejour/', '/cv/', '/os/cocoboum/', '/ce/', '/ve/royaumedesmotscroises/',
 ];
 
 try {
@@ -39,7 +40,7 @@ try {
         }));
         if (response?.status() !== 200) failures.push(path + ' HTTP ' + response?.status());
         if (audit.mainHeading !== 1) failures.push(path + ' H1=' + audit.mainHeading);
-        if (audit.languages !== 130) failures.push(path + ' menu=' + audit.languages);
+        if (audit.languages !== 140) failures.push(path + ' menu=' + audit.languages);
         if (audit.contentWidth > audit.viewportWidth + 3) failures.push(path + ' horizontal overflow ' + audit.contentWidth + ' > ' + audit.viewportWidth + ' at ' + width);
         if (!audit.heroLoaded) failures.push(path + ' hero image failed to load');
         if (pageErrors.length) failures.push(path + ' JS error: ' + pageErrors.join(' | ').slice(0,300));

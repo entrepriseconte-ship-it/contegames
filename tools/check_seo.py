@@ -44,6 +44,7 @@ LANGS = [
     ("tn", "tn"), ("lg", "lg"), ("bm", "bm"), ("ba", "ba"),
     ("ckb", "ckb"), ("dv", "dv"), ("bo", "bo"), ("sa", "sa"), ("fo", "fo"), ("ay", "ay"),
     ("kok", "kok"), ("haw", "haw"), ("ts", "ts"), ("ee", "ee"),
+    ("nn", "nn"), ("br", "br"), ("oc", "oc"), ("sc", "sc"), ("rn", "rn"), ("kg", "kg"), ("cv", "cv"), ("os", "os"), ("ce", "ce"), ("ve", "ve"),
 ]
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
