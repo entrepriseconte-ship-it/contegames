@@ -42,6 +42,8 @@ LANGS = [
     ("tt", "tt"), ("ln", "ln"), ("wo", "wo"), ("ak", "ak"),
     ("bho", "bho"), ("mai", "mai"), ("ug", "ug"), ("yi", "yi"), ("qu", "qu"), ("gn", "gn"),
     ("tn", "tn"), ("lg", "lg"), ("bm", "bm"), ("ba", "ba"),
+    ("ckb", "ckb"), ("dv", "dv"), ("bo", "bo"), ("sa", "sa"), ("fo", "fo"), ("ay", "ay"),
+    ("kok", "kok"), ("haw", "haw"), ("ts", "ts"), ("ee", "ee"),
 ]
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
@@ -183,7 +185,7 @@ for path, parser in PARSED.items():
     canonical = location(code, game)
     if parser.lang.lower() != dict(LANGS)[code].lower():
         error(path, f"incorrect lang {parser.lang!r}")
-    if code in ("ar", "he", "fa", "ur", "ps", "sd", "ug", "yi") and parser.dir != "rtl":
+    if code in ("ar", "he", "fa", "ur", "ps", "sd", "ug", "yi", "ckb", "dv") and parser.dir != "rtl":
         error(path, "RTL direction missing")
     if len(parser.canons) != 1 or parser.canons[0] != canonical:
         error(path, f"incorrect canonical {parser.canons}")
@@ -301,7 +303,7 @@ for code, _ in LANGS:
         continue
     for game in ("tableauxensorceles/", "royaumedesmotscroises/", "mieuxchaquejour/", "sauvequifleche/", "royaumedesenigmes/"):
         path = code + "/" + game + "index.html"
-        if not re.search(r'<h1 [^>]*class="game-title[^"]*">[^<]+<span class="title-translation">[^<]+</span></h1>', FILES.get(path, "")):
+        if not re.search(r'<h1 [^>]*class="game-title[^"]*">[^<]+<span class="title-translation">[^<]+</span>(?:<span class="title-genre">[^<]+</span>)?</h1>', FILES.get(path, "")):
             error(path, "translated game name missing under the H1")
     if FILES.get(code + "/index.html", "").count('<span class="title-translation">') != 5:
         error(code + "/index.html", "expected 5 translated game names on the home page")

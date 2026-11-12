@@ -71,10 +71,14 @@ LANGS = [
     ("bho", "bho", "भोजपुरी"), ("mai", "mai", "मैथिली"), ("ug", "ug", "ئۇيغۇرچە"), ("yi", "yi", "ייִדיש"),
     ("qu", "qu", "Runasimi"), ("gn", "gn", "Avañe’ẽ"), ("tn", "tn", "Setswana"), ("lg", "lg", "Luganda"),
     ("bm", "bm", "Bamanankan"), ("ba", "ba", "Башҡортса"),
+    # Lot 10
+    ("ckb", "ckb", "کوردیی ناوەندی"), ("dv", "dv", "ދިވެހި"), ("bo", "bo", "བོད་སྐད་"), ("sa", "sa", "संस्कृतम्"),
+    ("fo", "fo", "Føroyskt"), ("ay", "ay", "Aymar aru"), ("kok", "kok", "कोंकणी"),
+    ("haw", "haw", "ʻŌlelo Hawaiʻi"), ("ts", "ts", "Xitsonga"), ("ee", "ee", "Eʋegbe"),
 ]
 
 # Right-to-left new languages (styles.css already handles html[dir="rtl"], as for ar and he)
-RTL = {"fa", "ur", "ps", "sd", "ug", "yi"}
+RTL = {"fa", "ur", "ps", "sd", "ug", "yi", "ckb", "dv"}
 
 # New languages: og:locale, language-suggest prompt, ambience.js labels (play, pause)
 NEW = {
@@ -168,6 +172,16 @@ NEW = {
     "lg": ("lg_UG", "Oyagala okulaba empapula eno mu Luganda?", ["Weyongereyo animation", "Lekawo animation"]),
     "bm": ("bm_ML", "I b’a fɛ ka nin ɲɛ in lajɛ Bamanankan na wa?", ["Animasiyɔn kɔrɔta", "Animasiyɔn jɔ"]),
     "ba": ("ba_RU", "Был биттө башҡортса күрһәтергәме?", ["Анимацияны дауам итеү", "Анимацияны туҡтатыу"]),
+    "ckb": ("ckb_IQ", "ئەم لاپەڕەیە بە کوردی نیشان بدەم؟", ["ئانیمەیشنەکە بەردەوام بکە", "ئانیمەیشنەکە بوەستێنە"]),
+    "dv": ("dv_MV", "މި ސަފްޙާ ދިވެހިން ދައްކަންވީހެއްޔެ؟", ["އެނިމޭޝަން ކުރިއަށް ގެންދަވާ", "އެނިމޭޝަން ހުއްޓުވާ"]),
+    "bo": ("bo_CN", "ཤོག་ངོས་འདི་བོད་སྐད་དུ་སྟོན་ནམ།", ["འགུལ་རིས་མུ་མཐུད་པ།", "འགུལ་རིས་མཚམས་འཇོག"]),
+    "sa": ("sa_IN", "इदं पृष्ठं संस्कृतेन दर्शयामि वा?", ["चलचित्रं प्रवर्तयतु", "चलचित्रं विरमतु"]),
+    "fo": ("fo_FO", "Skal hendan síðan vísast á føroyskum?", ["Halt fram við teknimyndini", "Set teknimyndina á pausu"]),
+    "ay": ("ay_BO", "¿Aka laphi aymar arun uñacht’ayañati?", ["Animación sarantayaña", "Animación sayt’ayaña"]),
+    "kok": ("kok_IN", "हें पान कोंकणींत दाखयांव?", ["ॲनिमेशन चालू दवरात", "ॲनिमेशन थांबयात"]),
+    "haw": ("haw_US", "E hōʻike anei i kēia ʻaoʻao ma ka ʻŌlelo Hawaiʻi?", ["E hoʻomau i ka animation", "E hoʻomaha i ka animation"]),
+    "ts": ("ts_ZA", "Xana u lava ku vona tluka leri hi Xitsonga?", ["Yisa emahlweni animation", "Yimisa animation"]),
+    "ee": ("ee_GH", "Èdi be matsɔ axa sia afia le Eʋegbe me?", ["Yi edzi kple animation la", "Tɔ animation la"]),
 }
 
 TOK = re.compile(r'(<!--.*?-->|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)', re.S)
