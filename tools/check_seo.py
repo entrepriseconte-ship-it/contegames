@@ -46,11 +46,12 @@ LANGS = [
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
-UPCOMING = ("caligulavsgladiators/",)
+UPCOMING = ()  # Caligula vs Gladiators: on the App Store since 12/11/2026
 # Out on the App Store (tools/sortie_appstore.py): page -> App Store id.
 # Those still coming to Android must keep the Android coming-soon badge.
-RELEASED = {"sauvequifleche/": "6823751966", "royaumedesenigmes/": "6825285817"}
-ON_GOOGLE_PLAY = {"royaumedesenigmes/"}  # Google Play button instead of the badge (tools/google_play.py)
+RELEASED = {"sauvequifleche/": "6823751966", "royaumedesenigmes/": "6825285817",
+            "caligulavsgladiators/": "6822433598"}
+ON_GOOGLE_PLAY = {"royaumedesenigmes/", "caligulavsgladiators/"}  # Google Play button instead of the badge (tools/google_play.py)
 # Price not yet confirmed by the studio owner: no free offer is claimed for it.
 PRICE_UNCONFIRMED = ()  # every studio app is free (confirmed by Anthony on 23/10)
 ERRORS = []
