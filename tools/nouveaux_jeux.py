@@ -66,6 +66,7 @@ def build_page(code: str, game: tuple) -> None:
     where = f"{code}/{folder}"
     yt_label = re.search(r'class="button button-youtube"[^>]*>([^<]+)<', html).group(1)
     html = html.replace(TEMPLATE, folder)
+    html = re.sub(r'<meta name="apple-itunes-app"[^>]*>\s*', "", html)  # donnees_ia.py re-adds it once the game is on the App Store
 
     title = f"{name} | {G['genre']}" if code == "fr" else f"{G['genre']} | {name}"
     html = sub1(r"<title>.*?</title>", f"<title>{esc(title)}</title>", html, where)
@@ -84,6 +85,8 @@ def build_page(code: str, game: tuple) -> None:
                     # Every studio game is free (ads-funded): Google's app card shows the price.
                     "offers": {"@type": "Offer", "price": 0, "priceCurrency": "EUR"},
                     "author": data["author"]}
+        elif data.get("@type") == "FAQPage":
+            return ""  # rebuilt from the page's own visible Q&A by donnees_ia.py (run at the end)
         elif data.get("@type") == "BreadcrumbList":
             data["itemListElement"][1]["name"] = name
         return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "</script>"
@@ -104,6 +107,9 @@ def build_page(code: str, game: tuple) -> None:
         eyebrow = L["page_ey"]
         h1 = esc(name) + (f'<span class="title-translation">{esc(tr)}</span>' if tr else "")
         h1_class = "game-title game-title-fit"
+    # Visible genre line under the name (e.g. "Free crossword puzzle game"): the generic query
+    # people type, in the page language. Every new game gets it automatically (check_seo enforces it).
+    h1 += f'<span class="title-genre">{esc(G["genre"])}</span>'
     copy = (f'<div class="royal-copy"><p class="eyebrow">{esc(eyebrow)}</p><h1 id="game-title" class="{h1_class}">{h1}</h1>'
             f'<p class="hero-tagline">{esc(G["tag"])}</p><span class="button button-soon">{esc(L["soon_store"])}</span>'
             f'<span class="badge-soon">{esc(L["android"])}</span></div>')
@@ -188,10 +194,14 @@ for code in CODES:
         build_page(code, game)
     build_home(code)
 build_sitemap()
+# FAQPage first (sortie_appstore edits the answer in the page and in its FAQPage).
+import donnees_ia  # noqa: E402  (FAQPage, Organization/sameAs, Smart App Banner)
+donnees_ia.main()
 # Games already out on the App Store get their real button back (all languages).
 import sortie_appstore  # noqa: E402
 sortie_appstore.main()
 # Games already out on Google Play (Caligula vs Gladiators) get their real button back too.
 import google_play  # noqa: E402
 google_play.main()
+donnees_ia.main()  # again: App Store banner for the games now released
 print(f"{len(CODES)} languages, {len(GAMES)} games")
