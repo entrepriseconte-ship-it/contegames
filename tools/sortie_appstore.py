@@ -27,7 +27,9 @@ PROVIDER = "129524141"
 
 # folder, name shown on the site, App Store id
 RELEASED = [("sauvequifleche", "Sauve qui Flèche !", "6823751966"),
-            ("royaumedesenigmes", "Royaume des Énigmes", "6825285817")]  # online since 08/11/2026
+            ("royaumedesenigmes", "Royaume des Énigmes", "6825285817"),  # online since 08/11/2026
+            # on Google Play since 04/11/2026, approved by Apple on 12/11/2026
+            ("caligulavsgladiators", "Caligula vs Gladiators", "6822433598")]
 
 # Languages whose description does not end with the page eyebrow:
 # (old last sentence, new last sentence). "{ey}" is the new eyebrow.
@@ -36,6 +38,10 @@ DESC_END = {
     "my": ("မကြာမီ iPhone နှင့် Android တွင်။", "{ey}။"),
     "mn": ("Удахгүй iPhone, Android дээр.", "{ey}."),
     "wo": ("Dootul yàgg ci iPhone ak Android.", "{ey}."),
+}
+# Same, for a game that was already out on Google Play (tools/google_play.py SOON_TEXTS).
+DESC_END_GAME = {
+    ("fr", "caligulavsgladiators"): ("Disponible sur Android, bientôt sur iPhone.", "Disponible sur iPhone et Android."),
 }
 
 
@@ -70,7 +76,7 @@ def release_page(code: str, folder: str, name: str, app_id: str) -> None:
     old_ey, new_ey = eyebrow(html), eyebrow(src)
 
     # Description (meta, Open Graph, app card): its last sentence said "coming soon".
-    old_end, new_end = DESC_END.get(code, (old_ey, new_ey))
+    old_end, new_end = DESC_END_GAME.get((code, folder)) or DESC_END.get(code, (old_ey, new_ey))
     new_end = new_end.format(ey=new_ey)
     if html.count(old_end) < 3:
         raise SystemExit(f"{where}: description ending not found: {old_end!r}")
