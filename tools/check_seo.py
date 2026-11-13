@@ -47,9 +47,12 @@ LANGS = [
     ("nn", "nn"), ("br", "br"), ("oc", "oc"), ("sc", "sc"), ("rn", "rn"), ("kg", "kg"), ("cv", "cv"), ("os", "os"), ("ce", "ce"), ("ve", "ve"),
 ]
 GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
-         "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
+         "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/",
+         "gnomedescavernes/", "chateaudeslumieres/", "petitdragon/", "tailleurdenuages/",
+         "rouagesenchantes/", "royaumedesrunes/", "serpentdesrunes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
-UPCOMING = ()  # Caligula vs Gladiators: on the App Store since 12/11/2026
+UPCOMING = ("gnomedescavernes/", "chateaudeslumieres/", "petitdragon/", "tailleurdenuages/",
+            "rouagesenchantes/", "royaumedesrunes/", "serpentdesrunes/")  # added 13/11/2026
 # Out on the App Store (tools/sortie_appstore.py): page -> App Store id.
 # Those still coming to Android must keep the Android coming-soon badge.
 RELEASED = {"sauvequifleche/": "6823751966", "royaumedesenigmes/": "6825285817",
@@ -277,7 +280,7 @@ for path, html in FILES.items():
             error(path, "upcoming game: coming-soon button missing or store link present")
         continue
     if EXPECTED[path][1] == "":
-        html = re.sub(r'<div class="projects projects-more">[\s\S]*?</article>\s*</div>', "", html)
+        html = re.sub(r'<div class="projects projects-more">[\s\S]*?</article>\s*(?:<!--[^>]*-->\s*)?</div>', "", html)
     if "button-soon" in html:
         error(path, "page still shows a coming-soon App Store button (button-soon)")
     if EXPECTED[path][1] in RELEASED:

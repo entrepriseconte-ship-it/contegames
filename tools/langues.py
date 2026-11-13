@@ -22,7 +22,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 DOMAIN = "https://contegames.com"
 GROUPS = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableauxensorceles/",
-          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/"]
+          "caligulavsgladiators/", "sauvequifleche/", "royaumedesenigmes/",
+          "gnomedescavernes/", "chateaudeslumieres/", "petitdragon/", "tailleurdenuages/",
+          "rouagesenchantes/", "royaumedesrunes/", "serpentdesrunes/"]
 
 # folder, hreflang, name of the language in itself (menu order = this order)
 LANGS = [
