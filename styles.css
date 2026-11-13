@@ -325,3 +325,9 @@ h1, h2, h3 { overflow-wrap: break-word; }
 
 /* Mobile : titre + boutons de téléchargement au-dessus de la vidéo (pages jeux sorties) */
 @media (max-width: 520px) { .royal-content:has(.button-appstore) .royal-copy { order: -1; } .royal-content:has(.button-appstore) .hero-video { margin-top: 6px; } }
+
+/* Factoreo : une seule carte, centrée sous les jeux. */
+.projects-pro { grid-template-columns: minmax(0, 1fr); width: calc((100% - 30px) * .25); margin: 10px auto 0; }
+@media (max-width: 1180px) { .projects-pro { width: calc(50% - 5px); } }
+@media (max-width: 1100px) { .projects-pro { margin-top: 6px; width: calc(50% - 3px); } }
+@media (max-width: 800px) { .projects-pro { grid-template-columns: minmax(0, 470px); width: auto; margin-top: 0; } }
