@@ -325,3 +325,7 @@ h1, h2, h3 { overflow-wrap: break-word; }
 
 /* Mobile : titre + boutons de téléchargement au-dessus de la vidéo (pages jeux sorties) */
 @media (max-width: 520px) { .royal-content:has(.button-appstore) .royal-copy { order: -1; } .royal-content:has(.button-appstore) .hero-video { margin-top: 6px; } }
+/* Other Android stores (tools/autres_magasins.py): shown only once the game's store page exists */
+.other-stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; }
+.other-stores .button-other { min-height: 38px; padding: 6px 14px; font-size: .9rem; }
+.project-links .other-stores { margin-top: 0; }
