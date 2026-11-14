@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <script>if (location.protocol === 'http:' && location.hostname.endsWith('contegames.com')) location.replace('https://contegames.com' + location.pathname + location.search + location.hash);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#163e32" />
+    <title>Logiciel de devis et factures gratuit, sans inscription · auto-entrepreneur et artisan</title>
+    <meta name="description" content="Logiciel de devis et factures 100 % gratuit pour auto-entrepreneur, micro-entreprise et artisan : devis transformé en facture en un clic, numérotation automatique, mentions légales, PDF, chiffre d'affaires par mois. Sans inscription." />
+    <link rel="canonical" href="https://contegames.com/devis-facture/" />
+    <link rel="icon" href="../favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Conte Games Studio" />
+    <meta property="og:title" content="Logiciel de devis et factures gratuit, sans inscription" />
+    <meta property="og:description" content="Devis, factures, PDF, mentions légales et suivi des paiements, gratuitement et sans créer de compte. Pour auto-entrepreneurs et artisans." />
+    <meta property="og:url" content="https://contegames.com/devis-facture/" />
+    <meta property="og:image" content="https://contegames.com/assets/partage-devis-facture.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="../styles.css?v=15" />
+    <style>
+      .df-main{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;padding-block:28px 48px}
+      .df-main > .legal-panel{width:100%}
+      .df-main .story-content{text-align:left}
+      .df-main .story-content h1,.df-main .story-content h2,.df-main .eyebrow{text-align:center}
+      .df-hero h1{margin-top:.2em}
+      .df-lead{font-size:1.15em;max-width:62ch}
+      .df-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+      .df-badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+      .df-badges li{border:1px solid rgba(185,141,47,.6);border-radius:999px;padding:4px 12px;font-size:.92em;background:rgba(255,248,230,.55)}
+      .df-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:10px}
+      .df-grid h3{margin:.2em 0 .3em}
+      .df-grid p{margin:0}
+      .df-shot{margin:18px 0 0;border:3px solid #b98d2f;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(40,20,60,.25)}
+      .df-shot img{display:block;width:100%;height:auto}
+      .df-steps{counter-reset:etape;list-style:none;padding:0;display:grid;gap:12px}
+      .df-steps li{counter-increment:etape;position:relative;padding-left:46px}
+      .df-steps li::before{content:counter(etape);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:#4a2775;color:#f5e3b0;display:grid;place-items:center;font-weight:700}
+      .df-faq details{border-bottom:1px solid rgba(120,90,40,.3);padding:10px 0}
+      .df-faq summary{cursor:pointer;font-weight:700}
+      .df-faq details p{margin:.5em 0 0}
+      .df-table{width:100%;border-collapse:collapse;margin-top:8px}
+      .df-table th,.df-table td{text-align:left;padding:7px 8px;border-bottom:1px solid rgba(120,90,40,.25);vertical-align:top}
+      .df-scroll{overflow-x:auto}
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://contegames.com/devis-facture/#logiciel",
+          "name": "Devis & Factures, logiciel gratuit",
+          "url": "https://contegames.com/devis-facture/",
+          "applicationCategory": "BusinessApplication",
+          "applicationSubCategory": "Logiciel de devis et de facturation",
+          "operatingSystem": "Web, Windows, macOS, Android, iOS",
+          "inLanguage": "fr-FR",
+          "isAccessibleForFree": true,
+          "description": "Logiciel de devis et factures gratuit et sans inscription pour auto-entrepreneurs, micro-entreprises et artisans : devis, factures, numérotation automatique, mentions légales, PDF, suivi des paiements et chiffre d'affaires HT par mois.",
+          "screenshot": "https://contegames.com/assets/devis-facture-apercu.jpg",
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
+          "featureList": [
+            "Devis transformé en facture en un clic",
+            "Numérotation automatique et continue des devis et factures",
+            "Mentions légales obligatoires ajoutées automatiquement (EI, SIRET, TVA non applicable art. 293 B du CGI, pénalités de retard)",
+            "Gestion de la TVA ou franchise en base",
+            "Devis et factures en PDF",
+            "Fichier clients",
+            "Suivi des paiements et des factures en retard",
+            "Tableau de bord du chiffre d'affaires HT par mois",
+            "Export Excel (CSV) pour le comptable"
+          ],
+          "publisher": {"@type": "Organization", "name": "Conte Games Studio", "url": "https://contegames.com/"}
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "Le logiciel de devis et factures est-il vraiment gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Il est gratuit, sans abonnement, sans limite de devis ou de factures, sans publicité et sans inscription."}},
+            {"@type": "Question", "name": "Où sont enregistrés mes devis et factures ?", "acceptedAnswer": {"@type": "Answer", "text": "Dans votre navigateur, sur votre appareil. Rien n'est envoyé sur nos serveurs. Un bouton permet de télécharger une copie complète à garder sur une clé USB ou dans votre cloud, et de la récupérer sur un autre ordinateur."}},
+            {"@type": "Question", "name": "Quelles mentions obligatoires sont ajoutées sur les factures ?", "acceptedAnswer": {"@type": "Answer", "text": "Nom et statut (EI), adresse, SIRET, numéro unique et chronologique, date, identité du client, détail des prestations, total HT, TVA ou mention « TVA non applicable, art. 293 B du CGI », date d'échéance, pénalités de retard et, pour un client professionnel, l'indemnité forfaitaire de 40 € pour frais de recouvrement."}},
+            {"@type": "Question", "name": "Convient-il à un auto-entrepreneur en franchise de TVA ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Une case suffit : la TVA disparaît des documents et la mention « TVA non applicable, art. 293 B du CGI » est ajoutée automatiquement. Si vous facturez la TVA, vous choisissez le taux sur chaque ligne (20 %, 10 %, 5,5 %…)."}},
+            {"@type": "Question", "name": "Peut-on transformer un devis en facture ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, en un clic. La facture reprend le client et toutes les lignes du devis, reçoit son propre numéro et garde la référence du devis d'origine."}},
+            {"@type": "Question", "name": "Peut-on modifier ou supprimer une facture ?", "acceptedAnswer": {"@type": "Answer", "text": "Une facture émise est figée, comme l'exige la loi : on ne la modifie pas et on ne la supprime pas. En cas d'erreur, vous l'annulez (elle reste dans la liste avec la mention « Annulée ») et vous en émettez une nouvelle. Les devis, eux, restent modifiables."}},
+            {"@type": "Question", "name": "Est-il adapté à la facture électronique obligatoire ?", "acceptedAnswer": {"@type": "Answer", "text": "Le logiciel produit des factures en PDF. La facture électronique entre entreprises devient obligatoire à l'émission pour les PME et micro-entreprises le 1er septembre 2027 (depuis le 1er septembre 2026, toutes les entreprises doivent pouvoir en recevoir). Jusque-là, la facture PDF reste valable. Les factures adressées aux particuliers ne sont pas concernées."}},
+            {"@type": "Question", "name": "Fonctionne-t-il sur téléphone ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, sur ordinateur, tablette et téléphone, dans le navigateur, sans rien installer."}}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Conte Games Studio", "item": "https://contegames.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Logiciel de devis et factures gratuit", "item": "https://contegames.com/devis-facture/"}
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div class="landscape" aria-hidden="true"></div>
+    <header class="site-header" id="accueil">
+      <nav class="nav page-width" aria-label="Navigation principale">
+        <a class="brand" href="../index.html" aria-label="Conte Games Studio, accueil">Conte <span>Games Studio</span></a>
+        <div class="nav-links">
+          <a href="#fonctions">Fonctions</a>
+          <a href="#faq">Questions</a>
+          <a href="app/">Ouvrir le logiciel</a>
+        </div>
+      </nav>
+    </header>
+    <main class="legal page-width df-main">
+      <section class="story-panel unicorn-panel framed-panel legal-panel df-hero" aria-labelledby="df-titre">
+        <div class="parchment" aria-hidden="true"></div>
+        <div class="frame-art" aria-hidden="true"><span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>
+        <div class="story-content">
+          <p class="eyebrow">Outil gratuit · Conte Games Studio</p>
+          <h1 id="df-titre">Logiciel de devis et factures gratuit</h1>
+          <p class="df-lead">Pour les auto-entrepreneurs, micro-entreprises et artisans. Vous faites un devis en deux minutes, vous le transformez en facture d'un clic, et le PDF part avec toutes les mentions légales. Sans inscription et sans abonnement.</p>
+          <ul class="df-badges">
+            <li>100 % gratuit</li><li>Sans inscription</li><li>Sans publicité</li><li>Données sur votre appareil</li><li>Ordinateur et téléphone</li>
+          </ul>
+          <div class="df-actions">
+            <a class="button" href="app/">Créer mon premier devis</a>
+            <a href="#faq">Questions fréquentes</a>
+          </div>
+          <figure class="df-shot">
+            <img src="../assets/devis-facture-apercu.jpg" width="1280" height="900" alt="Tableau de bord du logiciel : chiffre d'affaires HT de l'année, factures à encaisser, devis en attente et graphique du chiffre d'affaires par mois" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="story-panel unicorn-panel framed-panel legal-panel" id="fonctions" aria-labelledby="df-fonctions">
+        <div class="parchment" aria-hidden="true"></div>
+        <div class="frame-art" aria-hidden="true"><span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>
+        <div class="story-content">
+          <h2 id="df-fonctions">Tout ce qu'il faut pour facturer, rien de plus</h2>
+          <div class="df-grid">
+            <div><h3>Devis en facture, d'un clic</h3><p>La facture reprend le client et les lignes du devis accepté. Plus rien à retaper.</p></div>
+            <div><h3>Numérotation automatique</h3><p>D-2026-001, F-2026-001… Les numéros se suivent sans trou ni doublon, comme l'exige l'administration.</p></div>
+            <div><h3>Mentions légales incluses</h3><p>EI, SIRET, « TVA non applicable, art. 293 B du CGI », échéance, pénalités de retard, indemnité de 40 € pour les clients professionnels.</p></div>
+            <div><h3>Franchise de TVA ou TVA</h3><p>Micro-entrepreneur sous le seuil ? Une case. Assujetti ? Choisissez le taux sur chaque ligne : 20 %, 10 %, 5,5 %.</p></div>
+            <div><h3>PDF propre, avec votre logo</h3><p>Un PDF A4 net pour chaque devis ou facture, avec la zone « Bon pour accord » sur les devis.</p></div>
+            <div><h3>Suivi des paiements</h3><p>Payée, à payer, en retard : vous voyez d'un coup d'œil qui vous doit quoi.</p></div>
+            <div><h3>Chiffre d'affaires par mois</h3><p>Un tableau de bord avec le chiffre d'affaires HT mois par mois, comparé à l'année précédente.</p></div>
+            <div><h3>Prêt pour le comptable</h3><p>Le tableau des factures en un clic pour Excel, et toutes les factures de l'année réunies dans un seul PDF.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-panel unicorn-panel framed-panel legal-panel" aria-labelledby="df-qui">
+        <div class="parchment" aria-hidden="true"></div>
+        <div class="frame-art" aria-hidden="true"><span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>
+        <div class="story-content">
+          <h2 id="df-qui">Pour qui ?</h2>
+          <p>Pour tous ceux qui facturent seuls et veulent un outil simple : <strong>auto-entrepreneurs</strong> et <strong>micro-entrepreneurs</strong>, <strong>artisans du bâtiment</strong> (peintre, plâtrier, plombier, électricien, menuisier…), indépendants, freelances, prestataires de services. Les artisans peuvent indiquer leur assurance décennale, imprimée automatiquement sur leurs devis et factures.</p>
+          <h2>Comment ça marche</h2>
+          <ol class="df-steps">
+            <li><strong>Ouvrez le logiciel</strong> : rien à installer, aucun compte à créer.</li>
+            <li><strong>Remplissez « Mon entreprise » une seule fois</strong> : nom, adresse, SIRET, logo. Ces informations apparaissent sur tous vos documents.</li>
+            <li><strong>Ajoutez un client et faites votre devis</strong>, puis téléchargez le PDF et envoyez-le.</li>
+            <li><strong>Devis accepté ?</strong> « Transformer en facture », puis cochez « Payée » le jour du paiement.</li>
+          </ol>
+          <div class="df-actions"><a class="button" href="app/">Ouvrir le logiciel gratuit</a></div>
+        </div>
+      </section>
+
+      <section class="story-panel unicorn-panel framed-panel legal-panel" aria-labelledby="df-mentions">
+        <div class="parchment" aria-hidden="true"></div>
+        <div class="frame-art" aria-hidden="true"><span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>
+        <div class="story-content">
+          <h2 id="df-mentions">Les mentions obligatoires sur une facture d'auto-entrepreneur</h2>
+          <p>Le logiciel les place pour vous. Pour mémoire, voici ce qu'une facture doit contenir :</p>
+          <div class="df-scroll"><table class="df-table">
+            <tr><th>Mention</th><th>Exemple</th></tr>
+            <tr><td>Nom suivi de « EI » ou « entrepreneur individuel »</td><td>Jean MARTIN EI</td></tr>
+            <tr><td>Adresse et numéro SIRET</td><td>12 rue des Lilas, 42000 Saint-Étienne · SIRET 123 456 789 00012</td></tr>
+            <tr><td>Numéro unique, chronologique, sans trou</td><td>F-2026-014</td></tr>
+            <tr><td>Date de la facture et date d'échéance</td><td>14/11/2026 · à payer avant le 14/12/2026</td></tr>
+            <tr><td>Nom et adresse du client (et son SIREN s'il est professionnel)</td><td>SARL Dupont, 3 place de la Mairie…</td></tr>
+            <tr><td>Détail : désignation, quantité, prix unitaire HT</td><td>Peinture d’un plafond · 40 m² · 22,00 €</td></tr>
+            <tr><td>TVA, ou mention de franchise</td><td>« TVA non applicable, art. 293 B du CGI »</td></tr>
+            <tr><td>Pénalités de retard</td><td>3 fois le taux d'intérêt légal</td></tr>
+            <tr><td>Client professionnel : indemnité de recouvrement</td><td>40 € (art. D441-5 du Code de commerce)</td></tr>
+            <tr><td>Bâtiment : assurance décennale</td><td>Assureur, n° de contrat, zone couverte</td></tr>
+          </table></div>
+        </div>
+      </section>
+
+      <section class="story-panel unicorn-panel framed-panel legal-panel df-faq" id="faq" aria-labelledby="df-faq">
+        <div class="parchment" aria-hidden="true"></div>
+        <div class="frame-art" aria-hidden="true"><span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>
+        <div class="story-content">
+          <h2 id="df-faq">Questions fréquentes</h2>
+          <details open><summary>Le logiciel est-il vraiment gratuit ?</summary><p>Oui. Il est gratuit, sans abonnement, sans limite de devis ou de factures, sans publicité et sans inscription.</p></details>
+          <details><summary>Où sont enregistrés mes devis et factures ?</summary><p>Dans votre navigateur, sur votre appareil. Rien n'est envoyé sur nos serveurs. Un bouton permet de télécharger une copie complète à garder sur une clé USB ou dans votre cloud, et de la récupérer sur un autre ordinateur.</p></details>
+          <details><summary>Quelles mentions obligatoires sont ajoutées sur les factures ?</summary><p>Nom et statut (EI), adresse, SIRET, numéro unique et chronologique, date, identité du client, détail des prestations, total HT, TVA ou mention « TVA non applicable, art. 293 B du CGI », date d'échéance, pénalités de retard et, pour un client professionnel, l'indemnité forfaitaire de 40 € pour frais de recouvrement.</p></details>
+          <details><summary>Convient-il à un auto-entrepreneur en franchise de TVA ?</summary><p>Oui. Une case suffit : la TVA disparaît des documents et la mention « TVA non applicable, art. 293 B du CGI » est ajoutée automatiquement. Si vous facturez la TVA, vous choisissez le taux sur chaque ligne (20 %, 10 %, 5,5 %…).</p></details>
+          <details><summary>Peut-on transformer un devis en facture ?</summary><p>Oui, en un clic. La facture reprend le client et toutes les lignes du devis, reçoit son propre numéro et garde la référence du devis d'origine.</p></details>
+          <details><summary>Peut-on modifier ou supprimer une facture ?</summary><p>Une facture émise est figée, comme l'exige la loi : on ne la modifie pas et on ne la supprime pas. En cas d'erreur, vous l'annulez (elle reste dans la liste avec la mention « Annulée ») et vous en émettez une nouvelle. Les devis, eux, restent modifiables.</p></details>
+          <details><summary>Est-il adapté à la facture électronique obligatoire ?</summary><p>Le logiciel produit des factures en PDF. La facture électronique entre entreprises devient obligatoire à l'émission pour les PME et micro-entreprises le 1<sup>er</sup> septembre 2027 (depuis le 1<sup>er</sup> septembre 2026, toutes les entreprises doivent pouvoir en recevoir). Jusque-là, la facture PDF reste valable. Les factures adressées aux particuliers ne sont pas concernées.</p></details>
+          <details><summary>Fonctionne-t-il sur téléphone ?</summary><p>Oui, sur ordinateur, tablette et téléphone, dans le navigateur, sans rien installer.</p></details>
+          <div class="df-actions"><a class="button" href="app/">Créer mon premier devis</a></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="page-width footer-content">
+        <span class="footer-brand">Conte Games Studio</span>
+        <span>Imaginé à Saint-Chamond</span>
+        <nav class="footer-links" aria-label="Liens utiles">
+          <a href="../index.html">Accueil</a>
+          <a href="../mentions-legales.html">Mentions légales</a>
+          <a href="#accueil">Retour en haut</a>
+        </nav>
+      </div>
+    </footer>
+  <script data-cg-language-suggest="off">/* Page uniquement en français : pas de suggestion de langue. */</script>
+<script src="/analytics.js?v=3" defer></script></body>
+</html>
