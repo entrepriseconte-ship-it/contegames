@@ -21,6 +21,9 @@ GAMES = [
     ("royaumedesmotscroises/", "id6817612983", "com.contegames.royaumedesmotscroises", "Royaume des Mots Croisés"),
     # On Google Play since 04/11/2026, on the App Store since 12/11/2026 (tools/sortie_appstore.py).
     ("caligulavsgladiators/", "id6822433598", "com.contegames.caligulavsgladiators", "Caligula vs Gladiators"),
+    # On the App Store since 01/11/2026, public on Google Play on 14/11/2026 (screenshot from Anthony).
+    # 5th field: the shorter name used in the page texts (the app card uses the full store name).
+    ("sauvequifleche/", "id6823751966", "com.contegames.arrowescape", "Sauve qui Flèche ! Casse-tête", "Sauve qui Flèche !"),
 ]
 # Texts of a game out on Google Play but not yet on the App Store (French and English pages;
 # other languages keep their "coming soon to iPhone and Android" wording).
@@ -99,7 +102,7 @@ def process_soon(path: Path, folder: str, package: str, name: str) -> bool:
     return True
 
 
-def released_texts(html: str, path: Path, name: str) -> str:
+def released_texts(html: str, path: Path, name: str) -> str:  # name as written in the page texts
     """French game page: drop "coming soon to Android" from its texts."""
     if path.relative_to(ROOT).parts[0] == path.parent.name:  # French pages sit at the root
         for old, text in RELEASED_TEXTS_FR:
@@ -107,9 +110,9 @@ def released_texts(html: str, path: Path, name: str) -> str:
     return html
 
 
-def process(path: Path, appstore_id: str, package: str, name: str) -> bool:
+def process(path: Path, appstore_id: str, package: str, name: str, text_name: str = "") -> bool:
     html = path.read_text(encoding="utf-8")
-    html = released_texts(html, path, name) if path.name == "index.html" and path.parent != ROOT else html
+    html = released_texts(html, path, text_name or name) if path.name == "index.html" and path.parent != ROOT else html
     if package in html:
         marked = mark_android(html, name)
         if marked != path.read_text(encoding="utf-8"):
@@ -134,14 +137,14 @@ def process(path: Path, appstore_id: str, package: str, name: str) -> bool:
 def main() -> None:
     codes = [""] + sorted(p.name for p in ROOT.iterdir() if p.is_dir() and (p / "cocoboum/index.html").exists())
     changed = 0
-    for folder, appstore_id, package, name in GAMES:
+    for folder, appstore_id, package, name, *text_name in GAMES:
         for code in codes:
             base = ROOT / code if code else ROOT
             for page in (base / "index.html", base / folder / "index.html"):
                 if appstore_id is None:
                     changed += process_soon(page, folder, package, name)
                 else:
-                    changed += process(page, appstore_id, package, name)
+                    changed += process(page, appstore_id, package, name, *text_name)
     print(f"updated {changed} pages")
 
 
