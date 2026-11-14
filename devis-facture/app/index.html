@@ -231,7 +231,27 @@ function etatFacture(f){
 }
 const ETATS_DEVIS = {brouillon:["Brouillon","p-gris"],envoye:["Envoyé","p-bleu"],accepte:["Accepté","p-vert"],refuse:["Refusé","p-rouge"],facture:["Facturé","p-violet"]};
 const triNum = (a,b) => (b.numero||"").localeCompare(a.numero||"");
-function bloquerSiLecture(){ if(!S.peutEcrire){ toast("Accès en lecture seule : consultation et export uniquement."); return true; } return false; }
+/* ===== Essai gratuit de 7 jours, puis abonnement ===== */
+const ESSAI_JOURS = 7, URL_ABONNEMENT = "/devis-facture/#tarif";
+const CLE_ESSAI = "cg-devis-essai-debut", CLE_LICENCE = "cg-devis-licence";
+const ESSAI = { debut:null, restant:ESSAI_JOURS, fini:false, abonne:false };
+function lireEssai(){
+  try{
+    ESSAI.abonne = !!localStorage.getItem(CLE_LICENCE);
+    let d = localStorage.getItem(CLE_ESSAI);
+    if(!d){ d = new Date().toISOString(); localStorage.setItem(CLE_ESSAI, d); }
+    ESSAI.debut = d;
+    const ecoule = Math.floor((Date.now() - new Date(d).getTime()) / 864e5);
+    ESSAI.restant = Math.max(0, ESSAI_JOURS - ecoule);
+    ESSAI.fini = !ESSAI.abonne && ESSAI.restant <= 0;
+  }catch(e){ /* stockage indisponible : on laisse l'essai ouvert */ }
+}
+function bandeauEssai(){
+  if(ESSAI.abonne) return "";
+  if(ESSAI.fini) return `<div class="alerte"><b>Votre essai gratuit de ${ESSAI_JOURS} jours est terminé.</b> Vos devis et factures restent consultables, téléchargeables en PDF et exportables. Pour en créer de nouveaux, passez à la version complète. <a href="${URL_ABONNEMENT}">Voir l'abonnement</a></div>`;
+  return `<div class="info">Essai gratuit : <b>${ESSAI.restant} jour${ESSAI.restant>1?"s":""} restant${ESSAI.restant>1?"s":""}</b> sur ${ESSAI_JOURS}. Toutes les fonctions sont ouvertes. <a href="${URL_ABONNEMENT}">Voir l'abonnement</a></div>`;
+}
+function bloquerSiLecture(){ if(!S.peutEcrire){ toast(ESSAI.fini?"Essai terminé : abonnez-vous pour créer de nouveaux documents. Vos données restent consultables et exportables.":"Accès en lecture seule : consultation et export uniquement.",5000); return true; } return false; }
 
 /* ================= Navigation ================= */
 let vueActive = "accueil", anneeTB = Number(aujourd().slice(0,4)), activiteTB = "";
@@ -241,6 +261,7 @@ $("#nav").addEventListener("click", e=>{ const v=e.target.closest("button")?.dat
 function afficher(){
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("actif", b.dataset.vue===vueActive));
   ({accueil:vueAccueil, devis:vueDevis, factures:vueFactures, clients:vueClients, reglages:vueReglages, export:vueExport})[vueActive]();
+  if(S.local && ESSAI.debut){ const b=bandeauEssai(); if(b) $("#vue").insertAdjacentHTML("afterbegin", b); }
 }
 let rendreTimer; function rafraichir(){ clearTimeout(rendreTimer); rendreTimer=setTimeout(afficher,60); }
 
@@ -692,7 +713,7 @@ async function demarrer(){
   afficher();
   const etat=$("#etat");
   const db = window.claude?.use ? await window.claude.use("db") : null;
-  if(!db){ S.local=true; chargerLocal(); etat.textContent="Vos données restent dans ce navigateur, sur cet appareil"; afficher(); return; }
+  if(!db){ S.local=true; chargerLocal(); lireEssai(); if(ESSAI.fini) S.peutEcrire=false; etat.textContent="Vos données restent dans ce navigateur, sur cet appareil"; afficher(); return; }
   S.db=db; S.local=false;
   S.downloads = await window.claude.use("downloads");
   const user = await window.claude.use("user");
