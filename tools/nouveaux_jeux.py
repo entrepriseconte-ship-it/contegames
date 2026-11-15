@@ -33,7 +33,7 @@ GAMES = [
      [("assistance.html", "Assistance"), ("confidentialite.html", "Confidentialité")], "Royaume des<br />Énigmes"),
 ]
 # YouTube video id per game, given by the studio owner.
-VIDEO = {"s": "mhKhM_90sWo"}
+VIDEO = {"s": "mhKhM_90sWo", "c": "4BHv3pqZB9U"}
 
 FRAME = ('<div class="parchment" aria-hidden="true"></div><div class="frame-art" aria-hidden="true">'
          '<span class="frame-top"></span><span class="frame-middle"></span><span class="frame-bottom"></span></div>')
