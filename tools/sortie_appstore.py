@@ -90,6 +90,9 @@ def release_page(code: str, folder: str, name: str, app_id: str) -> None:
 
     # "When can I download it?": visible answer and FAQ data.
     answer = last_answer(src).replace(SOURCE_NAME, name)
+    if code == "fr" and "Google Play" in answer:  # the French source page is on Google Play too
+        answer = (f"{name} est disponible dès maintenant sur l’App Store pour iPhone : "
+                  "touchez le bouton App Store en haut de cette page pour le télécharger.")
     old_answer = last_answer(html)
     if html.count(old_answer) < 2:
         raise SystemExit(f"{where}: download answer not found twice")
