@@ -173,5 +173,7 @@ if __name__ == "__main__":
                 langues.GROUPS.append(f + "/")
         print(f"{done} languages, relinked {langues.link_all()} pages")
         sitemap()
+        import sortie_appstore  # games already out keep their App Store button after a rebuild
+        sortie_appstore.main()
     else:
         print(f"{done} languages built; hreflang and sitemap wait for every language")

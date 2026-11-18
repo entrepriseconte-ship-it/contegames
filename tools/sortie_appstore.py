@@ -29,7 +29,9 @@ PROVIDER = "129524141"
 RELEASED = [("sauvequifleche", "Sauve qui Flèche !", "6823751966"),
             ("royaumedesenigmes", "Royaume des Énigmes", "6825285817"),  # online since 08/11/2026
             # on Google Play since 04/11/2026, approved by Apple on 12/11/2026
-            ("caligulavsgladiators", "Caligula vs Gladiators", "6822433598")]
+            ("caligulavsgladiators", "Caligula vs Gladiators", "6822433598"),
+            # added to the site on 13/11/2026 (tools/jeux_novembre.py), on the App Store since 18/11/2026
+            ("gnomedescavernes", "Gnome des Cavernes Enchantées", "6834289564")]
 
 # Languages whose description does not end with the page eyebrow:
 # (old last sentence, new last sentence). "{ey}" is the new eyebrow.
@@ -77,6 +79,8 @@ def release_page(code: str, folder: str, name: str, app_id: str) -> None:
 
     # Description (meta, Open Graph, app card): its last sentence said "coming soon".
     old_end, new_end = DESC_END_GAME.get((code, folder)) or DESC_END.get(code, (old_ey, new_ey))
+    if html.count(old_end) < 3 and html.count(old_ey) >= 3:  # pages of tools/jeux_novembre.py end with the eyebrow
+        old_end, new_end = old_ey, new_ey
     new_end = new_end.format(ey=new_ey)
     if html.count(old_end) < 3:
         raise SystemExit(f"{where}: description ending not found: {old_end!r}")
@@ -86,6 +90,9 @@ def release_page(code: str, folder: str, name: str, app_id: str) -> None:
 
     # "When can I download it?": visible answer and FAQ data.
     answer = last_answer(src).replace(SOURCE_NAME, name)
+    if code == "fr" and "Google Play" in answer:  # the French source page is on Google Play too
+        answer = (f"{name} est disponible dès maintenant sur l’App Store pour iPhone : "
+                  "touchez le bouton App Store en haut de cette page pour le télécharger.")
     old_answer = last_answer(html)
     if html.count(old_answer) < 2:
         raise SystemExit(f"{where}: download answer not found twice")
