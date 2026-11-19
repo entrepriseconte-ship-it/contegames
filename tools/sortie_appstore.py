@@ -31,7 +31,9 @@ RELEASED = [("sauvequifleche", "Sauve qui Flèche !", "6823751966"),
             # on Google Play since 04/11/2026, approved by Apple on 12/11/2026
             ("caligulavsgladiators", "Caligula vs Gladiators", "6822433598"),
             # added to the site on 13/11/2026 (tools/jeux_novembre.py), on the App Store since 18/11/2026
-            ("gnomedescavernes", "Gnome des Cavernes Enchantées", "6834289564")]
+            ("gnomedescavernes", "Gnome des Cavernes Enchantées", "6834289564"),
+            # added to the site on 13/11/2026 (tools/jeux_novembre.py), on the App Store since 18/11/2026
+            ("royaumedesrunes", "Royaume des Runes", "6833400206")]
 
 # Languages whose description does not end with the page eyebrow:
 # (old last sentence, new last sentence). "{ey}" is the new eyebrow.

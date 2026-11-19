@@ -52,11 +52,12 @@ GAMES = ["", "cocoboum/", "royaumedesmotscroises/", "mieuxchaquejour/", "tableau
          "rouagesenchantes/", "royaumedesrunes/", "serpentdesrunes/"]
 # Not on the stores yet: their pages and home cards show "coming soon" (button-soon), never a store link.
 UPCOMING = ("chateaudeslumieres/", "petitdragon/", "tailleurdenuages/",
-            "rouagesenchantes/", "royaumedesrunes/", "serpentdesrunes/")  # added 13/11/2026
+            "rouagesenchantes/", "serpentdesrunes/")  # added 13/11/2026
 # Out on the App Store (tools/sortie_appstore.py): page -> App Store id.
 # Those still coming to Android must keep the Android coming-soon badge.
 RELEASED = {"sauvequifleche/": "6823751966", "royaumedesenigmes/": "6825285817",
-            "caligulavsgladiators/": "6822433598", "gnomedescavernes/": "6834289564"}
+            "caligulavsgladiators/": "6822433598", "gnomedescavernes/": "6834289564",
+            "royaumedesrunes/": "6833400206"}
 ON_GOOGLE_PLAY = {"royaumedesenigmes/", "caligulavsgladiators/", "sauvequifleche/"}  # Google Play button instead of the badge (tools/google_play.py)
 # Price not yet confirmed by the studio owner: no free offer is claimed for it.
 PRICE_UNCONFIRMED = ()  # every studio app is free (confirmed by Anthony on 23/10)
