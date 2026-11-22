@@ -1,0 +1,140 @@
+fr|Logiciel de devis et factures|Factoreo : vos devis et factures en 2 minutes, pour artisans, commerçants et indépendants.|Visiter le site
+en|Quotes and invoices software|Factoreo: your quotes and invoices in 2 minutes, for craftspeople, shopkeepers and freelancers.|Visit the website
+es|Software de presupuestos y facturas|Factoreo: tus presupuestos y facturas en 2 minutos, para artesanos, comerciantes e independientes.|Visitar el sitio
+de|Software für Angebote und Rechnungen|Factoreo: Angebote und Rechnungen in 2 Minuten, für Handwerker, Händler und Selbstständige.|Website besuchen
+it|Software per preventivi e fatture|Factoreo: i tuoi preventivi e fatture in 2 minuti, per artigiani, commercianti e liberi professionisti.|Visita il sito
+pt|Software de orçamentos e faturas|Factoreo: os seus orçamentos e faturas em 2 minutos, para artesãos, comerciantes e independentes.|Visitar o site
+ja|見積書・請求書ソフト|Factoreo：見積書と請求書を2分で作成。職人、店主、個人事業主のために。|サイトを見る
+ko|견적서·청구서 소프트웨어|Factoreo: 견적서와 청구서를 2분 만에. 장인, 상인, 프리랜서를 위해.|사이트 방문
+zh-cn|报价单与发票软件|Factoreo：2 分钟完成报价单和发票，专为手工艺人、商户和自由职业者打造。|访问网站
+zh-tw|報價單與發票軟體|Factoreo：2 分鐘完成報價單和發票，專為工匠、店家和自由工作者打造。|造訪網站
+hi|कोटेशन और इनवॉइस सॉफ़्टवेयर|Factoreo: 2 मिनट में आपके कोटेशन और इनवॉइस, कारीगरों, दुकानदारों और स्वतंत्र पेशेवरों के लिए।|वेबसाइट देखें
+id|Perangkat lunak penawaran dan faktur|Factoreo: penawaran dan faktur Anda dalam 2 menit, untuk perajin, pedagang, dan pekerja lepas.|Kunjungi situs
+pt-br|Software de orçamentos e notas|Factoreo: seus orçamentos e faturas em 2 minutos, para artesãos, comerciantes e autônomos.|Visitar o site
+es-mx|Software de cotizaciones y facturas|Factoreo: tus cotizaciones y facturas en 2 minutos, para artesanos, comerciantes e independientes.|Visitar el sitio
+ar|برنامج عروض الأسعار والفواتير|Factoreo: عروض أسعارك وفواتيرك في دقيقتين، للحرفيين والتجار والمستقلين.|زيارة الموقع
+tr|Teklif ve fatura yazılımı|Factoreo: teklif ve faturalarınız 2 dakikada; zanaatkârlar, esnaf ve serbest çalışanlar için.|Siteyi ziyaret et
+ru|Программа для смет и счетов|Factoreo: сметы и счета за 2 минуты — для мастеров, торговцев и фрилансеров.|Перейти на сайт
+nl|Software voor offertes en facturen|Factoreo: je offertes en facturen in 2 minuten, voor vakmensen, winkeliers en zzp’ers.|Bezoek de website
+pl|Program do ofert i faktur|Factoreo: oferty i faktury w 2 minuty, dla rzemieślników, handlowców i freelancerów.|Odwiedź stronę
+th|ซอฟต์แวร์ใบเสนอราคาและใบแจ้งหนี้|Factoreo: ใบเสนอราคาและใบแจ้งหนี้ใน 2 นาที สำหรับช่างฝีมือ ร้านค้า และฟรีแลนซ์|เยี่ยมชมเว็บไซต์
+vi|Phần mềm báo giá và hóa đơn|Factoreo: báo giá và hóa đơn trong 2 phút, dành cho thợ thủ công, chủ cửa hàng và người làm tự do.|Truy cập trang web
+uk|Програма для кошторисів і рахунків|Factoreo: кошториси й рахунки за 2 хвилини — для майстрів, торговців і фрилансерів.|Перейти на сайт
+sv|Program för offerter och fakturor|Factoreo: dina offerter och fakturor på 2 minuter, för hantverkare, handlare och egenföretagare.|Besök webbplatsen
+ms|Perisian sebut harga dan invois|Factoreo: sebut harga dan invois anda dalam 2 minit, untuk tukang, peniaga dan pekerja bebas.|Lawati laman web
+ro|Software pentru oferte și facturi|Factoreo: ofertele și facturile tale în 2 minute, pentru meșteșugari, comercianți și independenți.|Vizitează site-ul
+el|Λογισμικό προσφορών και τιμολογίων|Factoreo: οι προσφορές και τα τιμολόγιά σας σε 2 λεπτά, για τεχνίτες, εμπόρους και ελεύθερους επαγγελματίες.|Επισκεφθείτε τον ιστότοπο
+cs|Software pro nabídky a faktury|Factoreo: nabídky a faktury za 2 minuty, pro řemeslníky, obchodníky a živnostníky.|Navštívit web
+hu|Árajánlat- és számlázó szoftver|Factoreo: árajánlatok és számlák 2 perc alatt, kézműveseknek, kereskedőknek és egyéni vállalkozóknak.|Weboldal megnyitása
+fi|Tarjous- ja laskutusohjelma|Factoreo: tarjoukset ja laskut 2 minuutissa käsityöläisille, kauppiaille ja yrittäjille.|Siirry sivustolle
+he|תוכנה להצעות מחיר וחשבוניות|Factoreo: הצעות מחיר וחשבוניות ב־2 דקות, לבעלי מלאכה, סוחרים ועצמאים.|לאתר
+da|Software til tilbud og fakturaer|Factoreo: dine tilbud og fakturaer på 2 minutter, til håndværkere, handlende og selvstændige.|Besøg hjemmesiden
+nb|Program for tilbud og fakturaer|Factoreo: tilbud og fakturaer på 2 minutter, for håndverkere, butikkeiere og selvstendige.|Besøk nettstedet
+sk|Softvér na ponuky a faktúry|Factoreo: ponuky a faktúry za 2 minúty, pre remeselníkov, obchodníkov a živnostníkov.|Navštíviť web
+bg|Софтуер за оферти и фактури|Factoreo: вашите оферти и фактури за 2 минути — за занаятчии, търговци и свободни професии.|Към сайта
+hr|Softver za ponude i račune|Factoreo: vaše ponude i računi za 2 minute, za obrtnike, trgovce i samostalne djelatnike.|Posjetite stranicu
+sl|Program za ponudbe in račune|Factoreo: ponudbe in računi v 2 minutah, za obrtnike, trgovce in samostojne podjetnike.|Obiščite spletno stran
+lt|Pasiūlymų ir sąskaitų programa|Factoreo: pasiūlymai ir sąskaitos per 2 minutes – amatininkams, prekybininkams ir laisvai samdomiems.|Apsilankyti svetainėje
+lv|Piedāvājumu un rēķinu programma|Factoreo: piedāvājumi un rēķini 2 minūtēs – amatniekiem, tirgotājiem un pašnodarbinātajiem.|Apmeklēt vietni
+et|Hinnapakkumiste ja arvete tarkvara|Factoreo: hinnapakkumised ja arved 2 minutiga – käsitöölistele, kaupmeestele ja ettevõtjatele.|Külasta veebilehte
+ca|Programari de pressupostos i factures|Factoreo: els teus pressupostos i factures en 2 minuts, per a artesans, comerciants i autònoms.|Visita el web
+is|Hugbúnaður fyrir tilboð og reikninga|Factoreo: tilboð og reikningar á 2 mínútum, fyrir iðnaðarmenn, kaupmenn og sjálfstætt starfandi.|Skoða vefinn
+sr|Софтвер за понуде и фактуре|Factoreo: ваше понуде и фактуре за 2 минута, за занатлије, трговце и предузетнике.|Посетите сајт
+fil|Software para sa quotation at invoice|Factoreo: ang iyong mga quotation at invoice sa loob ng 2 minuto, para sa mga artisan, negosyante at freelancer.|Bisitahin ang site
+af|Sagteware vir kwotasies en fakture|Factoreo: jou kwotasies en fakture in 2 minute, vir vakmanne, winkeliers en vryskutwerkers.|Besoek die webwerf
+sw|Programu ya nukuu na ankara|Factoreo: nukuu na ankara zako ndani ya dakika 2, kwa mafundi, wafanyabiashara na wajiajiri.|Tembelea tovuti
+bn|কোটেশন ও ইনভয়েস সফটওয়্যার|Factoreo: ২ মিনিটে আপনার কোটেশন ও ইনভয়েস, কারিগর, ব্যবসায়ী ও স্বাধীন পেশাজীবীদের জন্য।|ওয়েবসাইট দেখুন
+ta|மேற்கோள் மற்றும் விலைப்பட்டியல் மென்பொருள்|Factoreo: உங்கள் மேற்கோள்களும் விலைப்பட்டியல்களும் 2 நிமிடங்களில், கைவினைஞர்கள், வணிகர்கள் மற்றும் சுயதொழில் செய்பவர்களுக்கு.|இணையதளத்தைப் பார்வையிடுக
+kk|Коммерциялық ұсыныс пен шот бағдарламасы|Factoreo: ұсыныстар мен шоттар 2 минутта — шеберлерге, саудагерлерге және фрилансерлерге.|Сайтқа өту
+ka|შეთავაზებებისა და ინვოისების პროგრამა|Factoreo: შეთავაზებები და ინვოისები 2 წუთში — ხელოსნებისთვის, ვაჭრებისა და ფრილანსერებისთვის.|საიტზე გადასვლა
+az|Təklif və faktura proqramı|Factoreo: təklif və fakturalarınız 2 dəqiqəyə — ustalar, tacirlər və fərdi sahibkarlar üçün.|Sayta keçin
+sq|Program për oferta dhe fatura|Factoreo: ofertat dhe faturat tuaja në 2 minuta, për zejtarë, tregtarë dhe të vetëpunësuar.|Vizito faqen
+mk|Софтвер за понуди и фактури|Factoreo: вашите понуди и фактури за 2 минути, за занаетчии, трговци и самовработени.|Посетете ја страницата
+hy|Գնառաջարկների և հաշիվների ծրագիր|Factoreo՝ գնառաջարկներ և հաշիվներ 2 րոպեում՝ արհեստավորների, առևտրականների և ինքնազբաղների համար։|Այցելել կայք
+uz|Takliflar va hisob-fakturalar dasturi|Factoreo: takliflar va hisob-fakturalar 2 daqiqada — hunarmandlar, savdogarlar va frilanserlar uchun.|Saytga o‘tish
+gl|Software de orzamentos e facturas|Factoreo: os teus orzamentos e facturas en 2 minutos, para artesáns, comerciantes e autónomos.|Visitar o sitio
+eu|Aurrekontu eta faktura softwarea|Factoreo: zure aurrekontuak eta fakturak 2 minututan, artisau, merkatari eta autonomoentzat.|Bisitatu webgunea
+mr|कोटेशन आणि इनव्हॉइस सॉफ्टवेअर|Factoreo: तुमची कोटेशन आणि इनव्हॉइस 2 मिनिटांत, कारागीर, व्यापारी आणि स्वतंत्र व्यावसायिकांसाठी.|वेबसाइटला भेट द्या
+te|కొటేషన్లు మరియు ఇన్‌వాయిస్‌ల సాఫ్ట్‌వేర్|Factoreo: మీ కొటేషన్లు, ఇన్‌వాయిస్‌లు 2 నిమిషాల్లో — కళాకారులు, వ్యాపారులు, స్వతంత్ర వృత్తిదారుల కోసం.|వెబ్‌సైట్ చూడండి
+ne|कोटेसन र इनभ्वाइस सफ्टवेयर|Factoreo: २ मिनेटमा तपाईंका कोटेसन र इनभ्वाइस, कालिगढ, व्यापारी र स्वतन्त्र पेशाकर्मीहरूका लागि।|वेबसाइट हेर्नुहोस्
+si|මිල ගණන් සහ ඉන්වොයිස් මෘදුකාංගය|Factoreo: මිනිත්තු 2කින් ඔබේ මිල ගණන් සහ ඉන්වොයිස්, ශිල්පීන්, වෙළෙන්දන් සහ ස්වයං රැකියා කරන්නන් සඳහා.|වෙබ් අඩවියට පිවිසෙන්න
+pa|ਕੋਟੇਸ਼ਨ ਅਤੇ ਇਨਵੌਇਸ ਸਾਫ਼ਟਵੇਅਰ|Factoreo: 2 ਮਿੰਟਾਂ ਵਿੱਚ ਤੁਹਾਡੇ ਕੋਟੇਸ਼ਨ ਅਤੇ ਇਨਵੌਇਸ, ਕਾਰੀਗਰਾਂ, ਦੁਕਾਨਦਾਰਾਂ ਅਤੇ ਸੁਤੰਤਰ ਪੇਸ਼ੇਵਰਾਂ ਲਈ।|ਵੈੱਬਸਾਈਟ ਵੇਖੋ
+gu|ક્વોટેશન અને ઇન્વૉઇસ સૉફ્ટવેર|Factoreo: 2 મિનિટમાં તમારા ક્વોટેશન અને ઇન્વૉઇસ, કારીગરો, વેપારીઓ અને સ્વતંત્ર વ્યાવસાયિકો માટે.|વેબસાઇટ જુઓ
+kn|ಕೊಟೇಶನ್ ಮತ್ತು ಇನ್‌ವಾಯ್ಸ್ ಸಾಫ್ಟ್‌ವೇರ್|Factoreo: 2 ನಿಮಿಷಗಳಲ್ಲಿ ನಿಮ್ಮ ಕೊಟೇಶನ್ ಮತ್ತು ಇನ್‌ವಾಯ್ಸ್, ಕುಶಲಕರ್ಮಿಗಳು, ವ್ಯಾಪಾರಿಗಳು ಮತ್ತು ಸ್ವತಂತ್ರ ವೃತ್ತಿಪರರಿಗಾಗಿ.|ವೆಬ್‌ಸೈಟ್ ನೋಡಿ
+ml|ക്വട്ടേഷൻ, ഇൻവോയ്സ് സോഫ്റ്റ്‌വെയർ|Factoreo: നിങ്ങളുടെ ക്വട്ടേഷനുകളും ഇൻവോയ്സുകളും 2 മിനിറ്റിൽ, കരകൗശലക്കാർക്കും വ്യാപാരികൾക്കും സ്വതന്ത്ര തൊഴിലാളികൾക്കും.|വെബ്സൈറ്റ് സന്ദർശിക്കുക
+km|កម្មវិធីសម្រង់តម្លៃ និងវិក្កយបត្រ|Factoreo៖ សម្រង់តម្លៃ និងវិក្កយបត្ររបស់អ្នកក្នុងរយៈពេល 2 នាទី សម្រាប់សិប្បករ ពាណិជ្ជករ និងអ្នកធ្វើការឯករាជ្យ។|ចូលមើលគេហទំព័រ
+lo|ຊອບແວໃບສະເໜີລາຄາ ແລະ ໃບແຈ້ງໜີ້|Factoreo: ໃບສະເໜີລາຄາ ແລະ ໃບແຈ້ງໜີ້ຂອງທ່ານໃນ 2 ນາທີ ສຳລັບຊ່າງຫັດຖະກຳ, ພໍ່ຄ້າ ແລະ ຜູ້ເຮັດວຽກອິດສະຫຼະ.|ເຂົ້າເບິ່ງເວັບໄຊ
+my|ဈေးနှုန်းစာနှင့် ငွေတောင်းခံလွှာ ဆော့ဖ်ဝဲ|Factoreo - လက်မှုပညာရှင်များ၊ ကုန်သည်များနှင့် လွတ်လပ်စွာ အလုပ်လုပ်သူများအတွက် ဈေးနှုန်းစာနှင့် ငွေတောင်းခံလွှာကို ၂ မိနစ်အတွင်း။|ဝက်ဘ်ဆိုက်သို့ သွားရန်
+mn|Үнийн санал ба нэхэмжлэхийн программ|Factoreo: үнийн санал, нэхэмжлэхээ 2 минутад — гар урчууд, худалдаачид, хувиараа ажилладагчдад.|Сайт руу орох
+am|የዋጋ ግምት እና የደረሰኝ ሶፍትዌር|Factoreo፦ የዋጋ ግምትዎን እና ደረሰኞችዎን በ2 ደቂቃ ውስጥ፣ ለእደ ጥበብ ባለሙያዎች፣ ለነጋዴዎች እና ለግል ሥራ ባለቤቶች።|ድረ-ገጹን ይጎብኙ
+cy|Meddalwedd dyfynbrisiau ac anfonebau|Factoreo: eich dyfynbrisiau a’ch anfonebau mewn 2 funud, i grefftwyr, masnachwyr a gweithwyr llawrydd.|Ewch i’r wefan
+fa|نرم‌افزار پیش‌فاکتور و فاکتور|Factoreo: پیش‌فاکتورها و فاکتورهای شما در ۲ دقیقه، برای صنعتگران، کسبه و مشاغل آزاد.|بازدید از سایت
+ur|کوٹیشن اور انوائس سافٹ ویئر|Factoreo: آپ کی کوٹیشنز اور انوائسز 2 منٹ میں، کاریگروں، دکانداروں اور آزاد پیشہ افراد کے لیے۔|ویب سائٹ دیکھیں
+ga|Bogearraí meastachán agus sonrasc|Factoreo: do mheastacháin agus do shonraisc i 2 nóiméad, do cheardaithe, do lucht siopa agus do shaoroibrithe.|Tabhair cuairt ar an suíomh
+mt|Softwer għal kwotazzjonijiet u fatturi|Factoreo: il-kwotazzjonijiet u l-fatturi tiegħek f’2 minuti, għall-artiġjani, in-negozjanti u l-freelancers.|Żur is-sit
+lb|Software fir Offerten a Rechnungen|Factoreo: Är Offerten a Rechnungen an 2 Minutten, fir Handwierker, Geschäftsleit a Selbstänneger.|Websäit besichen
+be|Праграма для каштарысаў і рахункаў|Factoreo: каштарысы і рахункі за 2 хвіліны — для майстроў, гандляроў і фрылансераў.|Перайсці на сайт
+jv|Piranti lunak penawaran lan faktur|Factoreo: penawaran lan faktur sampeyan sajrone 2 menit, kanggo pengrajin, pedagang lan pekerja mandiri.|Bukak situs
+zu|Isofthiwe yezilinganiso nama-invoyisi|Factoreo: izilinganiso nama-invoyisi akho emizuzwini emi-2, kwabezandla, abahwebi nabazisebenzelayo.|Vakashela iwebhusayithi
+ha|Manhajar ƙididdiga da takardun kuɗi|Factoreo: ƙididdigarka da takardun kuɗinka cikin minti 2, don masu sana’a, ’yan kasuwa da masu zaman kansu.|Ziyarci shafin
+so|Barnaamijka qiimeynta iyo qaansheegadka|Factoreo: qiimeyntaada iyo qaansheegadkaaga 2 daqiiqo gudahood, farsamoyaqaannada, ganacsatada iyo kuwa iskood u shaqeysta.|Booqo bogga
+tg|Барномаи нархнома ва ҳисобнома|Factoreo: нархномаҳо ва ҳисобномаҳо дар 2 дақиқа — барои ҳунармандон, савдогарон ва фрилансерҳо.|Ба сайт гузаред
+ky|Сунуштар жана эсеп-фактуралар программасы|Factoreo: сунуштар жана эсеп-фактуралар 2 мүнөттө — устаттар, соодагерлер жана фрилансерлер үчүн.|Сайтка өтүү
+tk|Teklip we hasap-faktura programmasy|Factoreo: teklipleriňiz we hasap-fakturalaryňyz 2 minutda — ussalar, söwdagärler we hususy işleýänler üçin.|Saýta geçiň
+ku|Nermalava pêşniyar û fatûreyan|Factoreo: pêşniyar û fatûreyên te di 2 deqîqeyan de, ji bo esnaf, bazirgan û serbixweyan.|Biçe malperê
+yo|Sọfitiwia ìdíyelé àti ìwé-owó|Factoreo: ìdíyelé àti ìwé-owó rẹ ní ìṣẹ́jú 2, fún àwọn oníṣẹ́-ọwọ́, oníṣòwò àti àwọn tó ń ṣiṣẹ́ fúnra wọn.|Ṣàbẹ̀wò sí ojú-òpó
+ig|Ngwanrọ ọnụahịa na akwụkwọ ụgwọ|Factoreo: ọnụahịa na akwụkwọ ụgwọ gị n’ime nkeji 2, maka ndị ọrụ aka, ndị ahịa na ndị na-arụrụ onwe ha ọrụ.|Gaa na saịtị
+mg|Rindrambaika tolotra vidiny sy faktiora|Factoreo: ny tolotra vidiny sy faktiora anao ao anatin’ny 2 minitra, ho an’ny mpanao asa tanana, mpivarotra ary mpiasa tsy miankina.|Tsidiho ny tranonkala
+sn|Software yemitengo nemabhiri|Factoreo: mitengo yako nemabhiri mumaminitsi maviri, kune mhizha, vatengesi nevanozvishandira.|Shanyira saiti
+xh|Isoftwe yeengxelo zamaxabiso nee-invoyisi|Factoreo: iingxelo zamaxabiso nee-invoyisi zakho kwimizuzu emi-2, kwiingcibi, abarhwebi nabazisebenzelayo.|Tyelela iwebhusayithi
+ny|Pulogalamu ya mitengo ndi ma invoyisi|Factoreo: mitengo yanu ndi ma invoyisi mu mphindi ziwiri, kwa amisiri, amalonda ndi odzilemba ntchito.|Pitani pa webusayiti
+ceb|Software sa kuwotasyon ug invoice|Factoreo: ang imong mga kuwotasyon ug invoice sulod sa 2 ka minuto, para sa mga artisano, negosyante ug freelancer.|Bisitaha ang site
+ht|Lojisyèl pou devi ak fakti|Factoreo: devi ak fakti ou nan 2 minit, pou atizan, machann ak travayè endepandan.|Vizite sit la
+mi|Pūmanawa mō ngā tuku utu me ngā nama|Factoreo: ō tuku utu me ō nama i roto i te 2 meneti, mō ngā kaimahi ā-ringa, ngā kaihokohoko me ngā kaimahi motuhake.|Toro i te paetukutuku
+sm|Polokalame mo tau tau ma pili|Factoreo: au tau tau ma pili i totonu o le 2 minute, mo tufuga, faioloa ma i latou e faigaluega tutoatasi.|Asiasi i le upega
+st|Software ya ditheko le di-invoice|Factoreo: ditheko le di-invoice tsa hao ka metsotso e 2, bakeng sa ditsebi tsa matsoho, bahwebi le ba ipehelang mosebetsi.|Etela websaete
+rw|Porogaramu y’ibiciro na fagitire|Factoreo: ibiciro na fagitire zawe mu minota 2, ku banyabukorikori, abacuruzi n’abikorera.|Sura urubuga
+om|Sooftiweerii tilmaama gatii fi nagahee|Factoreo: tilmaama gatii fi nagahee kee daqiiqaa 2 keessatti, ogeeyyii harkaa, daldaltootaa fi hojii dhuunfaatiif.|Marsariitii daawwadhu
+ti|ሶፍትዌር ዋጋ ግምትን ፋክቱራን|Factoreo፦ ዋጋ ግምትካን ፋክቱራታትካን ኣብ 2 ደቒቕ፣ ንሞያውያን፣ ነጋዶን ብውልቆም ዝሰርሑን።|ነቲ መርበብ ብጻሕ
+eo|Programo por kostotaksoj kaj fakturoj|Factoreo: viaj kostotaksoj kaj fakturoj en 2 minutoj, por metiistoj, komercistoj kaj memstaruloj.|Viziti la retejon
+co|Prugramma di preventivi è fatture|Factoreo: i vostri preventivi è fatture in 2 minuti, per l’artigiani, i cummercianti è l’indipendenti.|Visità u situ
+as|কোটেচন আৰু ইনভইচ ছফ্টৱেৰ|Factoreo: ২ মিনিটতে আপোনাৰ কোটেচন আৰু ইনভইচ, শিল্পী, ব্যৱসায়ী আৰু স্বাধীন পেছাদাৰীৰ বাবে।|ৱেবছাইট চাওক
+or|କୋଟେସନ ଓ ଇନଭଏସ ସଫ୍ଟୱେର|Factoreo: 2 ମିନିଟରେ ଆପଣଙ୍କ କୋଟେସନ ଓ ଇନଭଏସ, କାରିଗର, ବ୍ୟବସାୟୀ ଓ ସ୍ୱାଧୀନ ବୃତ୍ତିଧାରୀଙ୍କ ପାଇଁ।|ୱେବସାଇଟ ଦେଖନ୍ତୁ
+ps|د بیې وړاندیز او بل سافټویر|Factoreo: ستاسو د بیې وړاندیزونه او بلونه په ۲ دقیقو کې، د لاسي هنرمندانو، سوداګرو او خپلواکو کارګرو لپاره.|ویب پاڼې ته ورشئ
+sd|قيمت جي آڇ ۽ انوائس سافٽ ويئر|Factoreo: توهان جون آڇون ۽ انوائس 2 منٽن ۾، ڪاريگرن، واپارين ۽ آزاد پيشه ورن لاءِ.|ويب سائيٽ ڏسو
+fy|Software foar offertes en faktueren|Factoreo: dyn offertes en faktueren yn 2 minuten, foar ambachtslju, winkellju en selsstannigen.|Besykje de webside
+gd|Bathar-bog airson tairgsean is fàirdealan|Factoreo: na tairgsean is na fàirdealan agad ann an 2 mhionaid, airson luchd-ciùird, ceannaichean is saor-obraichean.|Tadhail air an làrach
+tt|Тәкъдимнәр һәм счетлар программасы|Factoreo: тәкъдимнәр һәм счетлар 2 минутта — осталар, сәүдәгәрләр һәм фрилансерлар өчен.|Сайтка керү
+ln|Programɛ ya ntalo mpe bafaktire|Factoreo: ntalo na yo mpe bafaktire na yo na miniti 2, mpo na basáli ya mabɔkɔ, bateki mpe bato oyo bamisalelaka.|Kɔta na site
+wo|Lojisiyel ngir dewi ak faktiir|Factoreo: sa dewi ak sa faktiir ci 2 simili, ngir liggéeykat yi, jaaykat yi ak ñiy liggéeyal seen bopp.|Seet sit bi
+ak|Software a ɛkyerɛ boɔ ne akontaa krataa|Factoreo: wo boɔ nkyerɛkyerɛmu ne akontaa nkrataa wɔ simma 2 mu, ma adwumayɛfoɔ, adetɔnfoɔ ne wɔn a wɔyɛ wɔn ankasa adwuma.|Kɔ wɛbsaet no so
+bho|कोटेशन आ इनवॉइस सॉफ्टवेयर|Factoreo: 2 मिनट में रउआ कोटेशन आ इनवॉइस, कारीगर, दुकानदार आ स्वतंत्र काम करे वालन खातिर।|वेबसाइट देखीं
+mai|कोटेशन आ इनवॉइस सॉफ्टवेयर|Factoreo: 2 मिनटमे अहाँक कोटेशन आ इनवॉइस, कारीगर, दोकानदार आ स्वतंत्र पेशेवर सभक लेल।|वेबसाइट देखू
+ug|باھا تەكلىپى ۋە ھېسابات يۇمشاق دېتالى|Factoreo: باھا تەكلىپى ۋە ھېساباتلىرىڭىز 2 مىنۇتتا، ھۈنەرۋەنلەر، سودىگەرلەر ۋە ئەركىن كەسىپ ئىگىلىرى ئۈچۈن.|تور بېكەتنى زىيارەت قىلىڭ
+yi|ווייכווארג פֿאַר אָפֿערטן און חשבונות|Factoreo: אײַערע אָפֿערטן און חשבונות אין 2 מינוט, פֿאַר בעלי־מלאָכות, הענדלער און זעלבשטענדיקע.|באַזוכט דעם וועבזײַטל
+qu|Chanin willakuypaq factura ruranapaq software|Factoreo: chanin willakuykunata facturakunatapas 2 minutopi, maki llamkaqkunapaq, rantikuqkunapaq, sapalla llamkaqkunapaqpas.|Web kitiman yaykuy
+gn|Software tepy ha factura-rã|Factoreo: ne tepy ha ne factura 2 aravo’ípe, tembiapo po rehegua, ñemuha ha omba’apóva ijeheguíva-pe guarã.|Eike pe sitio-pe
+tn|Software ya ditlhwatlhwa le di-invoice|Factoreo: ditlhwatlhwa le di-invoice tsa gago mo metsotsong e le 2, mo baitirelong ba diatla, barekisi le ba ba ithapileng.|Etela webosaete
+lg|Pulogulaamu y’ebbeeyi n’ebbaluwa z’ensasula|Factoreo: ebbeeyi n’ebbaluwa z’ensasula zo mu ddakiika 2, eri abakozi b’emikono, abasuubuzi n’abeekolera.|Kyalira omukutu
+bm|Lojisiyɛli sɔngɔ ni jatɔsɛbɛnw kama|Factoreo: i ka sɔngɔ ni i ka jatɔsɛbɛnw miniti 2 kɔnɔ, bololabaarakɛlaw, jagokɛlaw ani mɔgɔ minnu bɛ baara kɛ u yɛrɛ ye.|Taa siti kan
+ba|Тәҡдимдәр һәм иҫәп-хисап программаһы|Factoreo: тәҡдимдәр һәм иҫәп-хисаптар 2 минутта — оҫталар, сауҙагәрҙәр һәм фрилансерҙар өсөн.|Сайтҡа инеү
+ckb|نەرمەکاڵای پێشنیاری نرخ و پسوڵە|Factoreo: پێشنیاری نرخ و پسوڵەکانت لە ٢ خولەکدا، بۆ پیشەگەران، بازرگانان و سەربەخۆکاران.|سەردانی ماڵپەڕ بکە
+dv|އަގު ބުނުމާއި އިންވޮއިސް ސޮފްޓްވެއަރ|Factoreo: 2 މިނެޓުތެރޭ ތިބާގެ އަގު ބުނުމާއި އިންވޮއިސް، ހުނަރުވެރިންނާއި ވިޔަފާރިވެރިންނާއި އަމިއްލަ މަސައްކަތްތެރިންނަށް.|ވެބްސައިޓަށް ވަޑައިގަންނަވާ
+bo|གོང་ཚད་དང་འཐུས་ཤོག་གི་མཉེན་ཆས།|Factoreo: སྐར་མ་ ༢ ནང་གོང་ཚད་དང་འཐུས་ཤོག ལག་ཤེས་པ་དང་ཚོང་པ། རང་ལས་པ་རྣམས་ཀྱི་ཆེད་དུ།|དྲ་ཚིགས་ལ་ལྟ།
+sa|मूल्यपत्र-देयकपत्र-तन्त्रांशः|Factoreo: निमेषद्वये भवतः मूल्यपत्राणि देयकपत्राणि च, शिल्पिनां वणिजां स्वतन्त्रकर्मिणां च कृते।|जालस्थानं पश्यतु
+fo|Ritbúnaður til tilboð og rokningar|Factoreo: tíni tilboð og rokningar á 2 minuttum, til handverkarar, handlandi og sjálvstøðug.|Vitja heimasíðuna
+ay|Chani yatiyañataki factura lurañataki software|Factoreo: chani yatiyawinakama, facturanakama 2 minutunxa, amparampi irnaqirinakataki, aljirinakataki, sapa irnaqirinakataki.|Web ukar mantam
+kok|कोटेशन आनी इनव्हॉयस सॉफ्टवेअर|Factoreo: 2 मिनटांत तुमचीं कोटेशन आनी इनव्हॉयस, कारागीर, वेपारी आनी स्वतंत्र वेवसायिकां खातीर.|वेबसायटीक भेट दियात
+haw|Polokalamu no nā kāki a me nā pila|Factoreo: kāu mau kāki a me nā pila i loko o 2 minuke, no ka poʻe hana lima, ka poʻe kālepa a me ka poʻe hana kūʻokoʻa.|E kipa i ka pūnaewele
+ts|Software ya swiringanyeto swa nxavo na ti-invoice|Factoreo: swiringanyeto swa nxavo na ti-invoice swa wena hi timinete ta 2, eka vatirhi va mavoko, vaxavisi na lava titirhelaka.|Endzela webusayiti
+ee|Kɔmpiutadɔwɔnu na asixɔxɔ kple fexexegbalẽwo|Factoreo: wò asixɔxɔwo kple fexexegbalẽwo le aɖabaƒoƒo 2 me, na asinudɔwɔlawo, asitsalawo kple ɖokuisinudɔwɔlawo.|Srã nyatakakadzraɖoƒea kpɔ
+nn|Program for tilbod og fakturaer|Factoreo: tilboda og fakturaene dine på 2 minutt, for handverkarar, butikkeigarar og sjølvstendige.|Besøk nettstaden
+br|Meziant evit an dezvizoù hag ar fakturennoù|Factoreo: ho tezvizoù hag ho fakturennoù e 2 vunutenn, evit an artizaned, ar genwerzhourien hag an emstalierien.|Gweladenniñ al lec’hienn
+oc|Logicial de devís e facturas|Factoreo: vòstres devís e facturas en 2 minutas, pels artesans, comerçants e independents.|Visitar lo site
+sc|Programma de preventivos e fatturas|Factoreo: sos preventivos e sas fatturas tuas in 2 minutos, pro artesanos, cummerciantes e indipendentes.|Bìsita su situ
+rn|Porogarama y’ibiciro na fagitire|Factoreo: ibiciro na fagitire zawe mu minota 2, ku banyabukorikori, abadandaza n’abikorera.|Ingendera urubuga
+kg|Programe ya ntalu ti bafactire|Factoreo: bantalu ti bafactire na nge na miniti 2, sambu na bantu ya ke salaka na maboko, bateki ti bantu ya ke kudisalisa.|Kwenda na site
+cv|Сметăсемпе счётсем валли программа|Factoreo: сметăсемпе счётсем 2 минутра — ăстасем, суту-илӳçӗсем тата фрилансерсем валли.|Сайта кӗрӗр
+os|Аргъты хъуыдыйæдтæ æмæ счетты программæ|Factoreo: аргъты хъуыдыйæдтæ æмæ счеттæ 2 минуты — дæсныты, хъæздыгуæтты æмæ фрилансерты тыххæй.|Сайтмæ бацæуын
+ce|Мехаш а, счеташ а кечйо программа|Factoreo: мехаш а, счеташ а 2 минотехь — пхьерашна, йохкархошна а, шайна болх беш болчарна а.|Сайте гӀо
+ve|Software ya mitengo na dziinvoyisi|Factoreo: mitengo na dziinvoyisi dzaṋu nga minetse mbili, kha vhashumi nga zwanḓa, vhavhambadzi na vhaḓishumelaho.|Dalelani webusaithi
