@@ -11,8 +11,9 @@
     || (params.has('fbclid') ? 'facebook' : '')
     || (params.has('gclid') ? 'google' : '');
 
-  const send = (type) => {
-    const body = JSON.stringify({p: location.pathname, t: type, r: document.referrer, u: utm});
+  const send = (type, jeu) => {
+    // Pour un clic vers un store, on ajoute le jeu cliqué après le chemin de la page (ex. « /@id6817739082 »).
+    const body = JSON.stringify({p: location.pathname + (jeu ? '@' + jeu : ''), t: type, r: document.referrer, u: utm});
     try {
       if (navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, new Blob([body], {type: 'text/plain'}))) return;
     } catch { /* on tente fetch */ }
@@ -27,8 +28,8 @@
     let url;
     try { url = new URL(anchor.href, location.href); } catch { return; }
     const host = url.hostname.toLowerCase();
-    if (host === 'apps.apple.com') send('store_ios');
-    else if (host === 'play.google.com' && url.pathname.startsWith('/store/apps/')) send('store_android');
+    if (host === 'apps.apple.com') send('store_ios', (url.pathname.match(/id\d+/) || [''])[0]);
+    else if (host === 'play.google.com' && url.pathname.startsWith('/store/apps/')) send('store_android', (url.searchParams.get('id') || '').slice(0, 60));
   }, {capture: true, passive: true});
 })();
 
