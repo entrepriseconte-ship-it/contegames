@@ -44,3 +44,13 @@
   script.dataset.cgLanguageSuggest = '1';
   document.head.appendChild(script);
 })();
+
+/* Marque le système du téléphone (os-ios / os-android) : sur l'accueil, le jeu vedette ne garde alors
+   que le bouton de la boutique de ce téléphone. Rien n'est envoyé ni stocké. */
+(() => {
+  'use strict';
+  const ua = navigator.userAgent || '';
+  const ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (ios) document.documentElement.classList.add('os-ios');
+  else if (/Android/.test(ua)) document.documentElement.classList.add('os-android');
+})();
