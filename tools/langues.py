@@ -286,6 +286,8 @@ def build(code: str, hreflang: str) -> int:
 
     for group in GROUPS:
         html = page_path("en", group).read_text(encoding="utf-8")
+        # Home guide of tools/guide_accueil.py: written by hand per language, never copied in English.
+        html = re.sub(r"<!--guide-accueil-->.*?<!--/guide-accueil-->", "", html, flags=re.S)
         html = transform(html, tr)
         direction = ' dir="rtl"' if code in RTL else ""
         html = html.replace('<html lang="en">', f'<html lang="{hreflang}"{direction}>', 1)
