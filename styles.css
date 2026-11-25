@@ -347,3 +347,4 @@ h1, h2, h3 { overflow-wrap: break-word; }
 .hero-featured .hero-all { margin-top: 2px; font-size: .95rem; text-decoration: underline; text-underline-offset: 4px; color: #4f2a12; }
 .os-ios .hero-featured .button-play, .os-android .hero-featured .button-store { display: none; }
 @media (max-width: 520px) { .royal-content:has(.hero-featured) .royal-copy { order: 0; } .hero-featured-game { font-size: 1.15rem; } .hero-featured-game img { width: 60px; height: 60px; } }
+.hero-play { min-height: 46px; margin-top: 4px; font-size: 1.05rem; }
