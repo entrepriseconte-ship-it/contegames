@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0d1230">
+<title>Le Gnome des Cavernes Enchantées</title>
+<style>
+html,body{margin:0;height:100%;background:#0b0d1e;overflow:hidden;color:#f6efdc;font:16px Georgia,serif}
+body{display:flex;align-items:center;justify-content:center}
+#jeu{display:block;touch-action:none;background:#0b0d1e}
+#charge{position:fixed;left:0;right:0;top:45%;text-align:center}
+#barre{width:260px;max-width:70%;height:12px;margin:14px auto;border:1px solid #e8b04a;border-radius:8px;overflow:hidden}
+#plein{height:100%;width:0;background:#e8b04a}
+</style>
+</head>
+<body>
+<canvas id="jeu"></canvas>
+<div id="charge"><div id="texte">Chargement du jeu…</div><div id="barre"><div id="plein"></div></div></div>
+<script src="Build/Web.loader.js"></script>
+<script>
+var c = document.getElementById('jeu');
+function taille() { var h = window.innerHeight, w = window.innerWidth, l = Math.min(w, h * 9 / 16); if (w / h < 9 / 16) { l = w; c.style.height = h + 'px'; } else { c.style.height = h + 'px'; } c.style.width = l + 'px'; }
+taille(); window.addEventListener('resize', taille);
+createUnityInstance(c, {
+  dataUrl: 'Build/Web.data.unityweb', frameworkUrl: 'Build/Web.framework.js.unityweb', codeUrl: 'Build/Web.wasm.unityweb',
+  companyName: 'Conte Games', productName: 'Gnome des Cavernes Enchantées', productVersion: '1.0',
+  devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2), autoSyncPersistentDataPath: true
+}, function (p) { document.getElementById('plein').style.width = Math.round(p * 100) + '%'; })
+  .then(function () { document.getElementById('charge').remove(); })
+  .catch(function () { document.getElementById('texte').textContent = 'Le jeu ne peut pas démarrer sur cet appareil.'; });
+</script>
+</body>
+</html>
