@@ -24,7 +24,7 @@ function taille() { var h = window.innerHeight, w = window.innerWidth, l = Math.
 taille(); window.addEventListener('resize', taille);
 createUnityInstance(c, {
   dataUrl: 'Build/Web.data.unityweb', frameworkUrl: 'Build/Web.framework.js.unityweb', codeUrl: 'Build/Web.wasm.unityweb',
-  companyName: 'Conte Games', productName: 'Gnome des Cavernes Enchantées', productVersion: '1.0',
+  companyName: 'Conte Games', productName: 'Le Château des Lumières', productVersion: '1.0',
   devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2), autoSyncPersistentDataPath: true
 }, function (p) { document.getElementById('plein').style.width = Math.round(p * 100) + '%'; })
   .then(function () { document.getElementById('charge').remove(); })
