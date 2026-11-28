@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<script>
+/* Lien intelligent : iPhone/iPad -> App Store, Android -> Google Play (tools/liens_go.py). ?reste=1 = pas de redirection. */
+(function(){
+  var T={};
+  var ua=navigator.userAgent||'';
+  var os=(/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1))?'ios':(/Android/.test(ua)?'android':'');
+  if(os)document.documentElement.className='os-'+os;
+  var t=T[os];
+  if(!t||/[?&]reste=1/.test(location.search))return;
+  try{
+    var q=new URLSearchParams(location.search);
+    var u=q.get('utm_source')||(q.has('ttclid')?'tiktok':'')||(q.has('fbclid')?'facebook':'')||(q.has('gclid')?'google':'');
+    var b=JSON.stringify({p:location.pathname+'@'+t.id,t:t.t,r:document.referrer,u:u});
+    navigator.sendBeacon('https://contegames-stats.mieuxchaquejour.workers.dev/hit',new Blob([b],{type:'text/plain'}));
+  }catch(e){}
+  location.replace(t.url);
+})();
+</script>
+<title>Le Petit Dragon | Conte Games Studio</title>
+<meta name="description" content="Un jeu de plateforme peint à la main : traverse 7 royaumes et chasse le Roi des Ombres.">
+<meta name="theme-color" content="#163e32">
+<link rel="canonical" href="https://contegames.com/go/petitdragon/">
+<meta property="og:title" content="Le Petit Dragon">
+<meta property="og:description" content="Un jeu de plateforme peint à la main : traverse 7 royaumes et chasse le Roi des Ombres.">
+<meta property="og:image" content="https://contegames.com/assets/petitdragon-icone.jpg">
+<meta property="og:url" content="https://contegames.com/go/petitdragon/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at top,#1f5a47,#163e32 55%,#0b241c);color:#3b2410;
+ display:flex;align-items:center;justify-content:center;padding:24px 14px;min-height:100vh}
+.card{width:100%;max-width:520px;background:radial-gradient(ellipse at top,#fbeecb,#f1d9a3 70%,#e9cb8a);border-radius:22px;padding:26px 22px 22px;
+ box-shadow:inset 0 0 0 5px #f4dfaf,inset 0 0 0 7px #b48b45,0 18px 40px #0008;text-align:center}
+.icon{width:112px;height:112px;border-radius:24px;object-fit:cover;box-shadow:0 4px 14px #0005;border:3px solid #e6c77c}
+h1{margin:14px 0 6px;font-size:1.7rem;color:#5a2a0c;line-height:1.15}
+.tag{margin:0 0 6px;font-size:1.02rem;line-height:1.4}
+.free{display:inline-block;margin:4px 0 16px;padding:3px 14px;border:1px solid #c9a24f;border-radius:14px;background:#fff6dc8c;color:#4f2a12;font-size:.92rem}
+.stores{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.btn{display:flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:8px 18px;border-radius:14px;text-decoration:none;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;font-size:1.08rem;color:#fff6dc;border:2px solid #e6c77c;
+ background:linear-gradient(180deg,#2b1f3d,#160f22);box-shadow:0 0 0 1px #3d2a0e inset,0 0 14px #b078ff59,0 5px 12px #29231140}
+.btn:hover{background:linear-gradient(180deg,#3a2a52,#1d142d)}
+.btn .ico{width:26px;height:28px;flex:none;color:#f3d98f}
+.btn span{display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;text-align:left}
+.btn small{font-size:.7em;font-weight:400;color:#e9dcc0}
+.btn.alt{background:linear-gradient(180deg,#7a4a1c,#4f2a12);min-height:48px;font-size:1rem}
+.btn.me{order:-1;outline:3px solid #f3d98f;outline-offset:2px}
+.os-android .b-ios,.os-ios .b-android{order:5}
+.qr{margin:20px auto 4px;display:flex;align-items:center;gap:14px;justify-content:center;text-align:left;font-size:.95rem;line-height:1.35}
+.qr svg{width:132px;height:132px;flex:none;background:#fff;border-radius:10px;padding:6px;box-shadow:0 2px 8px #0003}
+.qr b{color:#5a2a0c}
+.foot{margin-top:16px;font-size:.9rem}
+.foot a{color:#5d3418;text-underline-offset:4px}
+.hint{display:none;margin:0 0 12px;font-size:.95rem;color:#6b4320}
+.os-ios .qr,.os-android .qr{display:none}
+.os-ios .hint.h-ios,.os-android .hint.h-android{display:block}
+@media (max-width:420px){.qr{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<main class="card">
+<img class="icon" src="/assets/petitdragon-icone.jpg" alt="Le Petit Dragon" width="112" height="112">
+<h1>Le Petit Dragon</h1>
+<p class="tag" data-t="tag">Un jeu de plateforme peint à la main : traverse 7 royaumes et chasse le Roi des Ombres.</p>
+<span class="free" data-t="free">Gratuit</span>
+<p class="hint h-ios" data-t="no_ios">Bientôt sur l’App Store. En attendant, voici où y jouer :</p><p class="hint h-android" data-t="no_play">Bientôt sur Google Play. En attendant, voici où y jouer :</p>
+<div class="stores">
+<a class="btn alt b-itch" href="https://anthonycontegames.itch.io/le-petit-dragon" rel="noopener"><span><small data-t="itch_s">Android (APK) et ordinateur</small>itch.io</span></a>
+</div>
+<div class="qr"><svg role="img" aria-label="QR code" xmlns="http://www.w3.org/2000/svg" width="132" height="132" class="segno"><path transform="scale(4)" class="qrline" stroke="#2b1405" d="M2 2.5h7m2 0h1m1 0h1m1 0h3m1 0h4m1 0h7m-29 1h1m5 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m5 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m4 0h3m4 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h8m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h2m4 0h4m-21 1h1m2 0h1m1 0h2m1 0h1m1 0h2m4 0h1m2 0h1m1 0h1m1 0h1m-23 1h2m2 0h1m2 0h3m5 0h1m3 0h3m2 0h1m2 0h1m-29 1h1m1 0h1m3 0h1m1 0h4m4 0h2m1 0h1m1 0h1m2 0h4m-28 1h3m1 0h2m6 0h1m1 0h2m2 0h1m1 0h1m2 0h1m2 0h2m-25 1h2m1 0h1m1 0h2m1 0h1m4 0h3m1 0h4m1 0h1m1 0h2m-28 1h2m1 0h2m4 0h1m1 0h1m6 0h3m-22 1h1m2 0h2m1 0h1m1 0h5m3 0h1m4 0h3m1 0h4m-28 1h4m2 0h2m1 0h5m2 0h2m1 0h1m1 0h1m1 0h2m1 0h1m-28 1h4m2 0h2m3 0h4m1 0h2m2 0h2m5 0h1m-27 1h3m5 0h1m1 0h1m4 0h1m1 0h1m1 0h4m1 0h1m2 0h1m-29 1h1m1 0h2m2 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h2m3 0h2m-26 1h1m1 0h1m1 0h7m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h2m-29 1h1m1 0h1m2 0h2m2 0h2m3 0h1m1 0h1m3 0h5m1 0h1m-19 1h6m2 0h2m2 0h1m3 0h1m1 0h3m-29 1h7m2 0h2m2 0h2m5 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m5 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m-27 1h1m1 0h3m1 0h1m3 0h3m1 0h1m2 0h1m2 0h5m2 0h2m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h3m2 0h3m2 0h6m-28 1h1m1 0h3m1 0h1m3 0h1m3 0h1m2 0h1m1 0h1m4 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m4 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m-28 1h7m1 0h3m2 0h1m1 0h1m1 0h1m2 0h2m2 0h2m1 0h1"/></svg><div><b data-t="qr1">Sur ordinateur ?</b><br><span data-t="qr2">Scanne ce code avec ton téléphone : il ouvre directement le bon magasin.</span></div></div>
+<p class="foot"><a href="/petitdragon/" data-t="site">Voir la page du jeu</a> · <a href="/" data-t="studio">Tous nos jeux</a> · Conte Games Studio</p>
+</main>
+<script>
+(function(){
+  var L={"fr":{"tag":"Un jeu de plateforme peint à la main : traverse 7 royaumes et chasse le Roi des Ombres.","free":"Gratuit","dl_ios":"Télécharger dans","dl_play":"Disponible sur","pc":"Sur ordinateur, sans rien installer","play_web":"Jouer dans le navigateur","itch_s":"Android (APK) et ordinateur","qr1":"Sur ordinateur ?","qr2":"Scanne ce code avec ton téléphone : il ouvre directement le bon magasin.","site":"Voir la page du jeu","studio":"Tous nos jeux","no_ios":"Bientôt sur l’App Store. En attendant, voici où y jouer :","no_play":"Bientôt sur Google Play. En attendant, voici où y jouer :"},"en":{"tag":"A hand-painted platformer: cross 7 kingdoms and drive out the King of Shadows.","free":"Free","dl_ios":"Download on the","dl_play":"Get it on","pc":"On a computer, nothing to install","play_web":"Play in your browser","itch_s":"Android (APK) and computer","qr1":"On a computer?","qr2":"Scan this code with your phone: it opens the right store directly.","site":"See the game page","studio":"All our games","no_ios":"Coming soon to the App Store. Meanwhile, here is where to play:","no_play":"Coming soon to Google Play. Meanwhile, here is where to play:"}};
+  var lang=((navigator.language||'fr').slice(0,2).toLowerCase()==='fr')?'fr':'en';
+  if(lang!=='fr'){document.documentElement.lang='en';document.querySelectorAll('[data-t]').forEach(function(n){var v=L.en[n.getAttribute('data-t')];if(v)n.textContent=v;});}
+  var os=document.documentElement.className;
+  var mine=os==='os-ios'?(document.querySelector('.b-ios')||document.querySelector('.b-web')):os==='os-android'?(document.querySelector('.b-android')||document.querySelector('.b-itch')):null;
+  if(mine)mine.classList.add('me');
+})();
+</script>
+<script src="/analytics.js?v=3" defer></script>
+</body>
+</html>
